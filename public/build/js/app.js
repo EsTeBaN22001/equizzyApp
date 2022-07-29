@@ -1,0 +1,1 @@
+if(document.querySelector(".navbar-container")){window.onscroll=function(){stickyMenu()};const n=document.querySelector(".navbar-container"),t=n.offsetTop,e=n.nextSibling.nextSibling;function stickyMenu(){window.pageYOffset>=t?(n.classList.add("sticky"),e.style.paddingTop=n.offsetHeight+"px"):(n.classList.remove("sticky"),e.style.paddingTop="initial")}}

@@ -50,4 +50,4 @@ function watchArchives() {
 
 exports.css = css;
 exports.watch = watchArchives;
-exports.default = parallel(css, javascript,  img,  watchArchivos ); 
+exports.default = parallel(css, javascript,  img,  watchArchives ); 
