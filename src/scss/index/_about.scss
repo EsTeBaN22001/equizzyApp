@@ -1,0 +1,44 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.box-info-container{
+  margin-bottom: 10rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3rem;
+
+  .text-content{
+
+    &.text-left{
+      h2, p{text-align: left;}
+    }
+
+    &.text-right{
+      h2, p{text-align: right;}
+    }
+  }
+
+  .img-container{
+    img{
+      max-height: 40rem;
+      width: 100%;
+    }
+  }
+
+  @include m.tablet{
+    grid-template-columns: 1fr;
+
+    &.box-inverted{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .text-content{
+      &.text-left, &.text-right{
+        h2, p{
+          text-align: center;
+        }
+      }
+    }
+  }
+}

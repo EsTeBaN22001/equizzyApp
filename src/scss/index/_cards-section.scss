@@ -1,0 +1,33 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.cards-container {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  @include m.tablet{
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    color: v.$principalColor;
+    padding: 2rem;
+    border: .2rem solid v.$principalColor;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+
+    .img-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10rem;
+    }
+
+    .text-content{
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+}
