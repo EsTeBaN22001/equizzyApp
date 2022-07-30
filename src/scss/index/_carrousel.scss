@@ -1,0 +1,25 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.polls-carrousel{
+  .glide{
+    .about-poll-container{
+      position: relative;
+
+      .about-poll{
+        background-color: rgba($color: v.$black, $alpha: 0.8);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 1.5rem;
+        
+        h3{
+          text-align: start;
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
