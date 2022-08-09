@@ -46,19 +46,27 @@ class Router
 		}
 	}
 
-	public function render($view, $datos = [])
-	{
-
+	// Layout principal
+	public function render($view, $datos = []){
 		// Leer lo que le pasamos  a la vista
 		foreach ($datos as $key => $value) {
 			$$key = $value;  // Doble signo de dolar significa: variable de variable, básicamente nuestra variable sigue siendo la original, pero al asignarla a otra no la reescribe, mantiene su valor, de esta forma el nombre de la variable se asigna dinamicamente
 		}
-
 		ob_start(); // Almacenamiento en memoria durante un momento...
-
 		// entonces incluimos la vista en el layout
 		include_once __DIR__ . "/views/$view.php";
 		$content = ob_get_clean(); // Limpia el Buffer
-		include_once __DIR__ . '/views/layout.php';
+		include_once __DIR__ . '/views/layouts/layout.php';
+	}
+
+	// Layout para el el inicio y registro de los usuarios
+	public function renderLogin($view, $datos = []){
+		foreach ($datos as $key => $value){
+			$$key = $value;
+		}
+		ob_start();
+		include_once __DIR__ . "/views/$view.php";
+		$content = ob_get_clean();
+		include_once __DIR__ . '/views/layouts/layoutLogin.php';
 	}
 }

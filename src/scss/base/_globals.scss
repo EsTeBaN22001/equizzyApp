@@ -41,6 +41,14 @@ body {
 		margin-top: 5rem;
 	}
 }
+.section-sm{
+	margin: 2.5rem auto;
+	margin-top: 6rem;
+
+	@include m.tablet{
+		margin-top: 2.5rem;
+	}
+}
 a {
 	text-decoration: none;
 }
