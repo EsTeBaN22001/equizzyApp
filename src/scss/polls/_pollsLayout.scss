@@ -1,0 +1,72 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sitePollsLayoutContainer{
+  height: 100vh;
+  display: flex;
+
+  @include m.tablet{flex-direction: column}
+  
+  .sidebarContainer { 
+    flex: 1;
+    background-color: v.$black;
+    padding: 1rem 2rem;
+
+    h2{
+      margin-bottom: 3rem;
+    }
+
+    .sidebarOptions{
+      .option{
+        width: fit-content;
+        padding: .5rem 1rem;
+        border-radius: .3rem;
+        margin: .5rem 0;
+        transition: all .3s ease;
+        a{
+          color: v.$white;
+          font-size: 2.5rem;
+        }
+
+        &:hover{
+          background-color: v.$principalColor;
+        }
+      }
+
+      @include m.tablet{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .mainContent {
+    flex: 5;
+    overflow-y: scroll;
+    background-color: v.$bgColor;
+
+    .navbar-polls { 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: v.$black;
+      padding: 2rem;
+
+      .userNameContainer{
+        span{
+          color: v.$principalColor;
+        }
+      }
+
+      .closeSession{
+        font-size: 2.5rem;
+        transition: color .3s ease;
+
+        &:hover{
+          color: v.$principalColor;
+        }
+      }
+    }
+  }
+}

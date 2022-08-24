@@ -28,11 +28,10 @@
 
 	<section class="navbar-container">
 		<div class="navbar container">
-			<div class="logo">
-				<a class="logo">equizzy<span>App</span></a>
+			<div>
+				<a href="<?= $_ENV['HOST'] ?>/" class="logo">equizzy<span>App</span></a>
 			</div>
 			<nav class="nav">
-				<a href="<?= $_ENV['HOST'] ?>/">Inicio</a>
 				<a href="<?= $_ENV['HOST'] ?>/register">Regístrate</a>
 				<a href="<?= $_ENV['HOST'] ?>/login">Iniciar sesión</a>
 			</nav>

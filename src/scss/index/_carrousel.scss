@@ -2,6 +2,27 @@
 @use 'base/mixins' as m;
 
 .polls-carrousel{
+  .header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2{
+      text-align: start;
+      margin-bottom: 1rem;
+    }
+
+    a{
+      font-size: 3rem;
+      color: v.$principalColor;
+      transition: color .2s ease;
+
+      &:hover{
+        color: lighten($color: v.$principalColor, $amount: 10);
+      }
+    }
+  }
+
   .glide{
     .about-poll-container{
       position: relative;

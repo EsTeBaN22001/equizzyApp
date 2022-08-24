@@ -3,19 +3,19 @@
   display: block;
   top: 50%;
   z-index: 2;
-  color: #ffffff;
+  color: #000000;
   text-transform: uppercase;
-  padding: .5rem 1rem;
+  padding: .5rem;
   border-radius: 1rem;
   border: none;
   box-shadow: none;
   font-size: 2rem;
-  background-color: rgba($color: #000000, $alpha: .8);
+  font-weight: 800;
+  background-color: #ffffff;
   padding: 9px 12px;
   border: none;
   box-shadow: none;
   font-size: 3rem;
-  background-color: transparent;
   opacity: 1;
   cursor: pointer;
   transition: opacity 150ms ease, border 300ms ease-in-out;
@@ -40,7 +40,7 @@
 .glide__bullets {
   position: absolute;
   z-index: 2;
-  bottom: 2em;
+  bottom: -2rem;
   left: 50%;
   display: inline-flex;
   list-style: none;
