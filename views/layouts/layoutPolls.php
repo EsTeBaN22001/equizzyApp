@@ -19,9 +19,17 @@
 
   <section class="sitePollsLayoutContainer">
     <section class="sidebarContainer">
-      <a href="<?= $_ENV['HOST'] ?>/polls"><h2 class="logo">equizzy<span>App</span></h2></a>
+      <div class="sidebar-header">
+        <a href="<?= $_ENV['HOST'] ?>/polls">
+          <h2 class="logo">equizzy<span>App</span></h2>
+        </a>
+        <div class="menu-button">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
       <ul class="sidebarOptions">
         <li class="option"><a href="<?= $_ENV['HOST'] ?>/polls">Encuestas</a></li>
+        <li class="option"><a href="<?= $_ENV['HOST'] ?>/polls-categories">Categorías</a></li>
         <li class="option"><a href="<?= $_ENV['HOST'] ?>/myPolls">Mis encuestas</a></li>
         <li class="option"><a href="<?= $_ENV['HOST'] ?>/configuration">Configuración</a></li>
       </ul>
@@ -29,12 +37,16 @@
     <main class="mainContent">
       <?php include_once(__DIR__ . './../templates/navbar.php') ?>
       <?php echo $content; ?>
+      <footer class="footer polls-footer">
+        <p>&#169;Todos los derechos reservados por equizzyApp 2022</p>
+      </footer>
     </main>
   </section>
 
   <!-- Font Awesome -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js" integrity="sha512-8pHNiqTlsrRjVD4A/3va++W1sMbUHwWxxRPWNyVlql3T+Hgfd81Qc6FC5WMXDC+tSauxxzp1tgiAvSKFu1qIlA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="build/js/app.js"></script>
+  <script src="build/js/navbarPollsResponsive.js"></script>
   <?php echo $script ?? ''; ?>
 </body>
 

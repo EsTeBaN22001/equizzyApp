@@ -1,5 +1,4 @@
 if(document.querySelector('.polls-carrousel')){
-
   const config = {
     type: 'carousel',
     startAt: 0,
@@ -22,5 +21,6 @@ if(document.querySelector('.polls-carrousel')){
   new Glide('.glide1', config).mount()
   new Glide('.glide2', config).mount()
   new Glide('.glide3', config).mount()
-
+  new Glide('.glide4', config).mount()
+  new Glide('.glide5', config).mount()
 }

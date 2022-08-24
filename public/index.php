@@ -20,6 +20,7 @@ $router->post('/register', [LoginController::class, 'register']);
 
 // Páginas principales
 $router->get('/polls', [PollsController::class, 'polls']);
+$router->get('/polls-categories', [PollsController::class, 'categories']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->checkRoutes();

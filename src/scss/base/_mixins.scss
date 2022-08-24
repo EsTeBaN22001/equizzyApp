@@ -49,9 +49,6 @@
 	transition-property: background-color;
 	transition-duration: .3s;
 	text-align: center;
-	display: block;
-	width: 100%;
-	margin: 5rem 0;
 
 	@include tablet {
 		width: auto;

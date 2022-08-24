@@ -13,6 +13,13 @@ class PollsController{
     ]);
   }
 
+  public static function categories(Router $router){
+
+    $router->renderPolls('polls/categories', [
+      'title' => 'Encuestas'
+    ]);
+  }
+
 }
 
 ?>
