@@ -16,7 +16,14 @@ class PollsController{
   public static function categories(Router $router){
 
     $router->renderPolls('polls/categories', [
-      'title' => 'Encuestas'
+      'title' => 'Categorías'
+    ]);
+  }
+
+  public static function profile(Router $router){
+
+    $router->renderPolls('polls/profile', [
+      'title' => 'Perfíl'
     ]);
   }
 

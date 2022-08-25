@@ -31,7 +31,7 @@
         <li class="option"><a href="<?= $_ENV['HOST'] ?>/polls">Encuestas</a></li>
         <li class="option"><a href="<?= $_ENV['HOST'] ?>/polls-categories">Categorías</a></li>
         <li class="option"><a href="<?= $_ENV['HOST'] ?>/myPolls">Mis encuestas</a></li>
-        <li class="option"><a href="<?= $_ENV['HOST'] ?>/configuration">Configuración</a></li>
+        <li class="option"><a href="<?= $_ENV['HOST'] ?>/profile">Configuración</a></li>
       </ul>
     </section>
     <main class="mainContent">

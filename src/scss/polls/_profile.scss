@@ -1,0 +1,29 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.profile-section{
+  .form{
+    max-width: 55rem;
+
+    .field-group{
+      display: flex;
+      
+      label, input{
+        display: inline-block;
+      }
+
+      label{flex: 2;}
+      input{flex: 3;}
+    }
+
+    .link-profile{
+      color: v.$principalColor;
+      transition: color .2s ease;
+      font-size: 2rem;
+
+      &:hover{
+        color: v.$white;
+      }
+    }
+  }
+}
