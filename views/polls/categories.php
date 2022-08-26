@@ -1,4 +1,4 @@
-<div class="categories-section container-sm">
+<div class="categories-section section-sm container-sm">
   <h1>Categorías</h1>
   <div class="categories-container">
     <div class="about-poll-container">

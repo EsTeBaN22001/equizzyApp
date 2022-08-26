@@ -6,6 +6,7 @@ use MVC\Router;
 use Controllers\IndexController;
 use Controllers\LoginController;
 use Controllers\PollsController;
+use Controllers\UserController;
 
 $router = new Router();
 
@@ -21,7 +22,9 @@ $router->post('/register', [LoginController::class, 'register']);
 // Páginas principales
 $router->get('/polls', [PollsController::class, 'polls']);
 $router->get('/polls-categories', [PollsController::class, 'categories']);
+$router->get('/my-polls', [PollsController::class, 'myPolls']);
 $router->get('/profile', [PollsController::class, 'profile']);
+$router->get('/profile/change-password', [UserController::class, 'changePassword']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->checkRoutes();

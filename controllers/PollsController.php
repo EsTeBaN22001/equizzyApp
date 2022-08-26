@@ -20,6 +20,13 @@ class PollsController{
     ]);
   }
 
+  public static function myPolls(Router $router){
+
+    $router->renderPolls('polls/my-polls', [
+      'title' => 'Mis encuestas'
+    ]);
+  }
+
   public static function profile(Router $router){
 
     $router->renderPolls('polls/profile', [
