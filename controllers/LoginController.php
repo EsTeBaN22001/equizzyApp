@@ -8,6 +8,39 @@ use MVC\Router;
 class LoginController{
 
   public static function login(Router $router){
+
+    $user = new User();
+
+    $alerts = [];
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+      $user->syncUp($_POST);
+
+      $alerts = $user->validateLogin();
+
+      if(empty($alerts)){
+
+        $userExists = User::where('email', $user->email);
+        
+        if(!$userExists){
+          User::setAlert('error', 'El usuario no existe');
+        }else{
+
+          if(password_verify($user->password, $userExists->password)){
+
+            $userExists->startSession;
+            
+            header('Location: /polls');
+
+          }
+
+        }
+
+      }
+
+    }
+    
     $router->renderLogin('login', [
       'title' => 'Iniciar sesión'
     ]);
