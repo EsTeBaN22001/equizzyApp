@@ -1,5 +1,6 @@
 <section class="section-sm container-sm">
   <h1>Iniciar sesión</h1>
+  <?php include_once(__DIR__ . './templates/alerts.php') ?>
   <div class="login-form-container">
     <form method="POST" action="" class="form">
       <div class="field-group">

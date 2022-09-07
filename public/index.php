@@ -18,6 +18,7 @@ $router->get('/login', [LoginController::class, 'login']);
 $router->post('/login', [LoginController::class, 'login']);
 $router->get('/register', [LoginController::class, 'register']);
 $router->post('/register', [LoginController::class, 'register']);
+$router->get('/logout', [LoginController::class, 'logout']);
 
 // Páginas principales
 $router->get('/polls', [PollsController::class, 'polls']);

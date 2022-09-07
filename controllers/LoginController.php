@@ -29,10 +29,12 @@ class LoginController{
 
           if(password_verify($user->password, $userExists->password)){
 
-            $userExists->startSession;
+            $userExists->startSession();
             
             header('Location: /polls');
 
+          }else{
+            User::setAlert('error', 'La contraseña es incorrecta');
           }
 
         }
@@ -40,9 +42,12 @@ class LoginController{
       }
 
     }
+
+    $alerts = User::getAlerts();
     
     $router->renderLogin('login', [
-      'title' => 'Iniciar sesión'
+      'title' => 'Iniciar sesión',
+      'alerts' => $alerts
     ]);
   }
 
@@ -102,6 +107,14 @@ class LoginController{
       'user' => $user,
       'alerts' => $alerts
     ]);
+  }
+
+  public static function logout(){
+
+    session_unset();
+
+    header('Location: /');
+
   }
 
 }
