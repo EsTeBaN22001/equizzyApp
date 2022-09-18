@@ -8,8 +8,9 @@ class UserController{
 
   public static function changePassword(Router $router){
 
-    $router->renderPolls('polls/change-password', [
-      'title' => 'Cambiar contraseña'
+    $router->renderPolls('change-password', [
+      'title' => 'Cambiar contraseña',
+      'userName' => '' . $_SESSION['name'] . ' ' . $_SESSION['surname']
     ]);
     
   }

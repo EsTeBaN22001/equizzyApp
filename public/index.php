@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+use Controllers\AdminController;
 use MVC\Router;
 use Controllers\IndexController;
 use Controllers\LoginController;
@@ -19,6 +20,9 @@ $router->post('/login', [LoginController::class, 'login']);
 $router->get('/register', [LoginController::class, 'register']);
 $router->post('/register', [LoginController::class, 'register']);
 $router->get('/logout', [LoginController::class, 'logout']);
+
+// Rutas para la sección de administrador
+$router->get('/admin/index', [AdminController::class, 'index']);
 
 // Páginas principales
 $router->get('/polls', [PollsController::class, 'polls']);

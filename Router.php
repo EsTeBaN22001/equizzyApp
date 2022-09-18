@@ -76,8 +76,19 @@ class Router
 			$$key = $value;
 		}
 		ob_start();
-		include_once __DIR__ . "/views/$view.php";
+		include_once __DIR__ . "/views/polls/$view.php";
 		$content = ob_get_clean();
 		include_once __DIR__ . '/views/layouts/layoutPolls.php';
+	}
+
+	public function renderAdmin($view, $datos = []){
+		foreach ($datos as $key => $value){
+			$$key = $value;
+		}
+
+		ob_start();
+		include_once __DIR__ ."/views/admin/$view.php";
+		$content = ob_get_clean();
+		include_once __DIR__ . "/views/layouts/layoutAdmin.php";
 	}
 }
