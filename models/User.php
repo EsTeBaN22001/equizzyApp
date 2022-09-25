@@ -5,7 +5,7 @@ namespace Model;
 class User extends ActiveRecord{
 
   protected static $table = 'users';
-  protected static $columnsDB = ['id', 'uniqid', 'name', 'surname', 'email', 'password', 'admin'];
+  protected static $columnsDB = ['id', 'uniqId', 'name', 'surname', 'email', 'password', 'admin'];
 
   public function __construct($args = [])
   {
@@ -62,6 +62,7 @@ class User extends ActiveRecord{
   public function startSession(){
     session_unset();
 
+    $_SESSION['id'] = $this->id;
     $_SESSION['uniqId'] = $this->uniqId;
     $_SESSION['name'] = $this->name;
     $_SESSION['surname'] = $this->surname;

@@ -70,13 +70,13 @@ class Router
 		include_once __DIR__ . '/views/layouts/layoutLogin.php';
 	}
 
-	// Layout para el el inicio y registro de los usuarios
+	// Layout para las encuestas
 	public function renderPolls($view, $datos = []){
 		foreach ($datos as $key => $value){
 			$$key = $value;
 		}
 		ob_start();
-		include_once __DIR__ . "/views/polls/$view.php";
+		include_once __DIR__ . "/views/$view.php";
 		$content = ob_get_clean();
 		include_once __DIR__ . '/views/layouts/layoutPolls.php';
 	}

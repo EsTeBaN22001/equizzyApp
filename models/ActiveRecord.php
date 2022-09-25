@@ -161,13 +161,14 @@ class ActiveRecord
 	{
 		// Sanitizar los datos
 		$attributes = $this->sanitizeAttributes();
+		
 
 		// Insertar en la base de datos
 		$query = " INSERT INTO " . static::$table . " ( ";
 		$query .= join(', ', array_keys($attributes));
-		$query .= " ) VALUES (' ";
+		$query .= " ) VALUES ('";
 		$query .= join("', '", array_values($attributes));
-		$query .= " ') ";
+		$query .= "') ";
 
 		// Resultado de la consulta
 		$result = self::$db->query($query);
@@ -206,5 +207,33 @@ class ActiveRecord
 		$query = "DELETE FROM "  . static::$table . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
 		$result = self::$db->query($query);
 		return $result;
+	}
+
+	// Subida de archivos
+	public function setImage($img, $dir)
+	{
+
+		if ($this->img) {
+			// Elimina la imagen previa
+			$this->deleteImage($dir);
+		}
+
+
+		// Asignar al atributo de imagen el nombre de la imagen
+		if ($img) {
+			$this->img = $img;
+		}
+	}
+
+	// Eliminar imagen
+	public function deleteImage($dir)
+	{
+		// Comprobar si existe el archivo
+		$fileExist = file_exists($dir . $this->img);
+
+		if ($fileExist) {
+			unlink($dir . $this->img);
+		}
+		$fileExist = null;
 	}
 }

@@ -1,0 +1,88 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.my-polls-section {
+  position: relative;
+
+  .create-poll-button{
+    @include m.button(v.$principalColor, v.$white);
+    margin: 0;
+  }
+
+  .polls-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    @include m.phone{grid-template-columns: 1fr;}
+
+    .poll {
+      position: relative;
+      height: 100%;
+
+      .about-poll {
+        background-color: rgba($color: v.$black, $alpha: 0.8);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        padding: .7rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+          text-align: start;
+          font-size: 3rem;
+        }
+
+        .menu-icon-container{
+          font-size: 3rem;
+          padding: .5rem 2rem;
+
+          &:hover{
+            cursor: pointer;
+          }
+        }
+
+        .options-container{
+          position: absolute;
+          top: -15.9rem;
+          right: 0;
+          background-color: v.$black;
+          opacity: 0;
+          overflow: hidden;
+          transition: all .3s ease-in-out;
+
+          &.active{
+            display: block;
+            opacity: 1;
+            overflow: visible;
+          }
+
+          .option{
+            padding: 1.5rem 3rem;
+            transition: background-color .2s ease;
+
+            &:hover{
+              background-color: v.$gray;
+              
+              a{
+                color: v.$black;
+              }
+            }
+
+            a{
+              color: v.$white;
+              margin-left: 1rem;
+              font-size: 2rem;
+              font-weight: 500;
+              transition: color .2s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+}

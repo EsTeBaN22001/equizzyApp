@@ -1,0 +1,136 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sitePollsLayoutContainer{
+  height: 100vh;
+  display: flex;
+
+  @include m.tablet{flex-direction: column}
+  
+  .sidebarContainer { 
+    flex: 1;
+    background-color: v.$black;
+    padding: 1rem 2rem;
+
+    .sidebar-header{
+      position: relative;
+
+      h2{
+        margin-bottom: 3rem;
+        @include m.tablet{margin: 3rem 0;}
+      }
+  
+      .menu-button{
+        padding: 2rem;
+        position: absolute;
+        top: -1.5rem;
+        right: -1rem;
+        font-size: 4rem;
+        display: none;
+        transition: color .2s ease;
+
+        &:hover{
+          cursor: pointer;
+          color: v.$principalColor;
+        }
+
+        @include m.tablet{display: inline-block;}
+      }
+    }
+
+    .sidebarOptions{
+      display: flex;
+      flex-direction: column;
+
+      @include m.tablet{
+        height: 0;
+        overflow: hidden;
+      }
+
+      &.active{
+        height: auto;
+        overflow: visible;
+      }
+
+      .option{
+        width: fit-content;
+        padding: .5rem 1rem;
+        border-radius: .3rem;
+        margin: 1rem 0;
+        transition: all .3s ease;
+        a{
+          color: v.$white;
+          font-size: 2.5rem;
+        }
+
+        &:hover{
+          background-color: v.$principalColor;
+        }
+      }
+
+      @include m.tablet{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .mainContent {
+    flex: 5;
+    overflow-y: scroll;
+    background-color: v.$bgColor;
+    // min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .navbar-polls { 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: v.$black;
+      padding: 1rem 2rem;
+
+      .userNameContainer{
+        span{
+          color: v.$principalColor;
+        }
+      }
+
+      .closeSession{
+        padding: 1rem;
+        
+        a{
+          font-size: 3rem;
+          padding: 1rem;
+          color: v.$white;
+  
+          &:hover{
+            color: v.$principalColor;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .header-title-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5rem 0;
+
+      @include m.phone{
+        flex-direction: column;
+      }
+
+      h1{
+        margin: 0;
+      }
+    }
+  }
+
+  .polls-footer{
+    margin-top: 7rem;
+  }
+}

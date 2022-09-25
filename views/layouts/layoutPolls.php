@@ -29,8 +29,8 @@
       </div>
       <ul class="sidebarOptions">
         <li class="option"><a href="<?= $_ENV['HOST'] ?>/polls">Encuestas</a></li>
-        <li class="option"><a href="<?= $_ENV['HOST'] ?>/polls-categories">Categorías</a></li>
         <li class="option"><a href="<?= $_ENV['HOST'] ?>/my-polls">Mis encuestas</a></li>
+        <li class="option"><a href="<?= $_ENV['HOST'] ?>/categories/list">Categorías</a></li>
         <li class="option"><a href="<?= $_ENV['HOST'] ?>/profile">Perfíl</a></li>
       </ul>
     </section>

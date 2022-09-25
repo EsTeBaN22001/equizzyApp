@@ -2,41 +2,42 @@
 
 namespace Controllers;
 
-use Model\Polls;
+use Model\Poll;
 use MVC\Router;
 
 class PollsController{
 
-  public static function polls(Router $router){
+  public static function createPoll(Router $router){
     
-    $router->renderPolls('polls', [
-      'title' => 'Encuestas',
-      'userName' => $_SESSION['name'] . ' ' . $_SESSION['surname'],
-    ]);
-  }
+    $poll = new Poll();
 
-  public static function categories(Router $router){
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+      
+      $poll->syncUp($_POST);
 
-    $router->renderPolls('categories', [
-      'title' => 'Categorías',
+      $alerts = $poll->validateCreatePoll();
+
+      if(empty($alerts)){
+
+        $poll->uniqId = md5(uniqid());
+        $poll->userId = intval($_SESSION['id']);
+        
+        // $result = $poll->save();
+
+      }
+      
+      
+
+    }
+
+    $alerts = Poll::getAlerts();
+    
+    $router->renderPolls('polls/createPoll', [
+      'title' => 'Crear encuesta',
       'userName' => '' . $_SESSION['name'] . ' ' . $_SESSION['surname'],
+      'alerts' => $alerts
     ]);
-  }
 
-  public static function myPolls(Router $router){
-
-    $router->renderPolls('my-polls', [
-      'title' => 'Mis encuestas',
-      'userName' => '' . $_SESSION['name'] . ' ' . $_SESSION['surname']
-    ]);
-  }
-
-  public static function profile(Router $router){
-
-    $router->renderPolls('profile', [
-      'title' => 'Perfíl',
-      'userName' => '' . $_SESSION['name'] . ' ' . $_SESSION['surname']
-    ]);
   }
 
 }
