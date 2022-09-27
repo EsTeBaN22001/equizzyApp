@@ -148,7 +148,7 @@ class ActiveRecord
 		return array_shift($result);
 	}
 
-	// Busca todos los registros que coincidan con un id
+	// Busca todos los registros que coincidan con una columna
 	public static function belongsTo($column, $value)
 	{
 		$query = "SELECT * FROM " . static::$table . " WHERE ${column} = '${value}'";

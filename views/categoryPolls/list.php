@@ -1,6 +1,6 @@
 <div class="categories-section section-sm container-sm">
   <?php if($_GET): ?>
-    <div class="alert success">
+    <div class="alert <?= $_GET['alert'] ?>">
       La categoría se creó correctamente
     </div>
   <?php endif ?>

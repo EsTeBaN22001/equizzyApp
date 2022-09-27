@@ -14,7 +14,6 @@ $router = new Router();
 
 // Páginas principales
 $router->get('/', [IndexController::class, 'index']);
-$router->get('/polls', [IndexController::class, 'polls']);
 $router->get('/my-polls', [IndexController::class, 'myPolls']);
 $router->get('/profile', [IndexController::class, 'profile']);
 $router->get('/profile/change-password', [UserController::class, 'changePassword']);
@@ -32,8 +31,9 @@ $router->get('/categories/create', [CategoryPollController::class, 'create']);
 $router->post('/categories/create', [CategoryPollController::class, 'create']);
 
 // Crud de las encuestas del lado del usuario
-$router->get('/create-poll', [PollsController::class, 'createPoll']);
-$router->post('/create-poll', [PollsController::class, 'createPoll']);
+$router->get('/polls/list', [PollsController::class, 'list']);
+$router->get('/polls/create', [PollsController::class, 'createPoll']);
+$router->post('/poll/create', [PollsController::class, 'createPoll']);
 
 // Secciones de administrador
 $router->get('/admin/index', [AdminController::class, 'index']);

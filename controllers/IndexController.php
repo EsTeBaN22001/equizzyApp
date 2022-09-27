@@ -14,14 +14,6 @@ class IndexController{
 
   }
 
-  public static function polls(Router $router){
-    
-    $router->renderPolls('principalPages/polls', [
-      'title' => 'Encuestas',
-      'userName' => $_SESSION['name'] . ' ' . $_SESSION['surname'],
-    ]);
-  }
-
   public static function myPolls(Router $router){
 
     $router->renderPolls('principalPages/myPolls', [

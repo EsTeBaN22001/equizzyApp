@@ -20,7 +20,7 @@
   <section class="sitePollsLayoutContainer">
     <section class="sidebarContainer">
       <div class="sidebar-header">
-        <a href="<?= $_ENV['HOST'] ?>/polls">
+        <a href="<?= $_ENV['HOST'] ?>/polls/list">
           <h2 class="logo">equizzy<span>App</span></h2>
         </a>
         <div class="menu-button">
@@ -28,7 +28,7 @@
         </div>
       </div>
       <ul class="sidebarOptions">
-        <li class="option"><a href="<?= $_ENV['HOST'] ?>/polls">Encuestas</a></li>
+        <li class="option"><a href="<?= $_ENV['HOST'] ?>/polls/list">Encuestas</a></li>
         <li class="option"><a href="<?= $_ENV['HOST'] ?>/my-polls">Mis encuestas</a></li>
         <li class="option"><a href="<?= $_ENV['HOST'] ?>/categories/list">Categorías</a></li>
         <li class="option"><a href="<?= $_ENV['HOST'] ?>/profile">Perfíl</a></li>

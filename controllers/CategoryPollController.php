@@ -30,16 +30,20 @@ class CategoryPollController{
 
       if(empty($alerts)){
 
-        $result = $category->save();
+        $categoryExists = CategoryPolls::belongsTo('name', $category->name);
 
-        if($result){
-          header('Location: ' . $_ENV['HOST'] . '/categories/list?alert=success');
+        if(count($categoryExists) > 0){
+          $category::setAlert('error', 'La categoría ya existe');
         }else{
-          $alerts = CategoryPolls::setAlert('error', 'Hubo un problema al crear la categoría');
+          $result = $category->save();
+  
+          if($result){
+            header('Location: ' . $_ENV['HOST'] . '/categories/list?alert=success');
+          }else{
+            $alerts = CategoryPolls::setAlert('error', 'Hubo un problema al crear la categoría');
+          }
         }
-
       }
-
     }
 
     $alerts = CategoryPolls::getAlerts();

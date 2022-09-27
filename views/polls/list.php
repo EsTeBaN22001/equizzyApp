@@ -8,7 +8,7 @@
         <ul class="glide__slides">
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -17,7 +17,7 @@
           </li>
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -26,7 +26,7 @@
           </li>
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -60,7 +60,7 @@
         <ul class="glide__slides">
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -69,7 +69,7 @@
           </li>
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -78,7 +78,7 @@
           </li>
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -108,7 +108,7 @@
     <a href="#" class="create-poll-button">Crear encuesta</a>
   </div>
   <div class="img-container">
-    <img src="build/img/createPoll.svg" alt="imagen crear encuesta">
+    <img src="/build/img/createPoll.svg" alt="imagen crear encuesta">
   </div>
 </section>
 
@@ -123,7 +123,7 @@
         <ul class="glide__slides">
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -132,7 +132,7 @@
           </li>
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -141,7 +141,7 @@
           </li>
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -175,7 +175,7 @@
         <ul class="glide__slides">
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -184,7 +184,7 @@
           </li>
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -193,7 +193,7 @@
           </li>
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -227,7 +227,7 @@
         <ul class="glide__slides">
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -236,7 +236,7 @@
           </li>
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>
@@ -245,7 +245,7 @@
           </li>
           <li class="glide__slide">
             <div class="slide__content about-poll-container">
-              <img src="build/img/hero.webp">
+              <img src="/build/img/hero.webp">
               <div class="about-poll">
                 <h3>Poll title</h3>
                 <p><b>Categoría: </b>El pepe</p>

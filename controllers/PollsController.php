@@ -7,7 +7,15 @@ use MVC\Router;
 
 class PollsController{
 
-  public static function createPoll(Router $router){
+  public static function list(Router $router){
+    
+    $router->renderPolls('polls/list', [
+      'title' => 'Encuestas',
+      'userName' => $_SESSION['name'] . ' ' . $_SESSION['surname'],
+    ]);
+  }
+
+  public static function create(Router $router){
     
     $poll = new Poll();
 
@@ -32,7 +40,7 @@ class PollsController{
 
     $alerts = Poll::getAlerts();
     
-    $router->renderPolls('polls/createPoll', [
+    $router->renderPolls('polls/create', [
       'title' => 'Crear encuesta',
       'userName' => '' . $_SESSION['name'] . ' ' . $_SESSION['surname'],
       'alerts' => $alerts
