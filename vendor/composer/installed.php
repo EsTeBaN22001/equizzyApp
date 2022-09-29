@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '1b308e07c087ca2c91c9f8b8819650d59db47031',
+        'reference' => '65ebfd8a3879edb57eeb58080ae9eecf74d8cac0',
         'name' => 'esteb/template',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '1b308e07c087ca2c91c9f8b8819650d59db47031',
+            'reference' => '65ebfd8a3879edb57eeb58080ae9eecf74d8cac0',
             'dev_requirement' => false,
         ),
         'graham-campbell/result-type' => array(

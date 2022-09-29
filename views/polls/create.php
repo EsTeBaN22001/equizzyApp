@@ -9,6 +9,19 @@
         <input type="text" name="title" id="title" placeholder="Ingrese el nombre de la encuesta">
       </div>
       <div class="field-group">
+        <label for="categoryId">Categoría:</label>
+        <select name="categoryId" id="category">
+          <option value="" selected disabled>--Elegir una opción--</option>
+          <?php foreach($categories as $category): ?>
+            <option value="<?= $category->id ?>"><?= $category->name ?></option>
+          <?php endforeach ?>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="img">Seleccionar una imagen:</label>
+        <input type="file" name="img" id="img">
+      </div>
+      <div class="field-group">
         <input class="button-submit" type="submit" value="CREAR ENCUESTA">
       </div>
     </form>

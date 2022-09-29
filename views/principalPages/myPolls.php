@@ -1,7 +1,7 @@
 <div class="my-polls-section section-sm container-sm">
   <div class="header-title-container">
     <h1>Mis encuestas</h1>
-    <a href="<?= $_ENV['HOST'] ?>/create-poll" class="create-poll-button">Crear encuesta</a>
+    <a href="<?= $_ENV['HOST'] ?>/polls/create" class="create-poll-button">Crear encuesta</a>
   </div>
   <div class="polls-container">
     <div class="poll">

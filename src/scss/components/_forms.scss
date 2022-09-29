@@ -38,6 +38,23 @@
       }
     }
 
+    select{
+      border: .2rem solid v.$darkGray;
+      background-color: transparent;
+      color: v.$white;
+      padding: 1rem;
+      transition: border .3s ease;
+
+      &:focus{
+        border: .2rem solid v.$principalColor;
+      }
+
+      option{
+        background-color: v.$darkGray;
+        color: v.$white;
+      }
+    }
+
     .button-submit{
       border: .2rem solid v.$darkGray;
       color: v.$white;

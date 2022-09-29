@@ -25,15 +25,15 @@ $router->get('/register', [LoginController::class, 'register']);
 $router->post('/register', [LoginController::class, 'register']);
 $router->get('/logout', [LoginController::class, 'logout']);
 
-// Crud categorías
+// CRUD categorías
 $router->get('/categories/list', [CategoryPollController::class, 'list']);
 $router->get('/categories/create', [CategoryPollController::class, 'create']);
 $router->post('/categories/create', [CategoryPollController::class, 'create']);
 
-// Crud de las encuestas del lado del usuario
+// CRUD de las encuestas del lado del usuario
 $router->get('/polls/list', [PollsController::class, 'list']);
-$router->get('/polls/create', [PollsController::class, 'createPoll']);
-$router->post('/poll/create', [PollsController::class, 'createPoll']);
+$router->get('/polls/create', [PollsController::class, 'create']);
+$router->post('/polls/create', [PollsController::class, 'create']);
 
 // Secciones de administrador
 $router->get('/admin/index', [AdminController::class, 'index']);

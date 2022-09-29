@@ -31,7 +31,7 @@ class LoginController{
 
             $userExists->startSession();
             
-            header('Location: /polls');
+            header('Location: /polls/list');
 
           }else{
             User::setAlert('error', 'La contraseña es incorrecta');
@@ -86,7 +86,7 @@ class LoginController{
 
               $user->startSession();
 
-              header('Location: /polls');
+              header('Location: /polls/list');
             }
 
           }else{
