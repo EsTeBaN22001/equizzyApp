@@ -10,6 +10,17 @@ use Model\User;
 
 class PollsController{
 
+  public static function listMyPolls(Router $router){
+
+    $userPolls = Poll::belongsTo('userId', $_SESSION['id']);
+    
+    $router->renderPolls('polls/listMyPolls', [
+      'title' => 'Mis encuestas',
+      'userName' => '' . $_SESSION['name'] . ' ' . $_SESSION['surname'],
+      'userPolls' => $userPolls
+    ]);
+  }
+
   public static function list(Router $router){
     
     $router->renderPolls('polls/list', [
@@ -67,7 +78,7 @@ class PollsController{
             $result = $poll->save();
 
             if($result){
-              header('Location: /poll/edit?poll=' . $poll->uniqId);
+              header('Location: /polls/edit?poll=' . $poll->uniqId);
             }
 
           }
@@ -86,6 +97,47 @@ class PollsController{
       'alerts' => $alerts,
       'categories' => $categories
     ]);
+
+  }
+
+  public static function edit(Router $router){
+
+    $pollId = isset($_GET['poll']) ? $_GET['poll'] : '';
+
+    $poll = Poll::where('uniqId', $pollId);
+    
+    if(!$poll || $_SESSION['id'] != $poll->userId ){
+      header('Location: /my-polls');
+    }
+
+
+
+    $router->renderPolls('polls/edit', [
+      'title' => 'Editar encuesta',
+      'userName' => $_SESSION['name'] . ' ' . $_SESSION['surname'],
+      'poll' => $poll
+    ]);
+  }
+
+  public static function delete(){
+
+    if(isset($_GET['poll'])){
+
+      $poll = Poll::where('uniqId', $_GET['poll']);
+      
+      if(!$poll || $poll->userId !== $_SESSION['id']){
+        header('Location: /my-polls');
+      }
+
+      $result = $poll->delete();
+
+      if(!$result){
+        header('Location: /my-polls?alert=error');
+      }
+
+      header('Location: /my-polls?alert=success');
+
+    }
 
   }
 

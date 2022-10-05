@@ -5,7 +5,7 @@
     <form method="POST" action="" class="form">
       <div class="field-group">
         <label for="email">Correo electrónico:</label>
-        <input type="email" name="email" id="email" placeholder="Ingrese su correo">
+        <input autofocus type="email" name="email" id="email" placeholder="Ingrese su correo">
       </div>
       <div class="field-group">
         <label for="password">Contraseña:</label>
