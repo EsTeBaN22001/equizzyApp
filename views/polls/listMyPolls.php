@@ -18,7 +18,7 @@
         </div>
         <div class="about-poll">
           <h3><?= $poll->title ?></h3>
-          <button class="menu-button">^</button>
+          <button class="menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></button>
           <ul class="options-container">
             <a href="#">
               <li class="option">
@@ -47,10 +47,10 @@
   </div>
 </div>
 
-<?=
+<?php
 
 $script = '
-  <script src="/build/js/menuOptionsMyPolls.js"></script>
+  <script src="/build/js/polls/menuOptionsMyPolls.js"></script>
 ';
 
 ?>

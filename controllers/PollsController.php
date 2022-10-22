@@ -6,6 +6,7 @@ use Model\Poll;
 use MVC\Router;
 use Model\CategoryPolls;
 use Intervention\Image\ImageManagerStatic as Image;
+use Model\Question;
 use Model\User;
 
 class PollsController{
@@ -110,7 +111,7 @@ class PollsController{
       header('Location: /my-polls');
     }
 
-
+    $questions = Question::all();
 
     $router->renderPolls('polls/edit', [
       'title' => 'Editar encuesta',

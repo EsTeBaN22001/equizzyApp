@@ -1,0 +1,1 @@
+if(document.querySelector(".polls-container")){document.querySelectorAll(".menu-button").forEach(e=>{e.addEventListener("click",(function(t){e.nextElementSibling.classList.toggle("active")}))})}

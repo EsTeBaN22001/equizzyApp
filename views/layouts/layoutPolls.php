@@ -36,7 +36,9 @@
     </section>
     <main class="mainContent">
       <?php include_once(__DIR__ . './../templates/navbar.php') ?>
-      <?php echo $content; ?>
+      <div class="content">
+        <?php echo $content; ?>
+      </div>
       <footer class="footer polls-footer">
         <p>&#169;Todos los derechos reservados por equizzyApp 2022</p>
       </footer>

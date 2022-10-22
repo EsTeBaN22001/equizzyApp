@@ -80,10 +80,15 @@
     flex: 5;
     overflow-y: scroll;
     background-color: v.$bgColor;
+    position: relative;
     // min-height: 20vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
+
+    .content{
+      flex-grow: 1;
+    }
 
     .navbar-polls { 
       display: flex;
