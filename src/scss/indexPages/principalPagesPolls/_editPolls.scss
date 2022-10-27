@@ -34,6 +34,11 @@
 
   .questions-container {
     margin: 3rem auto;
+
+    .no-question{
+      text-align: center;
+      color: v.$gray;
+    }
   }
 }
 

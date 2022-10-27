@@ -7,56 +7,59 @@
   </div>
   <div class="questions-container container">
 
-    <?php for ($i = 0; $i < 5; $i++) : ?>
-
-      <div class="question">
-        <div class="question-header">
-          <div class="question-info">
-            <div class="show-more-button">
-              <i class="fa-solid fa-chevron-down"></i>
+    <?php if (count($questions) == 0) : ?>
+      <p class="no-question">No hay preguntas aún</p>
+    <?php else : ?>
+      <?php foreach ($questions as $question) : ?>
+        <div class="question">
+          <div class="question-header">
+            <div class="question-info">
+              <div class="show-more-button">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <h3><?= $question->name ?></h3>
             </div>
-            <h3>¿Cuál es el instrumento musical de cuerdas que tiene más cuerdas?</h3>
+            <div class="question-actions">
+              <button class="menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+              <ul class="options-container">
+                <a href="#">
+                  <li class="option">
+                    <i class="fa-solid fa-pen"></i>
+                    <p>Editar</p>
+                  </li>
+                </a>
+                <a href="#">
+                  <li class="option">
+                    <i class="fa-solid fa-trash-can"></i>
+                    <p>Eliminar</p>
+                  </li>
+                </a>
+              </ul>
+            </div>
           </div>
-          <div class="question-actions">
-            <button class="menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-            <ul class="options-container">
-              <a href="#">
+          <div class="question-content">
+            <hr class="separator">
+            <ul class="options-list">
+
+              <?php for ($n = 0; $n < 5; $n++) : ?>
+
                 <li class="option">
-                  <i class="fa-solid fa-pen"></i>
-                  <p>Editar</p>
+                  <p>Opción de cada pregunta de cada encuesta</p>
+                  <div class="option-actions">
+                    <button class="option-button edit-button"><i class="fa-solid fa-pen"></i>Editar</button>
+                    <button class="option-button delete-button"><i class="fa-solid fa-trash"></i>Borrar</button>
+                  </div>
                 </li>
-              </a>
-              <a href="#">
-                <li class="option">
-                  <i class="fa-solid fa-trash-can"></i>
-                  <p>Eliminar</p>
-                </li>
-              </a>
+
+              <?php endfor; ?>
+
             </ul>
+            <a href="#" class="add-option-button">Añadir opción</a>
           </div>
         </div>
-        <div class="question-content">
-          <hr class="separator">
-          <ul class="options-list">
 
-            <?php for ($n = 0; $n < 5; $n++) : ?>
-
-              <li class="option">
-                <p>Opción de cada pregunta de cada encuesta</p>
-                <div class="option-actions">
-                  <button class="option-button edit-button"><i class="fa-solid fa-pen"></i>Editar</button>
-                  <button class="option-button delete-button"><i class="fa-solid fa-trash"></i>Borrar</button>
-                </div>
-              </li>
-
-            <?php endfor; ?>
-
-          </ul>
-          <a href="#" class="add-option-button">Añadir opción</a>
-        </div>
-      </div>
-
-    <?php endfor ?>
+      <?php endforeach ?>
+    <?php endif ?>
 
   </div>
 </section>
@@ -64,6 +67,9 @@
 <?php
 
 $script = '
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5.0.12/dark.min.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script src="/build/js/crudQuestionPolls/createQuestion.js"></script>
   <script src="/build/js/polls/menuOptionsQuestions.js"></script>
 '

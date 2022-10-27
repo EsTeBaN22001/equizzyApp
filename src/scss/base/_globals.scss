@@ -100,3 +100,11 @@ img {
 .separator{
 	margin: 2rem 0;
 }
+
+// Cambiar los estilos de las alertas
+.swal2-popup {
+  font-size: 1.6rem !important;
+}
+.swal2-container.swal2-backdrop-show{
+	background-color: #4343438a !important;
+}

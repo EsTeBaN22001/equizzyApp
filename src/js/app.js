@@ -1,18 +1,8 @@
-if(document.querySelector('.navbar-container')){
-    // Sticky menu
-    window.onscroll = function(){stickyMenu()}
+// FUNCIONES HELPERS
 
-    const navbar = document.querySelector('.navbar-container')
-    const sticky = navbar.offsetTop
-    const nextElement = navbar.nextSibling.nextSibling;
-    
-    function stickyMenu(){
-      if(window.pageYOffset >= sticky){
-        navbar.classList.add('sticky')
-        nextElement.style.paddingTop = `${navbar.offsetHeight}px`;
-      }else{
-        navbar.classList.remove('sticky')
-        nextElement.style.paddingTop = "initial";
-      }
-    }
+// Función que obtiene el uniqId de la encuesta en el parámetro GET de la URL
+function getIdToUrl() {
+  const params = new URLSearchParams(window.location.search)
+  const param = Object.fromEntries(params.entries())
+  return param
 }

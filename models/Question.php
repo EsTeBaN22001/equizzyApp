@@ -11,7 +11,17 @@ class Question extends ActiveRecord{
     $this->id = $args['id'] ?? null;
     $this->name = $args['name'] ?? '';
     $this->pollId = $args['pollId'] ?? null;
-    $this->typeId = $args['typeId'] ?? null;
+    $this->typeId = $args['typeId'] ?? 1;
+  }
+
+  public function validateName(){
+
+    if(!$this->name || $this->name == 'undefined'){
+      self::$alerts['error'][] = 'Error en la pregunta';
+    }
+
+    return self::$alerts;
+
   }
 
 }

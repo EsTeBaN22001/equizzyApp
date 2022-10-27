@@ -38,8 +38,9 @@ $router->post('/polls/create', [PollsController::class, 'create']);
 $router->get('/polls/edit', [PollsController::class, 'edit']);
 $router->get('/polls/delete', [PollsController::class, 'delete']);
 
-// CRUD de las preguntas de las encuestas
-// $router->get('/questions/create', [QuestionController::class, 'create']);
+// CRUD de las PREGUNTAS de las encuestas
+$router->get('/questions/create', [QuestionController::class, 'create']);
+$router->post('/questions/create', [QuestionController::class, 'create']);
 
 // Secciones de administrador
 $router->get('/admin/index', [AdminController::class, 'index']);

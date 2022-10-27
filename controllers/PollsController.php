@@ -110,13 +110,14 @@ class PollsController{
     if(!$poll || $_SESSION['id'] != $poll->userId ){
       header('Location: /my-polls');
     }
-
-    $questions = Question::all();
+    
+    $questions = Question::belongsTo('pollId', $poll->id);
 
     $router->renderPolls('polls/edit', [
       'title' => 'Editar encuesta',
       'userName' => $_SESSION['name'] . ' ' . $_SESSION['surname'],
-      'poll' => $poll
+      'poll' => $poll,
+      'questions' => $questions
     ]);
   }
 

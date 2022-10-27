@@ -39,9 +39,9 @@
       <div class="content">
         <?php echo $content; ?>
       </div>
-      <footer class="footer polls-footer">
+      <!-- <footer class="footer polls-footer">
         <p>&#169;Todos los derechos reservados por equizzyApp 2022</p>
-      </footer>
+      </footer> -->
     </main>
   </section>
 
