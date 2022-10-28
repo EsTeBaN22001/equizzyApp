@@ -1,11 +1,11 @@
 const deleteButtons = document.querySelectorAll('.delete-question')
 
 deleteButtons.forEach(button => {
-  
-  button.addEventListener('click', function(){
+
+  button.addEventListener('click', function () {
 
     const idQuestion = button.dataset.idquestion
-    
+
     const data = new FormData()
     data.append('idQuestion', idQuestion)
 
@@ -22,14 +22,17 @@ deleteButtons.forEach(button => {
       if (result.isConfirmed) {
         const result = callFetch('http://localhost:3000/questions/delete', 'POST', data)
 
-        result.then((res)=>{
+        result.then((res) => {
           if (res.response) {
             Swal.fire({
               icon: 'success',
               title: 'Correcto!',
               text: 'La pregunta se eliminó correctamente!'
-            }).then(()=>{
-              location.reload()
+            }).then(() => {
+              setTimeout(() => {
+                const question = document.querySelector(`div.question[data-idquestion="${idQuestion}"]`)
+                question.remove()
+              }, 200);
             })
           }
         })

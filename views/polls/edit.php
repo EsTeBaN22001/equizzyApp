@@ -11,7 +11,7 @@
       <p class="no-question">No hay preguntas aún</p>
     <?php else : ?>
       <?php foreach ($questions as $question) : ?>
-        <div class="question">
+        <div class="question" data-idquestion="<?= $question->id ?>">
           <div class="question-header">
             <div class="question-info">
               <div class="show-more-button">
