@@ -22,18 +22,14 @@
             <div class="question-actions">
               <button class="menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></button>
               <ul class="options-container">
-                <a href="#">
-                  <li class="option">
-                    <i class="fa-solid fa-pen"></i>
-                    <p>Editar</p>
-                  </li>
-                </a>
-                <a href="#">
-                  <li class="option">
-                    <i class="fa-solid fa-trash-can"></i>
-                    <p>Eliminar</p>
-                  </li>
-                </a>
+                <li class="option edit-question">
+                  <i class="fa-solid fa-pen"></i>
+                  <p>Editar</p>
+                </li>
+                <li class="option delete-question" data-idquestion="<?= $question->id ?>">
+                  <i class="fa-solid fa-trash-can"></i>
+                  <p>Eliminar</p>
+                </li>
               </ul>
             </div>
           </div>
@@ -71,6 +67,7 @@ $script = '
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script src="/build/js/crudQuestionPolls/createQuestion.js"></script>
+  <script src="/build/js/crudQuestionPolls/deleteQuestion.js"></script>
   <script src="/build/js/polls/menuOptionsQuestions.js"></script>
 '
 

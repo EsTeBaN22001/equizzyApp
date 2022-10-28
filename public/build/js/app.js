@@ -1,1 +1,1 @@
-function getIdToUrl(){const e=new URLSearchParams(window.location.search);return Object.fromEntries(e.entries())}
+function getIdToUrl(){const t=new URLSearchParams(window.location.search);return Object.fromEntries(t.entries())}async function callFetch(t,n,c){try{const o=await fetch(t,{method:n,body:c});return await o.json()}catch(t){console.log(t)}}

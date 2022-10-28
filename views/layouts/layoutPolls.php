@@ -23,7 +23,7 @@
         <a href="<?= $_ENV['HOST'] ?>/polls/list">
           <h2 class="logo">equizzy<span>App</span></h2>
         </a>
-        <div class="menu-button">
+        <div class="navbar-menu-button">
           <i class="fa-solid fa-bars"></i>
         </div>
       </div>

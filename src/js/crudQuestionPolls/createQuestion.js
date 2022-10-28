@@ -47,23 +47,3 @@ createQuestionButton.addEventListener('click', function () {
 
   })
 })
-
-// Función que hace la llamada al backend
-async function callFetch(url, method, data) {
-
-  try {
-
-    const consult = await fetch(url, {
-      method: method,
-      body: data
-    })
-
-    const response = await consult.json()
-
-    return response
-
-  } catch (error) {
-    console.log(error)
-  }
-
-}

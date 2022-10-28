@@ -35,7 +35,7 @@
   .questions-container {
     margin: 3rem auto;
 
-    .no-question{
+    .no-question {
       text-align: center;
       color: v.$gray;
     }
@@ -117,26 +117,25 @@
           height: auto;
         }
 
-        a {
-          .option {
-            padding: 1.5rem 3rem;
-            transition: background-color .2s ease;
+        .option {
+          padding: 1.5rem 3rem;
+          transition: background-color .2s ease;
+          color: v.$white;
+          display: flex;
+          align-items: center;
+          border-radius: .5rem;
+
+          &:hover {
+            background-color: v.$gray;
+            cursor: pointer;
+          }
+
+          p {
             color: v.$white;
-            display: flex;
-            align-items: center;
-            border-radius: .5rem;
-
-            &:hover {
-              background-color: v.$gray;
-            }
-
-            p {
-              color: v.$white;
-              margin-left: 1rem;
-              font-size: 2rem;
-              font-weight: 500;
-              transition: color .2s ease;
-            }
+            margin-left: 1rem;
+            font-size: 2rem;
+            font-weight: 500;
+            transition: color .2s ease;
           }
         }
       }
