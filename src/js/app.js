@@ -1,3 +1,6 @@
+// VARIABLES GLOBALES
+const domain = 'http://localhost:3000'
+
 // FUNCIONES HELPERS
 
 // Función que obtiene el uniqId de la encuesta en el parámetro GET de la URL

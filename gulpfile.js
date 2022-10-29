@@ -26,12 +26,26 @@ function css() {
 		.pipe( dest('public/build/css') );
 }
 
+function cssDev(){
+	return src(paths.scss)
+		.pipe(sourcemaps.init())
+		.pipe(sass())
+		.pipe(postcss([autoprefixer()]))
+		.pipe(sourcemaps.write('.'))
+		.pipe(dest('public/build/css'))
+}
+
 
 function javascript() {
 	return src(paths.js)
 		.pipe(terser())
 		.pipe(sourcemaps.write('.'))
 		.pipe(dest('public/build/js'));
+}
+
+function javascriptDev(){
+	return src(paths.js)
+		.pipe(dest('public/build/js'))
 }
 
 function img() {
@@ -48,6 +62,12 @@ function watchArchives() {
 	watch( paths.img, img );
 }
 
-exports.css = css;
+function watchArchivesDev(){
+	watch( paths.scss, cssDev );
+	watch( paths.js, javascriptDev);
+	watch( paths.img, img);
+}
+
+exports.dev = watchArchivesDev;
 exports.watch = watchArchives;
 exports.default = parallel(css, javascript,  img,  watchArchives ); 
