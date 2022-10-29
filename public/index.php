@@ -41,7 +41,9 @@ $router->get('/polls/delete', [PollsController::class, 'delete']);
 // CRUD de las PREGUNTAS de las encuestas
 $router->get('/questions/create', [QuestionController::class, 'create']);
 $router->post('/questions/create', [QuestionController::class, 'create']);
+$router->post('/questions/update', [QuestionController::class, 'update']);
 $router->post('/questions/delete', [QuestionController::class, 'delete']);
+$router->post('/questions/get', [QuestionController::class, 'get']);
 
 // Secciones de administrador
 $router->get('/admin/index', [AdminController::class, 'index']);

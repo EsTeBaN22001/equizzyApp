@@ -17,12 +17,12 @@
               <div class="show-more-button">
                 <i class="fa-solid fa-chevron-down"></i>
               </div>
-              <h3><?= $question->name ?></h3>
+              <h3 data-namequestion="<?= $question->name ?>"><?= $question->name ?></h3>
             </div>
             <div class="question-actions">
               <button class="menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></button>
               <ul class="options-container">
-                <li class="option edit-question">
+                <li class="option edit-question" data-idquestion="<?= $question->id ?>">
                   <i class="fa-solid fa-pen"></i>
                   <p>Editar</p>
                 </li>
@@ -67,6 +67,7 @@ $script = '
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <script src="/build/js/crudQuestionPolls/createQuestion.js"></script>
+  <script src="/build/js/crudQuestionPolls/editQuestion.js"></script>
   <script src="/build/js/crudQuestionPolls/deleteQuestion.js"></script>
   <script src="/build/js/polls/menuOptionsQuestions.js"></script>
 '

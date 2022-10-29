@@ -28,7 +28,7 @@ createQuestionButton.addEventListener('click', function () {
       let nameQuestion = response.value
 
       //Llamada a la función que realiza el fetch
-      const url = 'http://localhost:3000/questions/create'
+      const url = `${domain}/questions/create`
       const result = callFetch(url, 'POST', data)
       result.then((res) => {
 
