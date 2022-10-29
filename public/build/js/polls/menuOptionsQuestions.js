@@ -4,6 +4,10 @@ const allMenuButtons = document.querySelectorAll('.menu-button')
 allMenuButtons.forEach(button => {
 
   button.addEventListener('click', function () {
+<<<<<<< HEAD
+=======
+
+>>>>>>> c6b541cb70a1dad09f062c6c77e6308a62799e7f
     const optionsContainer = button.nextElementSibling
     optionsContainer.classList.toggle('active')
     
