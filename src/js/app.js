@@ -29,3 +29,13 @@ async function callFetch(url, method, data) {
   }
 
 }
+
+function ocultActiveMenus(){
+
+  const activeMenus = document.querySelectorAll('.options-container.active')
+
+  activeMenus.forEach((menu)=>{
+    menu.classList.remove('active')
+  })
+
+}

@@ -1,0 +1,1 @@
+const editPollContainer=document.querySelector(".edit-poll-container");editPollContainer.addEventListener("click",(function(o){console.log(o.target),console.log(o.stopPropagation),console.log(o.target)}));

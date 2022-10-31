@@ -1,5 +1,6 @@
 @forward 'pollsLayout';
-@forward 'principalSection';
 @forward 'profile';
-@forward 'listMyPolls';
-@forward 'editPolls';
+
+@use 'listMyPolls';
+@use 'editPolls';
+@use 'principalListPolls';

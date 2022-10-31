@@ -1,47 +1,6 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.edit-poll-container {
-  h1 {
-    text-align: start;
-    font-size: 4.5rem;
-    margin-bottom: 2rem;
-
-    .poll-title {
-      color: v.$principalColor;
-    }
-  }
-
-  h2 {
-    text-align: start;
-    margin: 2rem 0;
-  }
-
-  .questions-container-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 3rem;
-
-    .create-question-button {
-      @include m.button(v.$principalColor, v.$white);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0;
-    }
-  }
-
-  .questions-container {
-    margin: 3rem auto;
-
-    .no-question {
-      text-align: center;
-      color: v.$gray;
-    }
-  }
-}
-
 .question {
   background-color: v.$black;
   padding: 1.5rem;
@@ -148,7 +107,6 @@
   visibility: hidden;
   opacity: 0;
   height: 0;
-  transition: all .3s ease;
 
   .separator {
     margin: 0;

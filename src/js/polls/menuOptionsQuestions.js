@@ -5,8 +5,12 @@ allMenuButtons.forEach(button => {
 
   button.addEventListener('click', function () {
     const optionsContainer = button.nextElementSibling
-    optionsContainer.classList.toggle('active')
-    
+    if(optionsContainer.classList.contains('active')){
+      ocultActiveMenus()
+    }else{
+      ocultActiveMenus()
+      optionsContainer.classList.add('active')
+    }
   })
 
 })
@@ -17,6 +21,7 @@ const allShowMoreButtons = document.querySelectorAll('.show-more-button')
 allShowMoreButtons.forEach(showButton => {
 
   showButton.addEventListener('click', function(){
+    ocultActiveMenus()
 
     showButton.classList.toggle('rotate-active')
 
