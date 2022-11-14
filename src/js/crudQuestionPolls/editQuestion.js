@@ -54,6 +54,7 @@ editButtons.forEach((button) => {
                   
                   setTimeout(() => {
                     oldNameQuestion.textContent = newQuestionName
+                    ocultActiveMenus()
                   }, 200);
 
                 })

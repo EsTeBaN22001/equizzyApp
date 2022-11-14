@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Model\ActiveRecord;
 use Model\User;
 use MVC\Router;
 
@@ -77,13 +78,17 @@ class LoginController{
           if($user->password == $user->confirmPassword){
 
             $user->hashPassword();
-            $user->admin = 0;
+            // Libera el parámetro temporal para confirmar la contraseña
             unset($user->confirmPassword);
 
             $result = $user->save();
 
-            if($result){
 
+            if($result){
+              // Se le asigna el id al objeto de usuario porque al ser autoincrementable no se añade al momento de hacer la consulta
+              $user->id = $result['id'];
+              
+              // Una vez asignado el id se inicia la sesión
               $user->startSession();
 
               header('Location: /polls/list');
@@ -98,9 +103,6 @@ class LoginController{
       }
 
     }
-
-    
-    // $alerts = $user->getAlerts();
     
     $router->renderLogin('register', [
       'title' => 'Registrate',

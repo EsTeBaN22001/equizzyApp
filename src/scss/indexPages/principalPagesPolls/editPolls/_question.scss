@@ -153,6 +153,8 @@
           color: v.$white;
           padding: 1rem;
           border-radius: .5rem;
+          border: none;
+          margin: 0 .5rem;
 
           &.edit-button {
             background-color: v.$blue;

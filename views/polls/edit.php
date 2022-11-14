@@ -37,8 +37,8 @@
             <hr class="separator">
             <ul class="options-list">
 
-              <?php for ($n = 0; $n < 5; $n++) : ?>
-
+              <?php for ($n = 0; $n < 1; $n++) : ?>
+                
                 <li class="option">
                   <p>Opción de cada pregunta de cada encuesta</p>
                   <div class="option-actions">
@@ -65,11 +65,12 @@
 $script = '
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5.0.12/dark.min.css">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/build/js/polls/menuOptionsQuestions.js"></script>
 
   <script src="/build/js/crudQuestionPolls/createQuestion.js"></script>
   <script src="/build/js/crudQuestionPolls/editQuestion.js"></script>
   <script src="/build/js/crudQuestionPolls/deleteQuestion.js"></script>
-  <script src="/build/js/polls/menuOptionsQuestions.js"></script>
+  <script src="/build/js/crudOptionPolls/createOption.js"></script>
 '
 
 ?>

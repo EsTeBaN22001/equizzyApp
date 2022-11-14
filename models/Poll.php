@@ -5,7 +5,7 @@ namespace Model;
 class Poll extends ActiveRecord{
 
   protected static $table = 'polls';
-  protected static $columnsDB = ['id', 'uniqId', 'title', 'img','likes', 'public', 'userId', 'categoryId'];
+  protected static $columnsDB = ['id', 'uniqId', 'title', 'img', 'likes', 'public', 'categoryId', 'userId'];
 
   public function __construct($args = []){
     $this->id = $args['id'] ?? null;
@@ -14,8 +14,8 @@ class Poll extends ActiveRecord{
     $this->img = $args['img'] ?? '';
     $this->likes = $args['likes'] ?? 0;
     $this->public = $args['public'] ?? 0;
-    $this->userId = $args['userId'] ?? null;
     $this->categoryId = $args['categoryId'] ?? null;
+    $this->userId = $args['userId'] ?? null;
   }
 
   public function validateNewPoll(){

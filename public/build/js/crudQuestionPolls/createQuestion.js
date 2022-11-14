@@ -1,1 +1,49 @@
-let urlPoll=getIdToUrl().poll;const createQuestionButton=document.querySelector(".create-question-button");createQuestionButton.addEventListener("click",(function(){Swal.fire({title:"Crear nueva pregunta",input:"text",inputLabel:"Ingrese su pregunta aquí:",inputPlaceholder:"Escriba su pregunta aquí",showCancelButton:!0,cancelButtonText:"Cancelar",confirmButtonText:"Crear",confirmButtonColor:"#00c9ac",inputValidator:e=>{if(!e)return"Este campo no puede estar vacío"}}).then(e=>{if(e.isConfirmed){const t=new FormData;t.append("name",e.value),t.append("idPoll",urlPoll);e.value;const n=domain+"/questions/create";callFetch(n,"POST",t).then(e=>{e.response&&Swal.fire({icon:"success",title:"Correcto!",text:"La pregunta se creó correctamente!"}).then(()=>{location.reload()})})}})}));
+let urlPoll = getIdToUrl().poll
+
+const createQuestionButton = document.querySelector('.create-question-button')
+
+createQuestionButton.addEventListener('click', function () {
+  Swal.fire({
+    title: 'Crear nueva pregunta',
+    input: 'text',
+    inputLabel: 'Ingrese su pregunta aquí:',
+    inputPlaceholder: 'Escriba su pregunta aquí',
+    showCancelButton: true,
+    cancelButtonText: 'Cancelar',
+    confirmButtonText: 'Crear',
+    confirmButtonColor: "#00c9ac",
+    inputValidator: (value) => {
+      if (!value) {
+        return "Este campo no puede estar vacío"
+      }
+    }
+  }).then(response => {
+
+    if (response.isConfirmed) {
+      const data = new FormData();
+      data.append('name', response.value)
+      data.append('idPoll', urlPoll)
+
+      // Variable para guardar el nombre de la pregunta
+      let nameQuestion = response.value
+
+      //Llamada a la función que realiza el fetch
+      const url = `${domain}/questions/create`
+      const result = callFetch(url, 'POST', data)
+      result.then((res) => {
+
+        if (res.response) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Correcto!',
+            text: 'La pregunta se creó correctamente!'
+          }).then(()=>{
+            location.reload()
+          })
+        }
+
+      })
+    }
+
+  })
+})
