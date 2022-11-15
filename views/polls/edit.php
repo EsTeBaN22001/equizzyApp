@@ -36,18 +36,14 @@
           <div class="question-content">
             <hr class="separator">
             <ul class="options-list">
-
-              <?php for ($n = 0; $n < 1; $n++) : ?>
                 
-                <li class="option">
-                  <p>Opción de cada pregunta de cada encuesta</p>
-                  <div class="option-actions">
-                    <button class="option-button edit-button"><i class="fa-solid fa-pen"></i>Editar</button>
-                    <button class="option-button delete-button"><i class="fa-solid fa-trash"></i>Borrar</button>
-                  </div>
-                </li>
-
-              <?php endfor; ?>
+              <!-- <li class="option">
+                <p class="name-option">Opción de cada pregunta de cada encuesta</p>
+                <div class="option-actions">
+                  <button class="option-button edit-button"><i class="fa-solid fa-pen"></i>Editar</button>
+                  <button class="option-button delete-button"><i class="fa-solid fa-trash"></i>Borrar</button>
+                </div>
+              </li> -->
 
             </ul>
             <a href="#" class="add-option-button">Añadir opción</a>
@@ -70,7 +66,9 @@ $script = '
   <script src="/build/js/crudQuestionPolls/createQuestion.js"></script>
   <script src="/build/js/crudQuestionPolls/editQuestion.js"></script>
   <script src="/build/js/crudQuestionPolls/deleteQuestion.js"></script>
+  
   <script src="/build/js/crudOptionPolls/createOption.js"></script>
+  <script src="/build/js/crudOptionPolls/listOption.js"></script>
 '
 
 ?>

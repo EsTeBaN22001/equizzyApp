@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Model\Option;
+use Model\Poll;
 use Model\Question;
 
 class OptionController {
@@ -37,6 +38,20 @@ class OptionController {
       echo json_encode($response);
 
     }
+  }
+
+  public static function list(){
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+      $questionId = $_POST['idQuestion'];
+
+      $options = Option::belongsTo('questionId', $questionId);
+
+      echo json_encode($options);
+
+    }
+
   }
 
 }

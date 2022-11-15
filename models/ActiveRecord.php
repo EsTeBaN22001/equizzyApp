@@ -142,7 +142,6 @@ class ActiveRecord
 	// Busqueda Where con Columna 
 	public static function where($column, $value)
 	{
-		// $query = "SELECT * FROM " . static::$table . " WHERE ${column} = '${value}'";
 		$query = "SELECT * FROM " . static::$table . " WHERE ${column} = '${value}'";
 		$result = self::consultSQL($query);
 		return array_shift($result);

@@ -143,6 +143,16 @@
       align-items: center;
       padding: 1rem 0;
 
+      .name-option{
+        font-size: 2rem;
+      }
+
+      .no-option-text{
+        text-align: center !important;
+        font-size: 2rem !important;
+        color: v.$gray !important;
+      }
+
       .option-actions {
         display: flex;
         justify-content: center;

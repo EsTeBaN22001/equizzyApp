@@ -47,6 +47,7 @@ $router->post('/questions/get', [QuestionController::class, 'get']);
 
 //CRUD de las OPCIONES de las preguntas
 $router->post('/options/create', [OptionController::class, 'create']);
+$router->post('/options/list', [OptionController::class, 'list']);
 
 // Secciones de administrador
 $router->get('/admin/index', [AdminController::class, 'index']);

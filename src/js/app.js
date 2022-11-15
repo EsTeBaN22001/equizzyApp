@@ -1,5 +1,6 @@
 // VARIABLES GLOBALES
 const domain = 'http://localhost:3000'
+const urlPoll = getIdToUrl().poll ?? ''
 
 // FUNCIONES HELPERS
 

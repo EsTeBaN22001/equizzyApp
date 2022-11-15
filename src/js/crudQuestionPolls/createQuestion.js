@@ -1,5 +1,3 @@
-let urlPoll = getIdToUrl().poll
-
 const createQuestionButton = document.querySelector('.create-question-button')
 
 createQuestionButton.addEventListener('click', function () {
