@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect('localhost', 'root', '', '');
+$db = mysqli_connect($_ENV['HOST'], $_ENV['DB_USER'], $_ENV['DB_USER_PASSWORD'], $_ENV['DB_NAME']);
 
 
 if (!$db) {

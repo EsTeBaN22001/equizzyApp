@@ -1,0 +1,1 @@
+const allMenuButtons=document.querySelectorAll(".menu-button");allMenuButtons.forEach(t=>{t.addEventListener("click",(function(n){const e=t.nextElementSibling;e.classList.contains("active")?ocultActiveMenus():(ocultActiveMenus(),e.classList.add("active"))}))});

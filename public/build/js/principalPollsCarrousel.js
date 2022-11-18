@@ -1,0 +1,1 @@
+if(document.querySelector(".polls-carrousel")){const e={type:"carousel",startAt:0,perView:3,focusAt:"center",gap:10,autoplay:1e4,animationDuration:1e3,hoverpause:!0,breakpoints:{768:{perView:2},480:{perView:1}}};new Glide(".glide1",e).mount(),new Glide(".glide2",e).mount(),new Glide(".glide3",e).mount(),new Glide(".glide4",e).mount(),new Glide(".glide5",e).mount()}

@@ -1,0 +1,68 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.form{
+  padding: 2rem;
+  border-radius: 2rem;
+  margin: 2rem auto;
+  max-width: 40rem;
+
+  .field-group-container{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 3rem;
+  }
+
+  .field-group{
+    margin: 2rem 0;
+
+    label, input{
+      display: block;
+      width: 100%;
+      // margin: .5rem 0;
+      padding: 1rem 0;
+      font-size: 2rem;
+    }
+
+    input{
+      background-color: transparent;
+      border: none;
+      color: v.$textColor;
+      border-bottom: .2rem solid v.$darkGray;
+      transition: all .3s ease;
+
+      &:focus{
+        outline: none;
+        color: v.$white;
+        border-bottom: .2rem solid v.$principalColor;
+      }
+    }
+
+    select{
+      border: .2rem solid v.$darkGray;
+      background-color: transparent;
+      color: v.$white;
+      padding: 1rem;
+      transition: border .3s ease;
+
+      &:focus{
+        border: .2rem solid v.$principalColor;
+      }
+
+      option{
+        background-color: v.$darkGray;
+        color: v.$white;
+      }
+    }
+
+    .button-submit{
+      border: .2rem solid v.$darkGray;
+      color: v.$white;
+
+      &:hover{
+        border: .2rem solid v.$principalColor;
+        color: v.$principalColor;
+      }
+    }
+  }
+}

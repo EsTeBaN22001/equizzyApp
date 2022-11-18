@@ -1,0 +1,42 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.categories-section {
+  position: relative;
+
+  .create-category-button{
+    @include m.button(v.$principalColor, v.$white);
+    margin: 0;
+  }
+
+  .categories-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    @include m.tablet{grid-template-columns: repeat(2, 1fr);}
+    @include m.phone{grid-template-columns: 1fr;}
+
+    .about-poll-container {
+      position: relative;
+      height: 100%;
+
+      .about-poll {
+        background-color: v.$black;
+        width: 100%;
+        padding: 2rem;
+        border-radius: .5rem;
+        transition: background-color .2s ease;
+
+        &:hover{
+          background-color: v.$principalColor;
+        }
+
+        h3 {
+          text-align: start;
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}

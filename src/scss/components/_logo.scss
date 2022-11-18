@@ -1,0 +1,10 @@
+@use 'base/variables' as v;
+
+.logo{
+  color: v.$principalColor;
+  font-weight: 700;
+
+  span{
+    color: v.$white;
+  }
+}

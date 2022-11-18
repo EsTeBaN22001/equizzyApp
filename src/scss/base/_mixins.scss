@@ -46,12 +46,10 @@
 	display: inline-block;
 	font-weight: 700;
 	border: none;
+	border-radius: .5rem;
 	transition-property: background-color;
-	transition-duration: .3s;
+	transition-duration: .15s;
 	text-align: center;
-	display: block;
-	width: 100%;
-	margin: 5rem 0;
 
 	@include tablet {
 		width: auto;

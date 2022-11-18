@@ -1,0 +1,192 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.question {
+  background-color: v.$black;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 2rem;
+
+  .question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2rem;
+
+    .show-more-button {
+      font-size: 2rem;
+      padding: 2rem;
+      transition: transform .3s ease;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.rotate-active {
+        transform: rotate(180deg);
+      }
+    }
+
+    .question-info {
+      flex: 4;
+      display: flex;
+      align-items: center;
+
+      h3 {
+        font-size: 2rem;
+        text-align: start;
+      }
+    }
+
+    .question-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 2rem;
+      position: relative;
+
+      .menu-button {
+        border: none;
+        font-size: 3rem;
+        padding: 1rem 2rem;
+        color: v.$white;
+        background-color: transparent;
+        border-radius: 50%;
+
+        &:hover {
+          cursor: pointer;
+          background-color: v.$mediumDarkGray
+        }
+      }
+
+      .options-container {
+        position: absolute;
+        top: -10rem;
+        right: 0;
+        background-color: v.$darkGray;
+        border-radius: .5rem;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        transition: all .3s ease;
+
+        &.active {
+          visibility: visible;
+          opacity: 1;
+          height: auto;
+        }
+
+        .option {
+          padding: 1.5rem 3rem;
+          transition: background-color .2s ease;
+          color: v.$white;
+          display: flex;
+          align-items: center;
+          border-radius: .5rem;
+
+          &:hover {
+            background-color: v.$gray;
+            cursor: pointer;
+          }
+
+          p {
+            color: v.$white;
+            margin-left: 1rem;
+            font-size: 2rem;
+            font-weight: 500;
+            transition: color .2s ease;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.question-content {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+
+  .separator {
+    margin: 0;
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+
+    .separator {
+      margin: 2rem 0;
+    }
+
+    .options-list {
+      margin: 3rem 0;
+    }
+  }
+
+  .add-option-button {
+    color: v.$principalColor;
+    font-size: 2rem;
+
+    &:hover {
+      cursor: pointer;
+      color: v.$white;
+    }
+  }
+
+  .options-list {
+    .option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+
+      .name-option{
+        font-size: 2rem;
+      }
+
+      .no-option-text{
+        text-align: center !important;
+        font-size: 2rem !important;
+        color: v.$gray !important;
+      }
+
+      .option-actions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .option-button {
+          color: v.$white;
+          padding: 1rem;
+          border-radius: .5rem;
+          border: none;
+          margin: 0 .5rem;
+
+          &.edit-button {
+            background-color: v.$blue;
+          }
+
+          &.delete-button {
+            background-color: v.$red;
+          }
+
+          &:hover {
+            cursor: pointer;
+
+            &.edit-button {
+              background-color: darken(v.$blue, 10);
+            }
+
+            &.delete-button {
+              background-color: darken(v.$red, 10);
+            }
+          }
+        }
+      }
+    }
+  }
+}

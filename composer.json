@@ -14,5 +14,9 @@
 			"name": "EsTeBaN22001",
 			"email": "esteban1.redon2@gmail.com"
 		}
-	]
+	],
+	"require": {
+		"vlucas/phpdotenv": "^5.4",
+		"intervention/image": "2.5"
+	}
 }
