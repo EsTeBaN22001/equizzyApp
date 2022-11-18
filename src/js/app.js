@@ -52,3 +52,39 @@ function getParentElementByClass(element, objetiveClass){
 
   return actualElement
 }
+
+// Función para crear el DOM para las opciones y agregarlas a la pregunta
+function addOptionDOM(question, optionName) {
+
+  const optionsContainer = question.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling
+
+  const optionContainer = document.createElement('li')
+  optionContainer.classList.add('option')
+
+  const nameOption = document.createElement('p')
+  nameOption.classList.add('name-option')
+  nameOption.innerHTML += `${optionName}`
+
+  const optionActions = document.createElement('div')
+  optionActions.classList.add('option-actions')
+
+  const editButton = document.createElement('button')
+  editButton.classList.add('option-button', 'edit-button')
+  editButton.textContent = 'Editar'
+
+  const deleteButton = document.createElement('button')
+  deleteButton.classList.add('option-button', 'delete-button')
+  deleteButton.textContent = 'Eliminar'
+
+  // Agregar los botones al div "option-actions"
+  optionActions.appendChild(editButton)
+  optionActions.appendChild(deleteButton)
+
+  // Agregar el "nameOption" y el "optionActions" al elemento "option"
+  optionContainer.appendChild(nameOption)
+  optionContainer.appendChild(optionActions)
+
+  // Agregar la opción al container "options-list"
+  optionsContainer.appendChild(optionContainer)
+
+}

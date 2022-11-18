@@ -22,6 +22,7 @@ questionsContainer.addEventListener('click', function(e){
       
       if(res.isConfirmed){
 
+        const question = getParentElementByClass(e.target, 'question')
         const questionId = getParentElementByClass(e.target, 'question').dataset.idquestion
         
         const data = new FormData()
@@ -38,7 +39,13 @@ questionsContainer.addEventListener('click', function(e){
               title: 'Correcto!',
               text: 'La opción se creó correctamente!'
             }).then(()=>{
-              location.reload()
+              const questionElement = question
+              const optionName = response.question.name
+
+              addOptionDOM(questionElement, optionName)
+
+              const noOption = document.querySelector('p.no-option-text')
+              noOption.remove()
             })
           }
 

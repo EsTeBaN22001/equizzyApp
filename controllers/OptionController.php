@@ -28,7 +28,10 @@ class OptionController {
           $result = $option->save();
 
           if($result){
-            $response = ['response' => true];
+            $response = [
+              'response' => true,
+              'question' => $question
+            ];
           }
 
         }

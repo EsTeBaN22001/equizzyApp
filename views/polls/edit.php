@@ -7,51 +7,47 @@
   </div>
   <div class="questions-container container">
 
-    <?php if (count($questions) == 0) : ?>
-      <p class="no-question">No hay preguntas aún</p>
-    <?php else : ?>
-      <?php foreach ($questions as $question) : ?>
-        <div class="question" data-idquestion="<?= $question->id ?>">
-          <div class="question-header">
-            <div class="question-info">
-              <div class="show-more-button">
-                <i class="fa-solid fa-chevron-down"></i>
-              </div>
-              <h3 data-namequestion="<?= $question->name ?>"><?= $question->name ?></h3>
-            </div>
-            <div class="question-actions">
-              <button class="menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-              <ul class="options-container">
-                <li class="option edit-question" data-idquestion="<?= $question->id ?>">
-                  <i class="fa-solid fa-pen"></i>
-                  <p>Editar</p>
-                </li>
-                <li class="option delete-question" data-idquestion="<?= $question->id ?>">
-                  <i class="fa-solid fa-trash-can"></i>
-                  <p>Eliminar</p>
-                </li>
-              </ul>
-            </div>
+  <?php foreach ($questions as $question) : ?>
+    <div class="question" data-idquestion="<?= $question->id ?>">
+      <div class="question-header">
+        <div class="question-info">
+          <div class="show-more-button">
+            <i class="fa-solid fa-chevron-down"></i>
           </div>
-          <div class="question-content">
-            <hr class="separator">
-            <ul class="options-list">
-                
-              <!-- <li class="option">
-                <p class="name-option">Opción de cada pregunta de cada encuesta</p>
-                <div class="option-actions">
-                  <button class="option-button edit-button"><i class="fa-solid fa-pen"></i>Editar</button>
-                  <button class="option-button delete-button"><i class="fa-solid fa-trash"></i>Borrar</button>
-                </div>
-              </li> -->
-
-            </ul>
-            <a href="#" class="add-option-button">Añadir opción</a>
-          </div>
+          <h3 data-namequestion="<?= $question->name ?>"><?= $question->name ?></h3>
         </div>
+        <div class="question-actions">
+          <button class="menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+          <ul class="options-container">
+            <li class="option edit-question" data-idquestion="<?= $question->id ?>">
+              <i class="fa-solid fa-pen"></i>
+              <p>Editar</p>
+            </li>
+            <li class="option delete-question" data-idquestion="<?= $question->id ?>">
+              <i class="fa-solid fa-trash-can"></i>
+              <p>Eliminar</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="question-content">
+        <hr class="separator">
+        <ul class="options-list">
+            
+          <!-- <li class="option">
+            <p class="name-option">Opción de cada pregunta de cada encuesta</p>
+            <div class="option-actions">
+              <button class="option-button edit-button"><i class="fa-solid fa-pen"></i>Editar</button>
+              <button class="option-button delete-button"><i class="fa-solid fa-trash"></i>Borrar</button>
+            </div>
+          </li> -->
 
-      <?php endforeach ?>
-    <?php endif ?>
+        </ul>
+        <a href="#" class="add-option-button">Añadir opción</a>
+      </div>
+    </div>
+
+  <?php endforeach ?>
 
   </div>
 </section>
