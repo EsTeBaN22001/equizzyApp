@@ -82,9 +82,7 @@ class QuestionController{
           }
 
         }else{
-          $response = [
-            'response' => false
-          ];
+          $response = ['response' => false];
         }
       }
       

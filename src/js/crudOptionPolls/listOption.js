@@ -29,7 +29,7 @@ questions.forEach(question => {
       }else{
 
         options.forEach((option)=>{
-          addOptionDOM(question, option.name)
+          addOptionDOM(question, option.name, option.id)
         })
 
 

@@ -54,12 +54,16 @@ function getParentElementByClass(element, objetiveClass){
 }
 
 // Función para crear el DOM para las opciones y agregarlas a la pregunta
-function addOptionDOM(question, optionName) {
+function addOptionDOM(question, optionName, optionId) {
 
   const optionsContainer = question.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling
 
+  const separator = document.createElement('hr')
+  separator.classList.add('separator')
+
   const optionContainer = document.createElement('li')
   optionContainer.classList.add('option')
+  optionContainer.dataset.id = optionId
 
   const nameOption = document.createElement('p')
   nameOption.classList.add('name-option')
@@ -86,5 +90,6 @@ function addOptionDOM(question, optionName) {
 
   // Agregar la opción al container "options-list"
   optionsContainer.appendChild(optionContainer)
+  // optionsContainer.appendChild(separator)
 
 }

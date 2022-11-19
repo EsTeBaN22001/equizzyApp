@@ -36,8 +36,9 @@ questionsContainer.addEventListener('click', function(e){
           if(response.response){
             let questionElement = question
             let optionName = response.option.name
+            let optionId = response.result.id
 
-            addOptionDOM(questionElement, optionName)
+            addOptionDOM(questionElement, optionName, optionId)
 
             if(document.querySelector('p.no-option-text')){
               const noOption = document.querySelector('p.no-option-text')
