@@ -49,6 +49,7 @@ $router->post('/questions/get', [QuestionController::class, 'get']);
 $router->post('/options/create', [OptionController::class, 'create']);
 $router->post('/options/list', [OptionController::class, 'list']);
 $router->post('/options/edit', [OptionController::class, 'edit']);
+$router->post('/options/delete', [OptionController::class, 'delete']);
 
 // Secciones de administrador
 $router->get('/admin/index', [AdminController::class, 'index']);

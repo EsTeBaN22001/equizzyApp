@@ -66,6 +66,7 @@ $script = '
   <script src="/build/js/crudOptionPolls/createOption.js"></script>
   <script src="/build/js/crudOptionPolls/listOption.js"></script>
   <script src="/build/js/crudOptionPolls/editOption.js"></script>
+  <script src="/build/js/crudOptionPolls/deleteOption.js"></script>
 '
 
 ?>

@@ -1,16 +1,1 @@
-// Sticky menu
-window.onscroll = function () { stickyMenu() }
-
-const navbar = document.querySelector('.navbar-container')
-const sticky = navbar.offsetTop
-const nextElement = navbar.nextSibling.nextSibling;
-
-function stickyMenu() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add('sticky')
-    nextElement.style.paddingTop = `${navbar.offsetHeight}px`;
-  } else {
-    navbar.classList.remove('sticky')
-    nextElement.style.paddingTop = "initial";
-  }
-}
+window.onscroll=function(){stickyMenu()};const navbar=document.querySelector(".navbar-container"),sticky=navbar.offsetTop,nextElement=navbar.nextSibling.nextSibling;function stickyMenu(){window.pageYOffset>=sticky?(navbar.classList.add("sticky"),nextElement.style.paddingTop=navbar.offsetHeight+"px"):(navbar.classList.remove("sticky"),nextElement.style.paddingTop="initial")}

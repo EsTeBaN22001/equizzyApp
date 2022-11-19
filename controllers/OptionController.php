@@ -93,6 +93,39 @@ class OptionController {
 
   }
 
+  public static function delete(){
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+      $response = ['response' => false];
+
+      if($_POST['idOption']){
+
+        $option = Option::find($_POST['idOption']);
+
+        if($option){
+
+          $result = $option->delete();
+
+          if($result){
+
+            $response = [
+              'response' => true,
+              'result' => $result
+            ];
+
+          }
+
+        }
+
+      }
+
+      echo json_encode($response);
+      
+    }
+
+  }
+
 }
 
 ?>
