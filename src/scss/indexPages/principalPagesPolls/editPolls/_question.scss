@@ -137,6 +137,9 @@
   }
 
   .options-list {
+    margin: 0 auto;
+    max-width: 80%;
+    
     .option {
       display: flex;
       justify-content: space-between;

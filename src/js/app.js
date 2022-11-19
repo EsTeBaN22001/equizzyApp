@@ -63,7 +63,7 @@ function addOptionDOM(question, optionName) {
 
   const nameOption = document.createElement('p')
   nameOption.classList.add('name-option')
-  nameOption.innerHTML += `${optionName}`
+  nameOption.textContent += `${optionName}`
 
   const optionActions = document.createElement('div')
   optionActions.classList.add('option-actions')

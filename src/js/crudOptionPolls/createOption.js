@@ -32,21 +32,17 @@ questionsContainer.addEventListener('click', function(e){
         const result = callFetch(`${domain}/options/create`, 'POST', data)
 
         result.then((response)=>{
-          
+
           if(response.response){
-            Swal.fire({
-              icon: 'success',
-              title: 'Correcto!',
-              text: 'La opción se creó correctamente!'
-            }).then(()=>{
-              const questionElement = question
-              const optionName = response.question.name
+            let questionElement = question
+            let optionName = response.option.name
 
-              addOptionDOM(questionElement, optionName)
+            addOptionDOM(questionElement, optionName)
 
+            if(document.querySelector('p.no-option-text')){
               const noOption = document.querySelector('p.no-option-text')
               noOption.remove()
-            })
+            }
           }
 
         })

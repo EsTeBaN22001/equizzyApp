@@ -30,7 +30,7 @@ class OptionController {
           if($result){
             $response = [
               'response' => true,
-              'question' => $question
+              'option' => $option
             ];
           }
 
