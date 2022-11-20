@@ -95,6 +95,7 @@ class PollsController{
     $router->renderPolls('polls/create', [
       'title' => 'Crear encuesta',
       'userName' => '' . $_SESSION['name'] . ' ' . $_SESSION['surname'],
+      'poll' => $poll,
       'alerts' => $alerts,
       'categories' => $categories
     ]);

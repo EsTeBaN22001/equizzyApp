@@ -15,44 +15,64 @@
 
   .field-group{
     margin: 2rem 0;
+    position: relative;
 
-    label, input{
-      display: block;
-      width: 100%;
-      // margin: .5rem 0;
-      padding: 1rem 0;
-      font-size: 2rem;
+    .char-counter{
+      background-color: v.$darkGray;
+      border-radius: .5rem;
+      padding: 1rem;
+      color: v.$white;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      &.error{
+        background-color: v.$red;
+      }
     }
 
-    input{
-      background-color: transparent;
-      border: none;
+    label, input, textarea, select{
+      display: block;
+      width: 100%;
       color: v.$textColor;
-      border-bottom: .2rem solid v.$darkGray;
+      padding: 1rem 0;
+      font-size: 2rem;
+      background-color: transparent;
       transition: all .3s ease;
 
       &:focus{
         outline: none;
         color: v.$white;
-        border-bottom: .2rem solid v.$principalColor;
+        border: .2rem solid v.$principalColor;
       }
     }
 
-    select{
+    input, textarea, select{
       border: .2rem solid v.$darkGray;
-      background-color: transparent;
-      color: v.$white;
       padding: 1rem;
-      transition: border .3s ease;
 
       &:focus{
         border: .2rem solid v.$principalColor;
       }
+    }
+
+    input{
+      color: v.$textColor;
+    }
+
+    select{
+      color: v.$white;
+      padding: 1rem;
 
       option{
         background-color: v.$darkGray;
         color: v.$white;
       }
+    }
+
+    textarea{
+      resize: none;
+      height: 15rem;
     }
 
     .button-submit{

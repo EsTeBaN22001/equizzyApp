@@ -1,1 +1,10 @@
-if(document.querySelector(".sitePollsLayoutContainer")){const e=document.querySelector(".sidebarOptions");document.querySelector(".navbar-menu-button").addEventListener("click",(function(){e.classList.toggle("active")}))}
+if(document.querySelector('.sitePollsLayoutContainer')){
+
+  const sidebarOptions = document.querySelector('.sidebarOptions')
+  const menuButton = document.querySelector('.navbar-menu-button')
+
+  menuButton.addEventListener('click', function(){
+    sidebarOptions.classList.toggle('active')
+  })
+
+}

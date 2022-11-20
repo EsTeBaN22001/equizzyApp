@@ -1,1 +1,52 @@
-const optionsList=document.querySelector("ul.options-list");optionsList.addEventListener("click",(function(t){if(t.target.classList.contains("edit-button")){const e=getParentElementByClass(t.target,"option"),n=e.dataset.id;let i=e.firstElementChild.textContent;Swal.fire({title:"Editar opción",input:"text",inputValue:i,inputLabel:"Editar el contenido de la opción seleccionada:",inputPlaceholder:"Escriba su edición aquí",showCancelButton:!0,cancelButtonText:"Cancelar",confirmButtonText:"Crear",confirmButtonColor:"#00c9ac",inputValidator:t=>{if(!t)return"Este campo no puede estar vacío"}}).then(t=>{if(t.isConfirmed){const i=new FormData;i.append("name",t.value),i.append("idOption",n);callFetch(domain+"/options/edit","POST",i).then(t=>{t.response&&(e.firstElementChild.textContent=t.option.name)})}})}}));
+const optionsList = document.querySelector('ul.options-list')
+
+optionsList.addEventListener('click', function(e){
+  
+  if(e.target.classList.contains('edit-button')){
+    
+    const option = getParentElementByClass(e.target, 'option')
+    const idOption = option.dataset.id
+    let nameOption = option.firstElementChild.textContent
+
+    Swal.fire({
+      title: 'Editar opción',
+      input: 'text',
+      inputValue: nameOption,
+      inputLabel: 'Editar el contenido de la opción seleccionada:',
+      inputPlaceholder: 'Escriba su edición aquí',
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Crear',
+      confirmButtonColor: "#00c9ac",
+      inputValidator: (value) => {
+        if (!value) {
+          return "Este campo no puede estar vacío"
+        }
+      }
+    }).then((res)=>{
+
+      if(res.isConfirmed){
+        
+        const data = new FormData()
+        data.append('name', res.value)
+        data.append('idOption', idOption)
+
+        const result = callFetch(`${domain}/options/edit`, 'POST', data)
+
+        result.then((response)=>{
+
+          if(response.response){
+
+            option.firstElementChild.textContent =  response.option.name
+
+          }
+
+        })
+
+      }
+
+    })
+
+  }
+
+})

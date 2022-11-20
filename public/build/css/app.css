@@ -541,38 +541,55 @@ p {
 }
 .form .field-group {
   margin: 2rem 0;
+  position: relative;
 }
-.form .field-group label, .form .field-group input {
+.form .field-group .char-counter {
+  background-color: #434343;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: #FFFFFF;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.form .field-group .char-counter.error {
+  background-color: #FF0000;
+}
+.form .field-group label, .form .field-group input, .form .field-group textarea, .form .field-group select {
   display: block;
   width: 100%;
+  color: #e6e6e6;
   padding: 1rem 0;
   font-size: 2rem;
-}
-.form .field-group input {
   background-color: transparent;
-  border: none;
-  color: #e6e6e6;
-  border-bottom: 0.2rem solid #434343;
   transition: all 0.3s ease;
 }
-.form .field-group input:focus {
+.form .field-group label:focus, .form .field-group input:focus, .form .field-group textarea:focus, .form .field-group select:focus {
   outline: none;
   color: #FFFFFF;
-  border-bottom: 0.2rem solid #00c9ac;
+  border: 0.2rem solid #00c9ac;
+}
+.form .field-group input, .form .field-group textarea, .form .field-group select {
+  border: 0.2rem solid #434343;
+  padding: 1rem;
+}
+.form .field-group input:focus, .form .field-group textarea:focus, .form .field-group select:focus {
+  border: 0.2rem solid #00c9ac;
+}
+.form .field-group input {
+  color: #e6e6e6;
 }
 .form .field-group select {
-  border: 0.2rem solid #434343;
-  background-color: transparent;
   color: #FFFFFF;
   padding: 1rem;
-  transition: border 0.3s ease;
-}
-.form .field-group select:focus {
-  border: 0.2rem solid #00c9ac;
 }
 .form .field-group select option {
   background-color: #434343;
   color: #FFFFFF;
+}
+.form .field-group textarea {
+  resize: none;
+  height: 15rem;
 }
 .form .field-group .button-submit {
   border: 0.2rem solid #434343;

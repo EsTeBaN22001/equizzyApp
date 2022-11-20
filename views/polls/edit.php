@@ -1,6 +1,6 @@
 <section class="section-sm container-sm edit-poll-container">
   <h1>Encuesta <span class="poll-title"><?= $poll->title ?></span></h1>
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci optio voluptatum accusamus voluptas atque, quisquam earum animi molestias amet rerum tempore dolorem perferendis eos asperiores eligendi est ipsa, reprehenderit corrupti! Necessitatibus a odit ut? Assumenda maiores a labore culpa eaque?</p>
+  <p><?= $poll->description ?></p>
   <div class="questions-container-header">
     <h2>Preguntas de las encuestas</h2>
     <a href="#" class="create-question-button"><i class="fa-solid fa-plus"></i>Añadir</a>

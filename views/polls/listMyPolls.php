@@ -14,7 +14,7 @@
 
       <div class="poll" data-id="<?= $poll->uniqId ?>">
         <div class="img-container">
-          <img src="/pollsImages/<?= $poll->img ?>" alt="Imagen de la encuesta">
+          <img src="/pollsImages/<?= $poll->img ?>" alt="Imagen de la encuesta <?= $poll->title ?>">
         </div>
         <div class="about-poll">
           <h3><?= $poll->title ?></h3>

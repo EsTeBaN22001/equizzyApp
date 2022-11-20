@@ -5,8 +5,13 @@
   <div class="form-container">
     <form method="POST" class="form" enctype="multipart/form-data">
       <div class="field-group">
-        <label for="title">Nombre de la encuesta:</label>
-        <input type="text" name="title" id="title" placeholder="Ingrese el nombre de la encuesta">
+        <label for="title">Nombre:</label>
+        <input type="text" name="title" id="title" placeholder="Ingrese el nombre de la encuesta" value="<?= $poll->title ?>">
+      </div>
+      <div class="field-group">
+        <label for="description">Descripción:</label>
+        <textarea value="<?= $poll->description ?>" name="description" id="description" placeholder="Ingrese la descripción de la encuesta" class="char-to-count"></textarea>
+          <span class="char-counter"></span>
       </div>
       <div class="field-group">
         <label for="categoryId">Categoría:</label>
@@ -27,3 +32,13 @@
     </form>
   </div>
 </section>
+
+<?php 
+
+  $script = '
+
+  <script src="/build/js/polls/textAreaCounter.js"></script>
+
+  ';
+
+?>

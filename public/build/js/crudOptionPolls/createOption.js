@@ -1,1 +1,57 @@
-const questionsContainer=document.querySelector(".questions-container");questionsContainer.addEventListener("click",(function(e){e.target.classList.contains("add-option-button")&&Swal.fire({title:"Crear nueva opción",input:"text",inputLabel:"Ingrese la opción que quiere añadir a continuación:",inputPlaceholder:"Escriba su opción aquí",showCancelButton:!0,cancelButtonText:"Cancelar",confirmButtonText:"Crear",confirmButtonColor:"#00c9ac",inputValidator:e=>{if(!e)return"Este campo no puede estar vacío"}}).then(t=>{if(t.isConfirmed){const n=getParentElementByClass(e.target,"question"),o=getParentElementByClass(e.target,"question").dataset.idquestion,a=new FormData;a.append("name",t.value),a.append("questionId",o);callFetch(domain+"/options/create","POST",a).then(e=>{if(e.response){let t=n,o=e.option.name,a=e.result.id;if(addOptionDOM(t,o,a),document.querySelector("p.no-option-text")){document.querySelector("p.no-option-text").remove()}}})}})}));
+const questionsContainer = document.querySelector('.questions-container')
+
+questionsContainer.addEventListener('click', function(e){
+  
+  if(e.target.classList.contains('add-option-button')){
+
+    Swal.fire({
+      title: 'Crear nueva opción',
+      input: 'text',
+      inputLabel: 'Ingrese la opción que quiere añadir a continuación:',
+      inputPlaceholder: 'Escriba su opción aquí',
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Crear',
+      confirmButtonColor: "#00c9ac",
+      inputValidator: (value) => {
+        if (!value) {
+          return "Este campo no puede estar vacío"
+        }
+      }
+    }).then((res)=>{
+      
+      if(res.isConfirmed){
+
+        const question = getParentElementByClass(e.target, 'question')
+        const questionId = getParentElementByClass(e.target, 'question').dataset.idquestion
+        
+        const data = new FormData()
+        data.append('name', res.value)
+        data.append('questionId', questionId)
+        
+        const result = callFetch(`${domain}/options/create`, 'POST', data)
+
+        result.then((response)=>{
+
+          if(response.response){
+            let questionElement = question
+            let optionName = response.option.name
+            let optionId = response.result.id
+
+            addOptionDOM(questionElement, optionName, optionId)
+
+            if(document.querySelector('p.no-option-text')){
+              const noOption = document.querySelector('p.no-option-text')
+              noOption.remove()
+            }
+          }
+
+        })
+
+      }
+
+    })
+
+  }
+
+})
