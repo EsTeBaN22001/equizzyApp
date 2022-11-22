@@ -26,6 +26,12 @@ $router->get('/register', [LoginController::class, 'register']);
 $router->post('/register', [LoginController::class, 'register']);
 $router->get('/logout', [LoginController::class, 'logout']);
 
+
+
+// PÁGINAS PRIVADAS - solo con sesión iniciada
+
+
+
 // CRUD categorías
 $router->get('/categories/list', [CategoryPollController::class, 'list']);
 $router->get('/categories/create', [CategoryPollController::class, 'create']);

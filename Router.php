@@ -24,9 +24,31 @@ class Router
 		session_start();
 
 		// Arreglo de rutas protegidas...
-		// $rutas_protegidas = [];
+		$protectedRoutes = [
+			// categories
+			'/categories/list',
+			'/categories/create',
+			// polls
+			'/my-polls',
+			'/polls/list',
+			'/polls/create',
+			'/polls/edit',
+			'/polls/delete',
+			// questions
+			'/questions/create',
+			'/questions/update',
+			'/questions/delete',
+			'/questions/get',
+			// options
+			'/options/create',
+			'/options/list',
+			'/options/edit',
+			'/options/delete',
+			// admin
+			'/admin/index'
+		];
 
-		// $auth = $_SESSION['login'] ?? null;
+		$auth = $_SESSION['login'] ?? null;
 
 		$currentUrl = $_SERVER['PATH_INFO'] ?? '/';
 		$method = $_SERVER['REQUEST_METHOD'];
@@ -37,12 +59,16 @@ class Router
 			$fn = $this->postRoutes[$currentUrl] ?? null;
 		}
 
+		if(in_array($currentUrl, $protectedRoutes) && !$auth){
+			header('Location: /');
+		}
+
 
 		if ( $fn ) {
 			// Call user fn va a llamar una función cuando no sabemos cual sera
 			call_user_func($fn, $this); // This es para pasar argumentos
 		} else {
-			echo "Página No Encontrada o Ruta no válida";
+			include_once __DIR__ . "/views/404.php";
 		}
 	}
 

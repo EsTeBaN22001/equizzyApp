@@ -4,6 +4,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Sitio para realizar, crear y contestas encuestas de tus temas preferidos">
+	<meta name="keywords" content="Encuestas, equizzyApp, crear encuestas, realizar encuestas, iniciar sesión, registrarse">
+	<meta name="author" content="Esteban Redón">
+	<meta name="copyright" content="Esteban Redón">
+	<meta name="robots" content="index">
+	<meta name="robots" content="follow">
 	<title><?= $title; ?> | Equizzy</title>
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">

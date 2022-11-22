@@ -449,6 +449,21 @@ p {
   font-size: 2.6rem;
 }
 
+.page-container {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.page-container .principalContent h1 {
+  color: #00c9ac;
+  margin-bottom: 2rem;
+}
+.page-container .principalContent p a {
+  color: #00c9ac;
+}
+
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("/build/img/hero.webp");
   background-position: center center;
@@ -915,6 +930,9 @@ p {
 }
 .sitePollsLayoutContainer .sidebarContainer .sidebar-header {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .sitePollsLayoutContainer .sidebarContainer .sidebar-header h2 {
   margin-bottom: 3rem;
@@ -926,9 +944,6 @@ p {
 }
 .sitePollsLayoutContainer .sidebarContainer .sidebar-header .navbar-menu-button {
   padding: 2rem;
-  position: absolute;
-  top: -1.5rem;
-  right: -1rem;
   font-size: 4rem;
   display: none;
   transition: color 0.2s ease;
@@ -1351,6 +1366,13 @@ p {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0 2rem 0;
+}
+@media (max-width: 480px) {
+  .question-content .options-list .option {
+    flex-direction: column;
+    row-gap: 1rem;
+    margin: 2rem 0;
+  }
 }
 .question-content .options-list .option .name-option {
   font-size: 2rem;
