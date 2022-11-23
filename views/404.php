@@ -34,7 +34,7 @@
     <div class="principalContent">
       <h1>Página no encontrada</h1>
       <p>Parece que la página que estás buscando no existe.</p>
-      <p> Volver a la <a href="<?= $ENV['HOST'] ?>/">página de inicio</a></p>
+      <p> Volver a la <a href="<?= $_ENV['HOST'] ?>/">página de inicio</a></p>
     </div>
   </main>
 

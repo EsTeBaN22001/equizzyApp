@@ -1,38 +1,40 @@
-optionsList.addEventListener('click', function(e){
+optionsLists.forEach(optionsList => {
+  optionsList.addEventListener('click', function (e) {
 
-  if(e.target.classList.contains('delete-button')){
-    
-    Swal.fire({
-      title: 'Estás seguro/a?',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Si',
-    }).then((result) => {
+    if (e.target.classList.contains('delete-button')) {
 
-      if (result.isConfirmed) {
+      Swal.fire({
+        title: 'Estás seguro/a?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si',
+      }).then((result) => {
 
-        const option = getParentElementByClass(e.target, 'option')
-        const idOption = option.dataset.id
-        
-        const data = new FormData();
-        data.append('idOption', idOption);
+        if (result.isConfirmed) {
 
-        const result = callFetch(`${domain}/options/delete`, 'POST', data)
+          const option = getParentElementByClass(e.target, 'option')
+          const idOption = option.dataset.id
 
-        result.then((response)=>{
+          const data = new FormData();
+          data.append('idOption', idOption);
 
-          if(response.response){
+          const result = callFetch(`${domain}/options/delete`, 'POST', data)
 
-            option.remove()
+          result.then((response) => {
 
-          }
+            if (response.response) {
 
-        })
-        
-      }
-      
-    })
+              option.remove()
 
-  }
+            }
 
+          })
+
+        }
+
+      })
+
+    }
+
+  })
 })
