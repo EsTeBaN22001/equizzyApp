@@ -1,5 +1,5 @@
 <section class="section-sm container-sm edit-poll-container">
-  <h1>Encuesta <span class="poll-title"><?= $poll->title ?></span></h1>
+  <h1><span class="poll-title"><?= $poll->title ?></span></h1>
   <p><?= $poll->description ?></p>
   <div class="questions-container-header">
     <h2>Preguntas de las encuestas</h2>

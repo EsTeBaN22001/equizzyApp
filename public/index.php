@@ -11,6 +11,7 @@ use Controllers\PollsController;
 use Controllers\OptionController;
 use Controllers\QuestionController;
 use Controllers\CategoryPollController;
+use Controllers\PublicPollsController;
 
 $router = new Router();
 
@@ -25,6 +26,11 @@ $router->post('/login', [LoginController::class, 'login']);
 $router->get('/register', [LoginController::class, 'register']);
 $router->post('/register', [LoginController::class, 'register']);
 $router->get('/logout', [LoginController::class, 'logout']);
+
+
+// Vistas para responder una encuesta
+$router->get('/polls/respond', [PublicPollsController::class, 'respond']);
+
 
 
 

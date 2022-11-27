@@ -17,7 +17,6 @@ class PollsController{
     
     $router->renderPolls('polls/listMyPolls', [
       'title' => 'Mis encuestas',
-      'userName' => '' . $_SESSION['name'] . ' ' . $_SESSION['surname'],
       'userPolls' => $userPolls
     ]);
   }
@@ -26,7 +25,6 @@ class PollsController{
     
     $router->renderPolls('polls/list', [
       'title' => 'Encuestas',
-      'userName' => $_SESSION['name'] . ' ' . $_SESSION['surname'],
     ]);
   }
 
@@ -94,7 +92,6 @@ class PollsController{
     
     $router->renderPolls('polls/create', [
       'title' => 'Crear encuesta',
-      'userName' => '' . $_SESSION['name'] . ' ' . $_SESSION['surname'],
       'poll' => $poll,
       'alerts' => $alerts,
       'categories' => $categories
@@ -116,7 +113,6 @@ class PollsController{
 
     $router->renderPolls('polls/edit', [
       'title' => 'Editar encuesta',
-      'userName' => $_SESSION['name'] . ' ' . $_SESSION['surname'],
       'poll' => $poll,
       'questions' => $questions
     ]);

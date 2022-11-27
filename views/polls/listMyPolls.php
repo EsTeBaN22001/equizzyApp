@@ -20,7 +20,7 @@
           <h3><?= $poll->title ?></h3>
           <button class="menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></button>
           <ul class="options-container">
-            <a href="#">
+            <a href="<?= $_ENV['HOST'] ?>/polls/respond?pollId=<?= $poll->uniqId ?>">
               <li class="option">
                 <i class="fa-regular fa-eye"></i>
                 <p>Ver</p>
