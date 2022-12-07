@@ -160,7 +160,7 @@ class ActiveRecord
 	{
 		// Sanitizar los datos
 		$attributes = $this->sanitizeAttributes();
-		
+
 
 		// Insertar en la base de datos
 		$query = " INSERT INTO " . static::$table . " ( ";
@@ -168,7 +168,7 @@ class ActiveRecord
 		$query .= " ) VALUES ('";
 		$query .= join("', '", array_values($attributes));
 		$query .= "') ";
-		
+
 		// Resultado de la consulta
 		$result = self::$db->query($query);
 		return [
@@ -234,5 +234,12 @@ class ActiveRecord
 			unlink($dir . $this->img);
 		}
 		$fileExist = null;
+	}
+
+	public static function exists($column, $id)
+	{
+		$query = "SELECT * FROM " . static::$table  . " WHERE ${column} = '${id}'";
+		$result = self::consultSQL($query);
+		if(!$result) header('Location: /polls/list');
 	}
 }

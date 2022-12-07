@@ -34,6 +34,9 @@ class Router
 			'/polls/create',
 			'/polls/edit',
 			'/polls/delete',
+			'/polls/respond',
+			'/polls/answers',
+			'/polls/get-answers',
 			// questions
 			'/questions/create',
 			'/questions/update',

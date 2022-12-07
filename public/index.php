@@ -27,16 +27,9 @@ $router->get('/register', [LoginController::class, 'register']);
 $router->post('/register', [LoginController::class, 'register']);
 $router->get('/logout', [LoginController::class, 'logout']);
 
-
-// Vistas para responder una encuesta
-$router->get('/polls/respond', [PublicPollsController::class, 'respond']);
-
-
-
-
-// PÁGINAS PRIVADAS - solo con sesión iniciada
-
-
+  ///////////////////////////////////////////////////////////////////////////////
+ ///////////////////////////////PÁGINAS PRIVADAS////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 // CRUD categorías
 $router->get('/categories/list', [CategoryPollController::class, 'list']);
@@ -50,6 +43,14 @@ $router->get('/polls/create', [PollsController::class, 'create']);
 $router->post('/polls/create', [PollsController::class, 'create']);
 $router->get('/polls/edit', [PollsController::class, 'edit']);
 $router->get('/polls/delete', [PollsController::class, 'delete']);
+
+// Vistas para responder una encuesta
+$router->get('/polls/respond', [PublicPollsController::class, 'respond']);
+$router->post('/polls/respond', [PublicPollsController::class, 'respond']);
+
+// Vistas para ver el resultado de la encuesta
+$router->get('/polls/answers', [PublicPollsController::class, 'answers']);
+$router->post('/polls/get-answers', [PublicPollsController::class, 'getAnswers']);
 
 // CRUD de las PREGUNTAS de las encuestas
 $router->post('/questions/create', [QuestionController::class, 'create']);

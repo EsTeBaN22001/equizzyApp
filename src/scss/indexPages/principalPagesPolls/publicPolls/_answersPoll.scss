@@ -1,0 +1,15 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.answers-section{
+  h2{
+    color: v.$principalColor;
+  }
+
+  .answers-container{
+    .answer-title{
+      font-size: 3rem;
+      margin-top: 3rem;
+    }
+  }
+}

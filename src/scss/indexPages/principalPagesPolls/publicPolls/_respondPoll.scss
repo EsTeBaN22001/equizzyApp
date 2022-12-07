@@ -1,12 +1,12 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
+.poll-title{
+  color: v.$principalColor;
+  text-align: start;
+}
+
 .respond-container{
-  
-  .poll-title{
-    color: v.$principalColor;
-    text-align: start;
-  }
 
   .questions-container{
 
@@ -47,7 +47,7 @@
         margin-bottom: 2rem;
       }
   
-      .form-options-container{
+      .options-container{
         padding: 0 .5rem;
 
         .option{

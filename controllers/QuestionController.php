@@ -58,6 +58,9 @@ class QuestionController{
 
   public static function update(){
     
+    // Verifica si existe la encuesta pasada por parámetro en la url
+    Poll::exists('uniqId', $_GET['pollId']);
+    
     if($_SERVER['REQUEST_METHOD']== 'POST'){
       
       if($_POST['id'] && $_POST['name']){
