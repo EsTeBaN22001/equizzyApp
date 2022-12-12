@@ -1597,6 +1597,15 @@ p {
   font-size: 3rem;
   margin-top: 3rem;
 }
+.answers-section .answers-container canvas {
+  width: 70% !important;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .answers-section .answers-container canvas {
+    width: 100% !important;
+  }
+}
 
 .categories-section {
   position: relative;
