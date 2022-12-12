@@ -52,6 +52,10 @@ $router->post('/polls/respond', [PublicPollsController::class, 'respond']);
 $router->get('/polls/answers', [PublicPollsController::class, 'answers']);
 $router->post('/polls/get-answers', [PublicPollsController::class, 'getAnswers']);
 
+// RUTAS para verificar si una encuesta es pública
+$router->post('/polls/get-public-state', [PollsController::class, 'getPublicState']);
+$router->post('/polls/set-public-state', [PollsController::class, 'setPublicState']);
+
 // CRUD de las PREGUNTAS de las encuestas
 $router->post('/questions/create', [QuestionController::class, 'create']);
 $router->post('/questions/update', [QuestionController::class, 'update']);

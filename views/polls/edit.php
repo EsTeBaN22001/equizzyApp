@@ -1,5 +1,10 @@
 <section class="section-sm container-sm edit-poll-container">
-  <h1><span class="poll-title"><?= $poll->title ?></span></h1>
+  <div class="poll-header">
+    <h1><?= $poll->title ?></h1>
+    <div class="visibility-poll-button-container">
+      <p>Estado: <button class="visibility-poll-button"></button></p>
+    </div>
+  </div>
   <p><?= $poll->description ?></p>
   <div class="questions-container-header">
     <h2>Preguntas de las encuestas</h2>
@@ -58,6 +63,7 @@ $script = '
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5.0.12/dark.min.css">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="/build/js/polls/menuOptionsQuestions.js"></script>
+  <script src="/build/js/polls/changePollVisibility.js"></script>
 
   <script src="/build/js/crudQuestionPolls/createQuestion.js"></script>
   <script src="/build/js/crudQuestionPolls/editQuestion.js"></script>

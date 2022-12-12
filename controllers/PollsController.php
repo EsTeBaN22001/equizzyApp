@@ -140,4 +140,52 @@ class PollsController{
 
   }
 
+  // Funciones helpers para algunas funcionalidades de la aplicación
+
+  // Obtiene el estado de la encuesta
+  public static function getPublicState(){
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+      $poll = Poll::where('uniqId', $_POST['pollId']);
+      
+      if($poll){
+
+        echo json_encode($poll->public);
+
+      }
+      
+    }
+
+  }
+  
+  // Cambia el estado de la encuesta
+  public static function setPublicState(){
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+      $poll = Poll::where('uniqId', $_POST['pollId']);
+      
+      if($poll && isset($_POST['state'])){
+
+        if($_POST['state'] == 0){
+          $poll->public = 1;
+        }
+
+        if($_POST['state'] == 1){
+          $poll->public = 0;
+        }
+
+        $result = $poll->save();
+
+        if($result){
+          echo json_encode($poll->public);
+        }
+
+      }
+      
+    }
+
+  }
+
 }

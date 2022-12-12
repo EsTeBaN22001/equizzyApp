@@ -19,6 +19,11 @@ class PublicPollsController{
 
     $pollUniqId = $_GET['poll'];
     $poll = Poll::where('uniqId', $pollUniqId);
+
+    // Comprobar si la encuesta es PÚBLICA
+    if($poll->public == 0){
+      header('Location: '. $_SERVER["HTTP_REFERER"]);
+    }
     
     $questions = Question::belongsTo('pollId', $poll->id);
 
