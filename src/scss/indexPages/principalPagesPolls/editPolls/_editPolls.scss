@@ -2,7 +2,7 @@
 @use 'base/mixins' as m;
 
 .edit-poll-container {
-  .poll-header{
+  .poll-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,27 +14,40 @@
       font-size: 4.5rem;
     }
 
-    .visibility-poll-button-container{
+    .visibility-poll-button-container {
       display: flex;
       justify-content: center;
       align-items: center;
 
-      .visibility-poll-button{
+      .visibility-poll-button {
         @include m.button(transparent, v.$white);
         margin: 0;
         padding: 1rem;
         font-weight: inherit;
         font-size: 2.2rem;
 
-        &.public{
+        &.public {
           background-color: v.$blue;
         }
 
-        &.private{
+        &.private {
           background-color: v.$red;
         }
       }
     }
+  }
+
+  .answers-link {
+    color: v.$textColor;
+    font-size: 2rem;
+
+    &:hover{
+      color: darken(v.$textColor, 10);
+    }
+  }
+
+  .poll-description{
+    margin-top: 2rem;
   }
 
   h2 {

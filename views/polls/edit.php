@@ -5,7 +5,8 @@
       <p>Estado: <button class="visibility-poll-button"></button></p>
     </div>
   </div>
-  <p><?= $poll->description ?></p>
+  <a class="answers-link" href="<?= $_ENV['HOST'] ?>/polls/answers?poll=<?= $poll->uniqId ?>"><i class="fa-regular fa-eye"></i>Ver resultados de la encuesta</a>
+  <p class="poll-description"><?= $poll->description ?></p>
   <div class="questions-container-header">
     <h2>Preguntas de las encuestas</h2>
     <a href="#" class="create-question-button"><i class="fa-solid fa-plus"></i>Añadir</a>
