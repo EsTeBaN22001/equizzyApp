@@ -136,7 +136,7 @@ class ActiveRecord
 	{
 		$query = "SELECT * FROM " . static::$table . " LIMIT ${limit}";
 		$result = self::consultSQL($query);
-		return array_shift($result);
+		return $result;
 	}
 
 	// Busqueda Where con Columna 

@@ -10,7 +10,7 @@ use MVC\Router;
 
 class PublicPollsController{
 
-  public static function respond(Router $router){
+  public static function respond(Router $router){ 
     
     // Verifica si existe la encuesta pasada por parámetro en la url
     Poll::exists('uniqId', $_GET['poll']);

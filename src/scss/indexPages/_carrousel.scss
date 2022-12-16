@@ -2,6 +2,10 @@
 @use 'base/mixins' as m;
 
 .polls-carrousel{
+
+  h2{
+    margin-bottom: 2rem;
+  }
   .header-container{
     display: flex;
     justify-content: space-between;

@@ -54,7 +54,7 @@ class PollsController{
           $nameImage = md5(uniqid(rand(), true)). ".webp";
 
           // Setear la imagen
-          $img = Image::make($_FILES['img']['tmp_name'])->resize(800, 600)->encode('webp', 70);
+          $img = Image::make($_FILES['img']['tmp_name'])->resize(1024, 768)->encode('webp', 70);
           $poll->setImage($nameImage, $_ENV['POLLS_IMAGES_FOLDER']);
 
           $pollsImagesFolder = $_SERVER['DOCUMENT_ROOT'] . $_ENV['POLLS_IMAGES_FOLDER'];

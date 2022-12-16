@@ -105,7 +105,7 @@
   <div class="text-info">
     <h2>Crear tu propia encuesta</h2>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime voluptate dolor doloremque.</p>
-    <a href="#" class="create-poll-button">Crear encuesta</a>
+    <a href="<?= $_ENV['HOST'] ?>/polls/create" class="create-poll-button">Crear encuesta</a>
   </div>
   <div class="img-container">
     <img src="/build/img/createPoll.svg" alt="imagen crear encuesta">

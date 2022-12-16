@@ -12,7 +12,19 @@
   align-items: center;
   text-align: center;
 
-  // .logo{
-  //   font-size: 6rem;
-  // }
+  .hero-content{
+
+    .logo{
+      margin-bottom: 5rem;
+      font-size: 7rem;
+    }
+
+    .register-paragraph{
+      margin-top: 3rem;
+    }
+
+    .register-link{
+      @include m.button(v.$principalColor, v.$white);
+    }
+  }
 }

@@ -51,8 +51,6 @@ class Router
 			'/admin/index'
 		];
 
-		$auth = $_SESSION['login'] ?? null;
-
 		$currentUrl = $_SERVER['PATH_INFO'] ?? '/';
 		$method = $_SERVER['REQUEST_METHOD'];
 
@@ -62,8 +60,10 @@ class Router
 			$fn = $this->postRoutes[$currentUrl] ?? null;
 		}
 
+		$auth = $_SESSION['login'] ?? null;
+
 		if(in_array($currentUrl, $protectedRoutes) && !$auth){
-			header('Location: /');
+			header('Location: /login');
 		}
 
 

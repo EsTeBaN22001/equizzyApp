@@ -60,15 +60,16 @@ class User extends ActiveRecord{
   }
 
   public function startSession(){
+    
     session_unset();
 
+    $_SESSION['login'] = true;
     $_SESSION['id'] = $this->id;
     $_SESSION['uniqId'] = $this->uniqId;
     $_SESSION['name'] = $this->name;
     $_SESSION['surname'] = $this->surname;
     $_SESSION['userName'] = $_SESSION['name'] . ' ' . $_SESSION['surname'];
     $_SESSION['email'] = $this->email;
-    $_SESSION['login'] = true;
     $_SESSION['admin'] = $this->admin;
 
   }
