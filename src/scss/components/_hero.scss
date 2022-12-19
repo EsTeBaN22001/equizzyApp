@@ -15,16 +15,35 @@
   .hero-content{
 
     .logo{
-      margin-bottom: 5rem;
+      margin-bottom: 2rem;
       font-size: 7rem;
-    }
-
-    .register-paragraph{
-      margin-top: 3rem;
     }
 
     .register-link{
       @include m.button(v.$principalColor, v.$white);
+      margin-top: 2rem;
+      background: linear-gradient(
+        45deg, 
+        #00C9AC, #00A5AE, #0098FA,
+        #00C9AC, #00A5AE, #0098FA,
+      );
+      background-size: 800%;
+      border-radius: 1rem;
+      animation: glowing 20s linear infinite;
+
+      @keyframes glowing{
+        0%{
+          background-position: 0 0;
+        }
+
+        50%{
+          background-position: 400% 0;
+        }
+
+        100%{
+          background-position: 0 0;
+        }
+      }
     }
   }
 }

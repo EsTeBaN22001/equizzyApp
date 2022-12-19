@@ -487,11 +487,8 @@ p {
   text-align: center;
 }
 .hero .hero-content .logo {
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   font-size: 7rem;
-}
-.hero .hero-content .register-paragraph {
-  margin-top: 3rem;
 }
 .hero .hero-content .register-link {
   background-color: #00c9ac;
@@ -507,6 +504,12 @@ p {
   transition-property: background-color;
   transition-duration: 0.15s;
   text-align: center;
+  margin-top: 2rem;
+  background: linear-gradient(45deg, #00C9AC, #00A5AE, #0098FA, #00C9AC, #00A5AE, #0098FA);
+  background-size: 800%;
+  border-radius: 1rem;
+  -webkit-animation: glowing 20s linear infinite;
+          animation: glowing 20s linear infinite;
 }
 @media (max-width: 768px) {
   .hero .hero-content .register-link {
@@ -516,6 +519,28 @@ p {
 .hero .hero-content .register-link:hover {
   background-color: #009680;
   cursor: pointer;
+}
+@-webkit-keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .navbar-container {
