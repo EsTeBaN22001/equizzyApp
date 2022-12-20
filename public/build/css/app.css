@@ -505,7 +505,7 @@ p {
   transition-duration: 0.15s;
   text-align: center;
   margin-top: 2rem;
-  background: linear-gradient(45deg, #00C9AC, #00A5AE, #0098FA, #00C9AC, #00A5AE, #0098FA);
+  background: linear-gradient(45deg, #00C9AC, #00A5AE, #0098FA, #0098FA, #00A5AE, #00C9AC);
   background-size: 800%;
   border-radius: 1rem;
   -webkit-animation: glowing 20s linear infinite;
@@ -628,6 +628,21 @@ p {
          column-gap: 0;
   }
 }
+.form .warning-input {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+.form .warning-input a {
+  color: #00c9ac;
+}
+.form .warning-input span {
+  color: #ff3333;
+  font-size: 2.5rem;
+}
 .form .field-group {
   margin: 2rem 0;
   position: relative;
@@ -644,7 +659,10 @@ p {
 .form .field-group .char-counter.error {
   background-color: #FF0000;
 }
-.form .field-group label, .form .field-group input, .form .field-group textarea, .form .field-group select {
+.form .field-group label,
+.form .field-group input,
+.form .field-group textarea,
+.form .field-group select {
   display: block;
   width: 100%;
   color: #e6e6e6;
@@ -653,16 +671,23 @@ p {
   background-color: transparent;
   transition: all 0.3s ease;
 }
-.form .field-group label:focus, .form .field-group input:focus, .form .field-group textarea:focus, .form .field-group select:focus {
+.form .field-group label:focus,
+.form .field-group input:focus,
+.form .field-group textarea:focus,
+.form .field-group select:focus {
   outline: none;
   color: #FFFFFF;
   border: 0.2rem solid #00c9ac;
 }
-.form .field-group input, .form .field-group textarea, .form .field-group select {
+.form .field-group input,
+.form .field-group textarea,
+.form .field-group select {
   border: 0.2rem solid #434343;
   padding: 1rem;
 }
-.form .field-group input:focus, .form .field-group textarea:focus, .form .field-group select:focus {
+.form .field-group input:focus,
+.form .field-group textarea:focus,
+.form .field-group select:focus {
   border: 0.2rem solid #00c9ac;
 }
 .form .field-group input {

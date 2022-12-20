@@ -6,7 +6,13 @@
     <form method="POST" class="form" enctype="multipart/form-data">
       <div class="field-group">
         <label for="name">Nombre de la categoría:</label>
-        <input autofocus type="text" name="name" id="name" placeholder="Ingrese el nombre de la categoría">
+        <input 
+        autofocus 
+        type="text" 
+        name="name"
+        title="Nombre de la categoría"
+        id="name" 
+        placeholder="Ingrese el nombre de la categoría">
       </div>
       <div class="field-group">
         <input class="button-submit" type="submit" value="CREAR CATEGORÍA">

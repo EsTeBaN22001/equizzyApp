@@ -1,28 +1,46 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.form{
+.form {
   padding: 2rem;
   border-radius: 2rem;
   margin: 2rem auto;
   max-width: 50rem;
 
-  .field-group-container{
+  .field-group-container {
     display: flex;
     justify-content: space-between;
     column-gap: 1rem;
 
-    @include m.phone{
+    @include m.phone {
       flex-direction: column;
       column-gap: 0;
     }
   }
 
-  .field-group{
+  .warning-input {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding-top: 0;
+    padding-bottom: 1rem;
+
+    a {
+      color: v.$principalColor;
+    }
+
+    span {
+      color: lighten(v.$red, 10);
+      font-size: 2.5rem;
+    }
+  }
+
+  .field-group {
     margin: 2rem 0;
     position: relative;
 
-    .char-counter{
+    .char-counter {
       background-color: v.$darkGray;
       border-radius: .5rem;
       padding: 1rem;
@@ -31,12 +49,15 @@
       right: 0;
       top: 0;
 
-      &.error{
+      &.error {
         background-color: v.$red;
       }
     }
 
-    label, input, textarea, select{
+    label,
+    input,
+    textarea,
+    select {
       display: block;
       width: 100%;
       color: v.$textColor;
@@ -45,46 +66,48 @@
       background-color: transparent;
       transition: all .3s ease;
 
-      &:focus{
+      &:focus {
         outline: none;
         color: v.$white;
         border: .2rem solid v.$principalColor;
       }
     }
 
-    input, textarea, select{
+    input,
+    textarea,
+    select {
       border: .2rem solid v.$darkGray;
       padding: 1rem;
 
-      &:focus{
+      &:focus {
         border: .2rem solid v.$principalColor;
       }
     }
 
-    input{
+    input {
       color: v.$textColor;
     }
 
-    select{
+    select {
       color: v.$white;
       padding: 1rem;
 
-      option{
+      option {
         background-color: v.$darkGray;
         color: v.$white;
       }
     }
 
-    textarea{
+    textarea {
       resize: none;
       height: 15rem;
     }
 
-    .button-submit{
+    .button-submit {
       border: .2rem solid v.$darkGray;
       color: v.$white;
 
-      &:hover{
+      &:hover {
         border: .2rem solid v.$principalColor;
         color: v.$principalColor;
       }

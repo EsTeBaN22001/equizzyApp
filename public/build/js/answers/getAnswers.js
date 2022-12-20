@@ -49,8 +49,8 @@ result.then((answers)=>{
           label: 'N° de votos',
           data: Object.values(options),
           borderWidth: 2,
-          borderColor: '#0084D1',
-          backgroundColor: '#0084D160'
+          // borderColor: '#0084D1',
+          backgroundColor: '#00c9ac'
         }]
       },
       options: {
