@@ -3,7 +3,7 @@
   <?php include_once(__DIR__ . './templates/alerts.php') ?>
   <div class="login-form-container">
     <form method="POST" action="" class="form">
-      <label for="name" class="warning-input"><span>*</span>Todos los campos son obligatorios</label>
+      <label for="name" class="warning-input"><span>*</span><p>Todos los campos son obligatorios</p></label>
       <div class="field-group-container">
         <div class="field-group">
           <label for="name">Nombre:</label>

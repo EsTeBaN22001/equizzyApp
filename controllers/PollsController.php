@@ -11,6 +11,7 @@ use Model\User;
 
 class PollsController{
 
+  // Vista que lista mis encuestas
   public static function listMyPolls(Router $router){
 
     $userPolls = Poll::belongsTo('userId', $_SESSION['id']);
@@ -21,6 +22,7 @@ class PollsController{
     ]);
   }
 
+  // Vista principal en donde se muestran todas las encuestas de todos los usuarios
   public static function list(Router $router){
     
     $router->renderPolls('polls/list', [
@@ -28,6 +30,7 @@ class PollsController{
     ]);
   }
 
+  // Vista para crear una nueva encuesta
   public static function create(Router $router){
     
     $poll = new Poll();
@@ -99,6 +102,7 @@ class PollsController{
 
   }
 
+  // Vista en la que el creador de la encuesta puede ver y editar las preguntas y opciones de la encuesta
   public static function edit(Router $router){
 
     $pollId = isset($_GET['poll']) ? $_GET['poll'] : '';
@@ -118,6 +122,85 @@ class PollsController{
     ]);
   }
 
+  // Edita la información general de la encuesta
+  public static function editInfo(Router $router){
+
+    // Verifica si existe la encuesta pasada por parámetro
+    $pollId = isset($_GET['poll']) ? $_GET['poll'] : '';
+
+    $poll = Poll::where('uniqId', $pollId);
+
+    if(!$poll || $_SESSION['id'] != $poll->userId ){
+      header('Location: /my-polls');
+    }
+
+    // Guardar los cambios de la encuesta
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+      $poll->syncUp($_POST);
+      
+      $alerts = $poll->validateEditInfoPoll();
+
+      if(empty($alerts)){
+
+        $categoryExists = CategoryPolls::belongsTo('id', $poll->categoryId);
+        
+        if(!$categoryExists){
+          $alerts = Poll::setAlert('error', 'La categoría no existe');
+        }else{
+
+          if($_FILES['img']['tmp_name'] !== ""){
+
+            $nameImage = md5(uniqid(rand(), true)). ".webp";
+
+            $img = Image::make($_FILES['img']['tmp_name'])->resize(1024, 768)->encode('webp', 70);
+            $poll->setImage($nameImage, $_ENV['POLLS_IMAGES_FOLDER']);
+  
+            $pollsImagesFolder = $_SERVER['DOCUMENT_ROOT'] . $_ENV['POLLS_IMAGES_FOLDER'];
+  
+            if(!is_dir($pollsImagesFolder)){
+              mkdir($pollsImagesFolder);
+            }
+
+            $img->save($pollsImagesFolder . $nameImage);
+  
+          }
+  
+          $userExists = User::belongsTo('id', $_SESSION['id']);
+
+          if($userExists){
+
+            $result = $poll->save();
+
+            if($result){
+              header('Location: /polls/edit?poll=' . $poll->uniqId);
+            }else{
+              $alerts = Poll::setAlert('error', 'Hubo algún problema al guarar la información');
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    // Obtener todas las categorías
+    $categories = CategoryPolls::all();
+
+    $alerts = Poll::getAlerts();
+    
+    $router->renderPolls('polls/editInfo', [
+      'title' => 'Editar información',
+      'poll' => $poll,
+      'alerts' => $alerts,
+      'categories' => $categories
+    ]);
+    
+  }
+
+  // Función para eliminar una encuesta
   public static function delete(){
 
     if(isset($_GET['poll'])){
@@ -141,7 +224,7 @@ class PollsController{
   }
 
   // Funciones helpers para algunas funcionalidades de la aplicación
-
+  
   // Obtiene el estado de la encuesta
   public static function getPublicState(){
 

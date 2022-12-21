@@ -227,11 +227,13 @@ class ActiveRecord
 	// Eliminar imagen
 	public function deleteImage($dir)
 	{
+		// Ruta del archivo de la imagen
+		$fileRoute= $_SERVER['DOCUMENT_ROOT'] . $dir . $this->img;
 		// Comprobar si existe el archivo
-		$fileExist = file_exists($dir . $this->img);
+		$fileExist = file_exists($fileRoute);
 
 		if ($fileExist) {
-			unlink($dir . $this->img);
+			unlink($fileRoute);
 		}
 		$fileExist = null;
 	}

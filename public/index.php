@@ -42,6 +42,8 @@ $router->get('/polls/list', [PollsController::class, 'list']);
 $router->get('/polls/create', [PollsController::class, 'create']);
 $router->post('/polls/create', [PollsController::class, 'create']);
 $router->get('/polls/edit', [PollsController::class, 'edit']);
+$router->get('/polls/edit-info', [PollsController::class, 'editInfo']);
+$router->post('/polls/edit-info', [PollsController::class, 'editInfo']);
 $router->get('/polls/delete', [PollsController::class, 'delete']);
 
 // Vistas para responder una encuesta

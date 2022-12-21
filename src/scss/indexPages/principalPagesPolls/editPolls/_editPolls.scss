@@ -14,27 +14,32 @@
       font-size: 4.5rem;
     }
 
-    .visibility-poll-button-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .edit-info-button{
+      @include m.button(v.$principalColor, v.$white);
+    }
+  }
 
-      .visibility-poll-button {
-        @include m.button(transparent, v.$white);
-        margin: 0;
-        padding: 1rem;
-        font-weight: inherit;
-        font-size: 2.2rem;
+  .actions-container{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 
-        &.public {
-          background-color: v.$blue;
-        }
+    .visibility-poll-button {
+      @include m.button(transparent, v.$white);
+      margin: 0;
+      padding: 1rem;
+      font-weight: inherit;
+      font-size: 2.2rem;
 
-        &.private {
-          background-color: v.$red;
-        }
+      &.public {
+        background-color: v.$blue;
+      }
+
+      &.private {
+        background-color: v.$red;
       }
     }
+    
   }
 
   .answers-link {

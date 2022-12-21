@@ -33,6 +33,7 @@ class Router
 			'/polls/list',
 			'/polls/create',
 			'/polls/edit',
+			'/polls/edit-info',
 			'/polls/delete',
 			'/polls/respond',
 			'/polls/answers',

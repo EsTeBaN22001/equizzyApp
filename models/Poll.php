@@ -45,6 +45,28 @@ class Poll extends ActiveRecord{
 
   }
 
+  public function validateEditInfoPoll(){
+
+    if(!$this->title){
+      self::$alerts['error'][] = 'El título es obligatorio';
+    }
+
+    if(!$this->description){
+      self::$alerts['error'][] = 'La descripción es obligatoria';
+    }
+
+    if(strlen($this->description) > 500 || strlen($this->description < 1)){
+      self::$alerts['error'][] = 'La descripción debe tener entre 1 y 500 carácteres';
+    }
+
+    if(!$this->categoryId){
+      self::$alerts['error'][] = 'Debes seleccionar una categoría';
+    }
+
+    return self::$alerts;
+
+  }
+
 }
 
 ?>
