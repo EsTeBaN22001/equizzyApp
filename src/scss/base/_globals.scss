@@ -92,18 +92,6 @@ img {
   }
 }
 
-// Link para volver a la página anterior
-.previousUrlLink{
-	display: block;
-	color: v.$principalColor;
-	padding-bottom: 2rem;
-	font-size: 2.5rem;
-
-	svg{
-		margin-right: .5rem;
-	}
-}
-
 // Agregar estilos a la etiqueta <hr> como separador
 .separator{
 	margin: 2rem 0;

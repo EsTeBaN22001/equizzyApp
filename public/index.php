@@ -36,6 +36,9 @@ $router->get('/categories/list', [CategoryPollController::class, 'list']);
 $router->get('/categories/create', [CategoryPollController::class, 'create']);
 $router->post('/categories/create', [CategoryPollController::class, 'create']);
 
+// Ver encuestas por categorías
+$router->get('/polls-by-category', [CategoryPollController::class, 'pollsByCategory']);
+
 // CRUD de las encuestas del lado del usuario
 $router->get('/my-polls', [PollsController::class, 'listMyPolls']);
 $router->get('/polls/list', [PollsController::class, 'list']);

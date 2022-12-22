@@ -413,16 +413,6 @@ img {
   margin: 3rem 0;
 }
 
-.previousUrlLink {
-  display: block;
-  color: #00c9ac;
-  padding-bottom: 2rem;
-  font-size: 2.5rem;
-}
-.previousUrlLink svg {
-  margin-right: 0.5rem;
-}
-
 .separator {
   margin: 2rem 0;
 }
@@ -1837,23 +1827,75 @@ p {
     grid-template-columns: 1fr;
   }
 }
-.categories-section .categories-container .about-poll-container {
+.categories-section .categories-container .category {
   position: relative;
   height: 100%;
 }
-.categories-section .categories-container .about-poll-container .about-poll {
+.categories-section .categories-container .category .about-category {
   background-color: #000000;
   width: 100%;
-  padding: 2rem;
   border-radius: 0.5rem;
   transition: background-color 0.2s ease;
 }
-.categories-section .categories-container .about-poll-container .about-poll:hover {
+.categories-section .categories-container .category .about-category:hover {
   background-color: #00c9ac;
 }
-.categories-section .categories-container .about-poll-container .about-poll h3 {
+.categories-section .categories-container .category .about-category a {
+  display: inline-block;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+}
+.categories-section .categories-container .category .about-category a h3 {
   text-align: start;
   font-size: 3rem;
+}
+
+.polls-by-category-container h1 span {
+  color: #00c9ac;
+  text-transform: uppercase;
+}
+.polls-by-category-container .polls-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 480px) {
+  .polls-by-category-container .polls-container {
+    grid-template-columns: 1fr;
+  }
+}
+.polls-by-category-container .polls-container .poll {
+  position: relative;
+  max-height: 30rem;
+}
+.polls-by-category-container .polls-container .poll .poll-link .img-container {
+  height: 100%;
+}
+.polls-by-category-container .polls-container .poll .poll-link .img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.polls-by-category-container .polls-container .poll .poll-link .about-poll {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.polls-by-category-container .polls-container .poll .poll-link .about-poll h3 {
+  text-align: start;
+  font-size: 3rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .admin-cards-container {

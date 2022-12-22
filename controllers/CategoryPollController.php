@@ -2,8 +2,9 @@
 
 namespace Controllers;
 
-use Model\CategoryPolls;
+use Model\Poll;
 use MVC\Router;
+use Model\CategoryPolls;
 
 class CategoryPollController{
 
@@ -54,6 +55,30 @@ class CategoryPollController{
       'alerts' => $alerts
     ]);
     
+  }
+
+  // Función para mostrar las encuestas por categorías
+  public static function pollsByCategory(Router $router){
+
+    // Verifica si existe la encuesta pasada por parámetro
+    $categoryId = isset($_GET['category']) ? $_GET['category'] : '';
+
+    $category = CategoryPolls::where('id', $categoryId);
+
+    if(!$category){
+      header('Location: /categories/list');
+    }
+
+    // Consulta a la base de datos para obtener todas las encuestas por id de la categoría y que sean públicas
+    $query = 'SELECT * FROM polls where categoryId = ' . $categoryId . ' AND public = 1';
+    $polls = Poll::consultSQL($query);
+    
+    $router->renderPolls('categoryPolls/pollsByCategory', [
+      'title' => $category->name,
+      'categoryName' => $category->name,
+      'polls' => $polls
+    ]);
+
   }
 
 }
