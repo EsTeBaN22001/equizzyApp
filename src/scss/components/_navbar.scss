@@ -31,13 +31,15 @@
       width: 100%;
     }
 
-    a{
+    .nav-link{
       text-align: center;
       padding: 1rem 2rem .7rem 2rem;
       color: v.$white;
       font-size: 2rem;
       border-bottom: .3rem solid transparent;
-      transition: color, border .3s ease;
+      transition-property: color;
+      transition-property: border;
+      transition: .2s ease;
 
       @include m.phone{
         flex: 1;
@@ -47,6 +49,20 @@
       &:hover{
         color: v.$principalColor;
         border-bottom: .3rem solid v.$white;
+      }
+
+      &.logout-button{
+        background-color: v.$red;
+        border-radius: 1rem;
+        border: none;
+        border-bottom: .3rem solid transparent;
+        color: v.$white;
+        transition: background-color .2s ease;
+
+        &:hover{
+          background-color: darken(v.$red, 10);
+          cursor: pointer;
+        }
       }
     }
   }

@@ -27,8 +27,13 @@
 				<a href="<?= $_ENV['HOST'] ?>/" class="logo">equizzy<span>App</span></a>
 			</div>
 			<nav class="nav">
-				<a href="<?= $_ENV['HOST'] ?>/register">Regístrate</a>
-				<a href="<?= $_ENV['HOST'] ?>/login">Iniciar sesión</a>
+				<?php if (isset($_SESSION['login']) && $_SESSION['login']): ?>
+					<a class="nav-link" href="<?=$_ENV['HOST']?>/polls/list">Ver encuestas</a>
+					<a class="nav-link logout-button" href="<?=$_ENV['HOST']?>/logout">Cerrar sesión</a>
+				<?php else: ?>
+					<a class="nav-link" href="<?=$_ENV['HOST']?>/register">Regístrate</a>
+					<a class="nav-link" href="<?=$_ENV['HOST']?>/login">Iniciar sesión</a>
+				<?php endif?>
 			</nav>
 		</div>
 	</section>
