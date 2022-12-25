@@ -74,6 +74,7 @@ $router->post('/options/edit', [OptionController::class, 'edit']);
 $router->post('/options/delete', [OptionController::class, 'delete']);
 
 // End-Point para agregar una nueva calificación a una encuesta
+$router->get('/polls/rate', [PollsController::class, 'addRatePoll']);
 $router->post('/polls/rate', [PollsController::class, 'addRatePoll']);
 
 // Secciones de administrador

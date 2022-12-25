@@ -272,8 +272,9 @@ class PollsController{
 
   }
 
+  // Guarda un registro en la base de datos sobre la calificación que le dió el usuario a la encuesta
   public static function addRatePoll(){
-
+    
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
       if(isset($_POST['rate']) && isset($_POST['pollUniqId'])){
@@ -282,10 +283,15 @@ class PollsController{
 
         if($poll){
 
-          $rate = new RatePolls();
+          $rate = RatePolls::where('userId', $_SESSION['id']);
+
+          if(!$rate){
+            $rate = new RatePolls();
+          }
 
           $rate->rate = $_POST['rate'];
           $rate->pollId = $poll->id;
+          $rate->userId = $_SESSION['id'];
 
           $result = $rate->save();
 
