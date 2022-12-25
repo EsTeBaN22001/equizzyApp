@@ -3,11 +3,12 @@
 namespace Controllers;
 
 use Model\Poll;
+use Model\User;
 use MVC\Router;
+use Model\Question;
+use Model\RatePolls;
 use Model\CategoryPolls;
 use Intervention\Image\ImageManagerStatic as Image;
-use Model\Question;
-use Model\User;
 
 class PollsController{
 
@@ -267,6 +268,43 @@ class PollsController{
 
       }
       
+    }
+
+  }
+
+  public static function addRatePoll(){
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+      if(isset($_POST['rate']) && isset($_POST['pollUniqId'])){
+
+        $poll = Poll::where('uniqId', $_POST['pollUniqId']);
+
+        if($poll){
+
+          $rate = new RatePolls();
+
+          $rate->rate = $_POST['rate'];
+          $rate->pollId = $poll->id;
+
+          $result = $rate->save();
+
+          if($result){
+            $response = ['result' => true];
+          }else{
+            $response = ['result' =>false];
+          }
+
+        }else{
+          $response = ['result' =>false];
+        }
+
+      }else{
+        $response = ['result' =>false];
+      }
+      
+      echo json_encode($response);
+
     }
 
   }

@@ -1783,6 +1783,62 @@ p {
     width: 100% !important;
   }
 }
+.answers-section .rate-poll-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.137);
+  padding: 3rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 0.5rem;
+}
+.answers-section .rate-poll-container .rated-message {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.answers-section .rate-poll-container .rate-info {
+  text-align: center;
+}
+.answers-section .rate-poll-container .rate-info p {
+  margin-top: 0.5rem;
+}
+.answers-section .rate-poll-container .stars-widget {
+  font-size: 4rem;
+}
+.answers-section .rate-poll-container .stars-widget .rated {
+  color: #e5ff00;
+}
+.answers-section .rate-poll-container .rate-button {
+  background-color: #00c9ac;
+  padding: 1.5rem 4rem;
+  color: #FFFFFF;
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 400;
+  display: inline-block;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem;
+  transition-property: background-color;
+  transition-duration: 0.15s;
+  text-align: center;
+  margin-top: 0;
+}
+@media (max-width: 768px) {
+  .answers-section .rate-poll-container .rate-button {
+    width: auto;
+  }
+}
+.answers-section .rate-poll-container .rate-button:hover {
+  background-color: #009680;
+  cursor: pointer;
+}
 
 .categories-section {
   position: relative;

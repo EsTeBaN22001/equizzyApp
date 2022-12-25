@@ -18,17 +18,21 @@
 <body>
 
   <section class="navbar-container">
-    <div class="navbar container">
-      <div class="logo">
-        <a href="<?= $_ENV['HOST'] ?>/" class="logo">equizzy<span>App</span></a>
-      </div>
-      <nav class="nav">
-        <a href="<?= $_ENV['HOST'] ?>/">Inicio</a>
-        <a href="<?= $_ENV['HOST'] ?>/register">Regístrate</a>
-        <a href="<?= $_ENV['HOST'] ?>/login">Iniciar sesión</a>
-      </nav>
-    </div>
-  </section>
+		<div class="navbar container">
+			<div class="logo">
+				<a href="<?= $_ENV['HOST'] ?>/" class="logo">equizzy<span>App</span></a>
+			</div>
+			<nav class="nav">
+				<?php if (isset($_SESSION['login']) && $_SESSION['login']): ?>
+					<a class="nav-link" href="<?=$_ENV['HOST']?>/polls/list">Ver encuestas</a>
+					<a class="nav-link logout-button" href="<?=$_ENV['HOST']?>/logout">Cerrar sesión</a>
+				<?php else: ?>
+					<a class="nav-link" href="<?=$_ENV['HOST']?>/register">Regístrate</a>
+					<a class="nav-link" href="<?=$_ENV['HOST']?>/login">Iniciar sesión</a>
+				<?php endif?>
+			</nav>
+		</div>
+	</section>
 
   <main class="page-container">
     <div class="principalContent">

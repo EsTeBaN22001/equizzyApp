@@ -21,4 +21,43 @@
       }
     }
   }
+
+  .rate-poll-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.137);
+    padding: 3rem;
+    width: fit-content;
+    border-radius: .5rem;
+
+    .rated-message{
+      font-size: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    
+    .rate-info{
+      text-align: center;
+      p{
+        margin-top: .5rem;
+      }
+    }
+
+    .stars-widget{
+      font-size: 4rem;
+
+      .rated{
+        color: v.$yellow;
+      }
+    }
+
+    .rate-button{
+      @include m.button(v.$principalColor, v.$white);
+      margin-top: 0;
+    }
+  }
 }
