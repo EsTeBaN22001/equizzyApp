@@ -24,7 +24,7 @@ optionsLists.forEach(optionsList => {
             return "Este campo no puede estar vacío"
           }
         }
-      }).then((res) => {
+      }).then( async res => {
 
         if (res.isConfirmed) {
 
@@ -32,17 +32,13 @@ optionsLists.forEach(optionsList => {
           data.append('name', res.value)
           data.append('idOption', idOption)
 
-          const result = callFetch(`${domain}/options/edit`, 'POST', data)
+          const result = await callFetch(`${domain}/options/edit`, 'POST', data)
 
-          result.then((response) => {
+          if (result.response) {
 
-            if (response.response) {
+            option.firstElementChild.textContent = result.option.name
 
-              option.firstElementChild.textContent = response.option.name
-
-            }
-
-          })
+          }
 
         }
 

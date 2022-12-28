@@ -32,9 +32,7 @@ questions.forEach(question => {
           addOptionDOM(question, option.name, option.id)
         })
 
-
       }
-
 
     }
 

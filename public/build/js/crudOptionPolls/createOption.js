@@ -18,7 +18,7 @@ questionsContainer.addEventListener('click', function(e){
           return "Este campo no puede estar vacío"
         }
       }
-    }).then((res)=>{
+    }).then( async (res)=>{
       
       if(res.isConfirmed){
 
@@ -29,24 +29,20 @@ questionsContainer.addEventListener('click', function(e){
         data.append('name', res.value)
         data.append('questionId', questionId)
         
-        const result = callFetch(`${domain}/options/create`, 'POST', data)
+        const result = await callFetch(`${domain}/options/create`, 'POST', data)
 
-        result.then((response)=>{
+        if(result.response){
+          let questionElement = question
+          let optionName = result.option.name
+          let optionId = result.result.id
 
-          if(response.response){
-            let questionElement = question
-            let optionName = response.option.name
-            let optionId = response.result.id
+          addOptionDOM(questionElement, optionName, optionId)
 
-            addOptionDOM(questionElement, optionName, optionId)
-
-            if(document.querySelector('p.no-option-text')){
-              const noOption = document.querySelector('p.no-option-text')
-              noOption.remove()
-            }
+          if(document.querySelector('p.no-option-text')){
+            const noOption = document.querySelector('p.no-option-text')
+            noOption.remove()
           }
-
-        })
+        }
 
       }
 

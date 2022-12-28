@@ -18,28 +18,26 @@ getPublicState().then(state => {
 
 
 
-visibilityButton.addEventListener('click', function(){
+visibilityButton.addEventListener('click', async ()=>{
 
   const data = new FormData()
   data.append('pollId', urlPoll)
   data.append('state', pollState)
 
-  const result = callFetch(`${domain}/polls/set-public-state`, 'POST', data)
+  const result =  await callFetch(`${domain}/polls/set-public-state`, 'POST', data)
 
-  result.then(state => {
-    pollState = state
-    // Obtener el estado de la encuesta y asignarle el color al boton
-    if(state == 1){
-      visibilityButton.classList.remove('private')
-      visibilityButton.classList.add('public')
-      visibilityButton.textContent = 'Público'
-    }
-    if(state == 0){
-      visibilityButton.classList.remove('public')
-      visibilityButton.classList.add('private')
-      visibilityButton.textContent = 'Privado'
-    }
-    })
+  pollState = result
+  // Obtener el estado de la encuesta y asignarle el color al boton
+  if(result == 1){
+    visibilityButton.classList.remove('private')
+    visibilityButton.classList.add('public')
+    visibilityButton.textContent = 'Público'
+  }
+  if(result == 0){
+    visibilityButton.classList.remove('public')
+    visibilityButton.classList.add('private')
+    visibilityButton.textContent = 'Privado'
+  }
 
 })
 
@@ -53,10 +51,4 @@ async function getPublicState(){
     
   return state
 
-}
-
-async function setPublicState(actualState){
-
-
-  
 }

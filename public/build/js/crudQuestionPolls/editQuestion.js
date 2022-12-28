@@ -30,7 +30,7 @@ editButtons.forEach((button) => {
               return "Este campo no puede estar vacío"
             }
           }
-        }).then((res) => {
+        }).then( async res => {
           if (res.isConfirmed) {
 
             const newQuestionName = res.value
@@ -39,36 +39,34 @@ editButtons.forEach((button) => {
             data.append('id', idQuestion)
             data.append('name', newQuestionName)
 
-            const result = callFetch(`${domain}/questions/update`, 'POST', data)
+            const result = await callFetch(`${domain}/questions/update`, 'POST', data)
 
-            result.then((res) => {
-              if(res.response){
+            if(result.response){
 
-                Swal.fire(
-                  'Correcto!',
-                  'Se actualizó la pregunta correctamente!',
-                  'success'
-                ).then(()=>{
+              Swal.fire(
+                'Correcto!',
+                'Se actualizó la pregunta correctamente!',
+                'success'
+              ).then(()=>{
 
-                  const oldNameQuestion = document.querySelector(`h3[data-namequestion="${questionName}"]`)
-                  
-                  setTimeout(() => {
-                    oldNameQuestion.textContent = newQuestionName
-                    ocultActiveMenus()
-                  }, 200);
+                const oldNameQuestion = document.querySelector(`h3[data-namequestion="${questionName}"]`)
+                
+                setTimeout(() => {
+                  oldNameQuestion.textContent = newQuestionName
+                  ocultActiveMenus()
+                }, 200);
 
-                })
+              })
 
-              }else{
+            }else{
 
-                Swal.fire(
-                  'Incorrecto',
-                  'Algo salió mal!',
-                  'error'
-                )
+              Swal.fire(
+                'Incorrecto',
+                'Algo salió mal!',
+                'error'
+              )
 
-              }
-            })
+            }
 
           }
         })

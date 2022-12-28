@@ -18,24 +18,23 @@ deleteButtons.forEach(button => {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Borrar',
       cancelButtonText: 'Cancelar'
-    }).then((result) => {
+    }).then( async result => {
       if (result.isConfirmed) {
-        const result = callFetch('http://localhost:3000/questions/delete', 'POST', data)
 
-        result.then((res) => {
-          if (res.response) {
-            Swal.fire({
-              icon: 'success',
-              title: 'Correcto!',
-              text: 'La pregunta se eliminó correctamente!'
-            }).then(() => {
-              setTimeout(() => {
-                const question = document.querySelector(`div.question[data-idquestion="${idQuestion}"]`)
-                question.remove()
-              }, 200);
-            })
-          }
-        })
+        const result = await callFetch(`${domain}/questions/delete`, 'POST', data)
+
+        if (result.response) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Correcto!',
+            text: 'La pregunta se eliminó correctamente!'
+          }).then(() => {
+            setTimeout(() => {
+              const question = document.querySelector(`div.question[data-idquestion="${idQuestion}"]`)
+              question.remove()
+            }, 200);
+          })
+        }
       }
     })
 

@@ -8,7 +8,7 @@ optionsLists.forEach(optionsList => {
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Si',
-      }).then((result) => {
+      }).then( async result => {
 
         if (result.isConfirmed) {
 
@@ -18,17 +18,13 @@ optionsLists.forEach(optionsList => {
           const data = new FormData();
           data.append('idOption', idOption);
 
-          const result = callFetch(`${domain}/options/delete`, 'POST', data)
+          const result = await callFetch(`${domain}/options/delete`, 'POST', data)
 
-          result.then((response) => {
+          if (result.response) {
 
-            if (response.response) {
+            option.remove()
 
-              option.remove()
-
-            }
-
-          })
+          }
 
         }
 

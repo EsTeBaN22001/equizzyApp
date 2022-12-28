@@ -90,6 +90,5 @@ function addOptionDOM(question, optionName, optionId) {
 
   // Agregar la opción al container "options-list"
   optionsContainer.appendChild(optionContainer)
-  // optionsContainer.appendChild(separator)
 
 }
