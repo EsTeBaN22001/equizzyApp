@@ -46,7 +46,7 @@ function ocultActiveMenus(){
 function getParentElementByClass(element, objetiveClass){
   let actualElement = element
 
-  while(!actualElement.classList.contains(objetiveClass)){
+  while(actualElement && !actualElement.classList.contains(objetiveClass)){
     actualElement = actualElement.parentElement
   }
 

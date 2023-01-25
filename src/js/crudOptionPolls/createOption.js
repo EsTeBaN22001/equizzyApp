@@ -1,7 +1,5 @@
-const questionsContainer = document.querySelector('.questions-container')
+function createOption(e){
 
-questionsContainer.addEventListener('click', function(e){
-  
   if(e.target.classList.contains('add-option-button')){
 
     Swal.fire({
@@ -23,7 +21,7 @@ questionsContainer.addEventListener('click', function(e){
       if(res.isConfirmed){
 
         const question = getParentElementByClass(e.target, 'question')
-        const questionId = getParentElementByClass(e.target, 'question').dataset.idquestion
+        const questionId = question.dataset.idquestion
         
         const data = new FormData()
         data.append('name', res.value)
@@ -50,4 +48,4 @@ questionsContainer.addEventListener('click', function(e){
 
   }
 
-})
+}

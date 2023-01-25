@@ -34,6 +34,13 @@ questionsContainer.addEventListener('click', function(e){
     
   }
 
+  // EDITAR UNA PREGUNTA
+  const editQuestionButton = getParentElementByClass(e.target, 'edit-question')
+
+  if(editQuestionButton){
+    editQuestion(editQuestionButton)
+  }
+
   // ELIMINAR UNA PREGUNTA
   
   const deleteQuestionButton = getParentElementByClass(e.target, 'delete-question')
@@ -42,11 +49,24 @@ questionsContainer.addEventListener('click', function(e){
     deleteQuestion(deleteQuestionButton)
   }
 
-  // EDITAR UNA PREGUNTA
-  const editQuestionButton = getParentElementByClass(e.target, 'edit-question')
+  // CREAR OPCIÓN
+  const createOptionButton = getParentElementByClass(e.target, 'add-option-button')
 
-  if(editQuestionButton){
-    editQuestion(editQuestionButton)
+  if(createOptionButton){
+    createOption(e)
+  }
+  
+  // CÓDIGO PARA EDITAR Y ELIMINAR UNA OPCION
+  if (e.target.classList.contains('edit-button')) {
+
+    editOption(e)
+
+  } 
+  
+  if(e.target.classList.contains('delete-button')){
+
+    deleteOption(e)
+
   }
 
 })

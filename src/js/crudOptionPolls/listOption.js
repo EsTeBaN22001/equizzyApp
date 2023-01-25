@@ -1,3 +1,4 @@
+// LISTAR LAS OPCIONES
 const questions = document.querySelectorAll('.question')
 
 questions.forEach(question => {

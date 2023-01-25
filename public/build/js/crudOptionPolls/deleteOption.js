@@ -1,36 +1,28 @@
-optionsLists.forEach(optionsList => {
-  optionsList.addEventListener('click', function (e) {
+function deleteOption(e){
+  Swal.fire({
+    title: 'Estás seguro/a?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Si',
+  }).then( async result => {
 
-    if (e.target.classList.contains('delete-button')) {
+    if (result.isConfirmed) {
 
-      Swal.fire({
-        title: 'Estás seguro/a?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Si',
-      }).then( async result => {
+      const option = getParentElementByClass(e.target, 'option')
+      const idOption = option.dataset.id
 
-        if (result.isConfirmed) {
+      const data = new FormData();
+      data.append('idOption', idOption);
 
-          const option = getParentElementByClass(e.target, 'option')
-          const idOption = option.dataset.id
+      const result = await callFetch(`${domain}/options/delete`, 'POST', data)
 
-          const data = new FormData();
-          data.append('idOption', idOption);
+      if (result.response) {
 
-          const result = await callFetch(`${domain}/options/delete`, 'POST', data)
+        option.remove()
 
-          if (result.response) {
-
-            option.remove()
-
-          }
-
-        }
-
-      })
+      }
 
     }
 
   })
-})
+}

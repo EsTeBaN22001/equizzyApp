@@ -64,9 +64,10 @@
 $script = '
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5.0.12/dark.min.css">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="/build/js/polls/menuOptionsQuestions.js"></script>
+
   <script src="/build/js/polls/changePollVisibility.js"></script>
 
+  <script src="/build/js/crudQuestionPolls/questionManager.js"></script>
   <script src="/build/js/crudQuestionPolls/createQuestion.js"></script>
   <script src="/build/js/crudQuestionPolls/editQuestion.js"></script>
   <script src="/build/js/crudQuestionPolls/deleteQuestion.js"></script>

@@ -1,4 +1,7 @@
-// *******BOTONES PARA EL MENU DE OPCIONES*******
+// En este archivo se maneja toda la lógica para las preguntas y las opciones de una encuesta.
+// Incluye el funcionamiento de los botones y menu's
+// Incluye el manejo del eventDelegation para detectar a que se le está dando click y poder ejecutar las funciones para el crud de las opciones
+
 const questionsContainer = document.querySelector('.questions-container')
 
 questionsContainer.addEventListener('click', function(e){
@@ -18,8 +21,7 @@ questionsContainer.addEventListener('click', function(e){
 
   }
 
-  // *******BOTONES PARA MOSTRAR LAS OPCIONES*******
-
+  // BOTONES PARA MOSTRAR LAS OPCIONES
   const showMoreButton = getParentElementByClass(e.target, 'show-more-button')
 
   if(showMoreButton){
@@ -34,6 +36,13 @@ questionsContainer.addEventListener('click', function(e){
     
   }
 
+  // EDITAR UNA PREGUNTA
+  const editQuestionButton = getParentElementByClass(e.target, 'edit-question')
+
+  if(editQuestionButton){
+    editQuestion(editQuestionButton)
+  }
+
   // ELIMINAR UNA PREGUNTA
   
   const deleteQuestionButton = getParentElementByClass(e.target, 'delete-question')
@@ -42,11 +51,25 @@ questionsContainer.addEventListener('click', function(e){
     deleteQuestion(deleteQuestionButton)
   }
 
-  // EDITAR UNA PREGUNTA
-  const editQuestionButton = getParentElementByClass(e.target, 'edit-question')
+  // CREAR OPCIÓN
+  const createOptionButton = getParentElementByClass(e.target, 'add-option-button')
 
-  if(editQuestionButton){
-    editQuestion(editQuestionButton)
+  if(createOptionButton){
+    createOption(e)
+  }
+  
+  // EDITAR OPCIÓN
+  if (e.target.classList.contains('edit-button')) {
+
+    editOption(e)
+
+  }
+  
+  // ELIMINAR OPCIÓN
+  if(e.target.classList.contains('delete-button')){
+
+    deleteOption(e)
+
   }
 
 })

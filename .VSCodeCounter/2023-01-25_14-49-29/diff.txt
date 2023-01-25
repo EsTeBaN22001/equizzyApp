@@ -1,0 +1,72 @@
+Date : 2023-01-25 14:49:29
+Directory : c:\laragon\www\equizzy
+Total : 33 files,  -2484 codes, -205 comments, -405 blanks, all -3094 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| XML        |          5 |         -7 |          0 |          0 |         -7 |
+| PHP        |          1 |        -51 |        -16 |        -17 |        -84 |
+| JavaScript |         26 |       -648 |        -58 |       -283 |       -989 |
+| CSS        |          1 |     -1,778 |       -131 |       -105 |     -2,014 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                             | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                |         33 |     -2,484 |       -205 |       -405 |     -3,094 |
+| public                                                                           |         33 |     -2,484 |       -205 |       -405 |     -3,094 |
+| public (Files)                                                                   |          1 |        -51 |        -16 |        -17 |        -84 |
+| public\build                                                                     |         32 |     -2,433 |       -189 |       -388 |     -3,010 |
+| public\build\css                                                                 |          1 |     -1,778 |       -131 |       -105 |     -2,014 |
+| public\build\img                                                                 |          5 |         -7 |          0 |          0 |         -7 |
+| public\build\js                                                                  |         26 |       -648 |        -58 |       -283 |       -989 |
+| public\build\js (Files)                                                          |          6 |       -123 |        -11 |        -37 |       -171 |
+| public\build\js\answers                                                          |          4 |        -89 |         -9 |        -43 |       -141 |
+| public\build\js\crudOptionPolls                                                  |          4 |       -112 |         -2 |        -47 |       -161 |
+| public\build\js\crudOptionsQuestion                                              |          1 |          0 |          0 |         -1 |         -1 |
+| public\build\js\crudQuestionPolls                                                |          6 |       -234 |        -29 |       -109 |       -372 |
+| public\build\js\polls                                                            |          5 |        -90 |         -7 |        -46 |       -143 |
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                         | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\laragon\www\equizzy\public\build\css\app.css                                  | CSS        |     -1,778 |       -131 |       -105 |     -2,014 |
+| c:\laragon\www\equizzy\public\build\img\EquizzyAppIcon.svg                       | XML        |         -3 |          0 |          0 |         -3 |
+| c:\laragon\www\equizzy\public\build\img\createPoll.svg                           | XML        |         -1 |          0 |          0 |         -1 |
+| c:\laragon\www\equizzy\public\build\img\undraw_about.svg                         | XML        |         -1 |          0 |          0 |         -1 |
+| c:\laragon\www\equizzy\public\build\img\undraw_analitics.svg                     | XML        |         -1 |          0 |          0 |         -1 |
+| c:\laragon\www\equizzy\public\build\img\undraw_createPoll.svg                    | XML        |         -1 |          0 |          0 |         -1 |
+| c:\laragon\www\equizzy\public\build\js\answers\chart.js                          | JavaScript |         -1 |          0 |          0 |         -1 |
+| c:\laragon\www\equizzy\public\build\js\answers\getAnswers.js                     | JavaScript |        -49 |         -9 |        -17 |        -75 |
+| c:\laragon\www\equizzy\public\build\js\answers\rate-poll.js                      | JavaScript |          0 |          0 |         -1 |         -1 |
+| c:\laragon\www\equizzy\public\build\js\answers\ratePoll.js                       | JavaScript |        -39 |          0 |        -25 |        -64 |
+| c:\laragon\www\equizzy\public\build\js\app.js                                    | JavaScript |        -56 |        -10 |        -28 |        -94 |
+| c:\laragon\www\equizzy\public\build\js\crudOptionPolls\createOption.js           | JavaScript |        -38 |          0 |        -13 |        -51 |
+| c:\laragon\www\equizzy\public\build\js\crudOptionPolls\deleteOption.js           | JavaScript |        -19 |          0 |         -9 |        -28 |
+| c:\laragon\www\equizzy\public\build\js\crudOptionPolls\editOption.js             | JavaScript |        -31 |          0 |         -9 |        -40 |
+| c:\laragon\www\equizzy\public\build\js\crudOptionPolls\listOption.js             | JavaScript |        -24 |         -2 |        -16 |        -42 |
+| c:\laragon\www\equizzy\public\build\js\crudOptionsQuestion\createOption.js       | JavaScript |          0 |          0 |         -1 |         -1 |
+| c:\laragon\www\equizzy\public\build\js\crudQuestionPolls\createQuestion.js       | JavaScript |        -35 |         -2 |         -6 |        -43 |
+| c:\laragon\www\equizzy\public\build\js\crudQuestionPolls\deleteQuestion.js       | JavaScript |        -31 |          0 |         -4 |        -35 |
+| c:\laragon\www\equizzy\public\build\js\crudQuestionPolls\editQuestion.js         | JavaScript |        -54 |          0 |        -18 |        -72 |
+| c:\laragon\www\equizzy\public\build\js\crudQuestionPolls\menuOptionsQuestions.js | JavaScript |        -38 |         -7 |        -27 |        -72 |
+| c:\laragon\www\equizzy\public\build\js\crudQuestionPolls\questionEventManager.js | JavaScript |        -38 |        -10 |        -27 |        -75 |
+| c:\laragon\www\equizzy\public\build\js\crudQuestionPolls\questionManager.js      | JavaScript |        -38 |        -10 |        -27 |        -75 |
+| c:\laragon\www\equizzy\public\build\js\indexPollsCarrousel.js                    | JavaScript |        -21 |          0 |         -3 |        -24 |
+| c:\laragon\www\equizzy\public\build\js\menuOptionsMyPolls.js                     | JavaScript |         -1 |          0 |          0 |         -1 |
+| c:\laragon\www\equizzy\public\build\js\navbarHome.js                             | JavaScript |        -13 |         -1 |         -2 |        -16 |
+| c:\laragon\www\equizzy\public\build\js\navbarPollsResponsive.js                  | JavaScript |         -7 |          0 |         -3 |        -10 |
+| c:\laragon\www\equizzy\public\build\js\polls\changePollVisibility.js             | JavaScript |        -35 |         -2 |        -17 |        -54 |
+| c:\laragon\www\equizzy\public\build\js\polls\menuOptionsMyPolls.js               | JavaScript |        -11 |          0 |         -5 |        -16 |
+| c:\laragon\www\equizzy\public\build\js\polls\menuOptionsQuestions.js             | JavaScript |        -28 |         -5 |        -19 |        -52 |
+| c:\laragon\www\equizzy\public\build\js\polls\ocultActiveMenusListener.js         | JavaScript |         -1 |          0 |          0 |         -1 |
+| c:\laragon\www\equizzy\public\build\js\polls\textAreaCounter.js                  | JavaScript |        -15 |          0 |         -5 |        -20 |
+| c:\laragon\www\equizzy\public\build\js\principalPollsCarrousel.js                | JavaScript |        -25 |          0 |         -1 |        -26 |
+| c:\laragon\www\equizzy\public\index.php                                          | PHP        |        -51 |        -16 |        -17 |        -84 |
+| Total                                                                            |            |     -2,484 |       -205 |       -405 |     -3,094 |
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
