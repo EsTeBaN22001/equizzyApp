@@ -25,9 +25,13 @@ class Router
 
 		// Arreglo de rutas protegidas...
 		$protectedRoutes = [
+			//profile user
+			'/profile',
+			'/profile/change-password',
 			// categories
 			'/categories/list',
 			'/categories/create',
+			'/polls-by-category',
 			// polls
 			'/my-polls',
 			'/polls/list',
@@ -37,17 +41,7 @@ class Router
 			'/polls/delete',
 			'/polls/respond',
 			'/polls/answers',
-			'/polls/get-answers',
-			// questions
-			'/questions/create',
-			'/questions/update',
-			'/questions/delete',
-			'/questions/get',
-			// options
-			'/options/create',
-			'/options/list',
-			'/options/edit',
-			'/options/delete',
+			'/polls/rate',
 			// admin
 			'/admin/index'
 		];

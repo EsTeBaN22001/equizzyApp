@@ -20,12 +20,4 @@ class IndexController{
 
   }
 
-  public static function profile(Router $router){
-
-    $router->renderPolls('principalPages/profile', [
-      'title' => 'Perfíl',
-      'userName' => '' . $_SESSION['name'] . ' ' . $_SESSION['surname']
-    ]);
-  }
-
 }

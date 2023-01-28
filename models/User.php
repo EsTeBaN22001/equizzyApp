@@ -15,6 +15,7 @@ class User extends ActiveRecord{
     $this->surname = $args['surname'] ?? '';
     $this->email = $args['email'] ?? '';
     $this->password = $args['password'] ?? '';
+    $this->newPassword = $args['newPassword'] ?? '';
     $this->confirmPassword = $args['confirmPassword'] ?? '';
     $this->admin = $args['admin'] ?? 0;
   }
@@ -53,6 +54,24 @@ class User extends ActiveRecord{
 
     if(!$this->password){
       self::$alerts['error'][] = 'La contraseña es incorrecta';
+    }
+
+    return self::$alerts;
+
+  }
+
+  public function validateProfile(){
+
+    if(!$this->name){
+      self::$alerts['error'][] = 'El nombre es incorrecto';
+    }
+
+    if(!$this->surname){
+      self::$alerts['error'][] = 'El apellido es incorrecto';
+    }
+
+    if(!$this->email){
+      self::$alerts['error'][] = 'El correo es incorrecto';
     }
 
     return self::$alerts;

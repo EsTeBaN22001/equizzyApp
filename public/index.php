@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
-use Controllers\UserController;
+use Controllers\ProfileController;
 use Controllers\AdminController;
 use Controllers\IndexController;
 use Controllers\LoginController;
@@ -15,10 +15,8 @@ use Controllers\PublicPollsController;
 
 $router = new Router();
 
-// Páginas principales
+// Página principal
 $router->get('/', [IndexController::class, 'index']);
-$router->get('/profile', [IndexController::class, 'profile']);
-$router->get('/profile/change-password', [UserController::class, 'changePassword']);
 
 // Registro e inicio de sesión de usuarios
 $router->get('/login', [LoginController::class, 'login']);
@@ -30,6 +28,12 @@ $router->get('/logout', [LoginController::class, 'logout']);
   ///////////////////////////////////////////////////////////////////////////////
  ///////////////////////////////PÁGINAS PRIVADAS////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
+
+// Administración del perfil y datos del usuario
+$router->get('/profile', [ProfileController::class, 'profile']);
+$router->post('/profile', [ProfileController::class, 'profile']);
+$router->get('/profile/change-password', [ProfileController::class, 'changePassword']);
+$router->post('/profile/change-password', [ProfileController::class, 'changePassword']);
 
 // CRUD categorías
 $router->get('/categories/list', [CategoryPollController::class, 'list']);
