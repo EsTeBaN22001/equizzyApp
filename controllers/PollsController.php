@@ -58,7 +58,7 @@ class PollsController{
           $nameImage = md5(uniqid(rand(), true)). ".webp";
 
           // Setear la imagen
-          $img = Image::make($_FILES['img']['tmp_name'])->resize(1024, 768)->encode('webp', 70);
+          $img = Image::make($_FILES['img']['tmp_name'])->fit(1024, 768)->encode('webp', 50);
           $poll->setImage($nameImage, $_ENV['POLLS_IMAGES_FOLDER']);
 
           $pollsImagesFolder = $_SERVER['DOCUMENT_ROOT'] . $_ENV['POLLS_IMAGES_FOLDER'];
@@ -154,7 +154,7 @@ class PollsController{
 
             $nameImage = md5(uniqid(rand(), true)). ".webp";
 
-            $img = Image::make($_FILES['img']['tmp_name'])->resize(1024, 768)->encode('webp', 70);
+            $img = Image::make($_FILES['img']['tmp_name'])->fit(1024, 768)->encode('webp', 50);
             $poll->setImage($nameImage, $_ENV['POLLS_IMAGES_FOLDER']);
   
             $pollsImagesFolder = $_SERVER['DOCUMENT_ROOT'] . $_ENV['POLLS_IMAGES_FOLDER'];
@@ -272,41 +272,74 @@ class PollsController{
 
   }
 
-  // Guarda un registro en la base de datos sobre la calificación que le dió el usuario a la encuesta
-  public static function addRatePoll(){
-    
+  // Verificar si el usuario actual ya calificó la encuesta
+  public static function verifyRate(){
+
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-      if(isset($_POST['rate']) && isset($_POST['pollUniqId'])){
+      $response = ['isRated' => false];
+
+      if(isset($_POST['pollUniqId'])){
 
         $poll = Poll::where('uniqId', $_POST['pollUniqId']);
 
         if($poll){
 
-          $rate = RatePolls::where('userId', $_SESSION['id']);
+          $rate = RatePolls::where('pollId', $poll->id);
 
-          if(!$rate){
-            $rate = new RatePolls();
+          if($rate && $rate->userId == $_SESSION['id']){
+            $response = ['isRated' => true];
           }
 
-          $rate->rate = $_POST['rate'];
-          $rate->pollId = $poll->id;
-          $rate->userId = $_SESSION['id'];
+        }
 
+      }
+
+      echo json_encode($response);
+
+    }
+
+  }
+
+  // Guarda un registro en la base de datos sobre la calificación que le dió el usuario a la encuesta
+
+  public static function addRatePoll(){
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+      $response = ['result' => false];
+      
+      if(isset($_POST['rate']) && isset($_POST['pollUniqId'])){
+
+        // Busca si existe esa encuesta
+        $poll = Poll::where('uniqId', $_POST['pollUniqId']);
+
+        if($poll){
+          
+          $rate = RatePolls::where('pollId', $poll->id);
+
+          if($rate && $rate->userId == $_SESSION['id']){
+
+            $rate->rate = $_POST['rate'];
+
+          }else{
+
+            $rate = new RatePolls();
+            $rate->rate = $_POST['rate'];
+            $rate->pollId = $poll->id;
+            $rate->userId = $_SESSION['id'];
+
+          }
+
+          // Guardar la nueva calificación en la base de datos
           $result = $rate->save();
 
           if($result){
             $response = ['result' => true];
-          }else{
-            $response = ['result' =>false];
           }
-
-        }else{
-          $response = ['result' =>false];
+          
         }
 
-      }else{
-        $response = ['result' =>false];
       }
       
       echo json_encode($response);

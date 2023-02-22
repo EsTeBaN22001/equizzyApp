@@ -67,7 +67,7 @@
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           <?php foreach($polls as $poll): ?>
-            <li class="glide__slide">
+            <li class="glide__slide poll">
               <div class="slide__content about-poll-container">
                 <img src="/pollsImages/<?= $poll->img ?>">
                 <div class="about-poll">

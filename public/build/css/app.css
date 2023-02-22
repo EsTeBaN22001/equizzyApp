@@ -425,6 +425,11 @@ img {
   background-color: rgba(67, 67, 67, 0.5411764706) !important;
 }
 
+.poll {
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
 h1, h2, h3 {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -1001,6 +1006,7 @@ p {
   color: #00c9ac;
   padding: 2rem;
   border: 0.2rem solid #00c9ac;
+  border-radius: 2rem;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
 }
@@ -1039,9 +1045,19 @@ p {
 .polls-carrousel .header-container a:hover {
   color: #00fcd8;
 }
+.polls-carrousel .glide {
+  border-radius: 2rem;
+  overflow: hidden;
+}
 .polls-carrousel .glide .about-poll-container {
   position: relative;
   height: 100%;
+}
+.polls-carrousel .glide .about-poll-container img {
+  width: 100%;
+  max-height: 30rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .polls-carrousel .glide .about-poll-container .about-poll {
   background-color: rgba(0, 0, 0, 0.8);
@@ -1055,6 +1071,9 @@ p {
 .polls-carrousel .glide .about-poll-container .about-poll h3 {
   text-align: start;
   font-size: 3rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .sitePollsLayoutContainer {
@@ -1077,11 +1096,17 @@ p {
   justify-content: space-between;
   align-items: center;
 }
-.sitePollsLayoutContainer .sidebarContainer .sidebar-header h2 {
-  margin-bottom: 3rem;
+.sitePollsLayoutContainer .sidebarContainer .sidebar-header a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sitePollsLayoutContainer .sidebarContainer .sidebar-header a h2 {
+  margin-bottom: 5rem;
 }
 @media (max-width: 768px) {
-  .sitePollsLayoutContainer .sidebarContainer .sidebar-header h2 {
+  .sitePollsLayoutContainer .sidebarContainer .sidebar-header a h2 {
     margin: 3rem 0;
   }
 }
@@ -1340,6 +1365,7 @@ p {
   color: #00c9ac;
   text-align: start;
   font-size: 4.5rem;
+  max-width: 70%;
 }
 .edit-poll-container .poll-header .edit-info-button {
   background-color: #00c9ac;
@@ -1910,6 +1936,15 @@ p {
 .polls-by-category-container h1 span {
   color: #00c9ac;
   text-transform: uppercase;
+}
+.polls-by-category-container .no-poll-message {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #e0e0e0;
+  margin-top: 5rem;
+}
+.polls-by-category-container .no-poll-message a {
+  color: #00c9ac;
 }
 .polls-by-category-container .polls-container {
   display: grid;

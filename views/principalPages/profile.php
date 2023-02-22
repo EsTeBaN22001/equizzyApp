@@ -9,7 +9,7 @@
     </div>
   <?php endif ?>
 
-  <div class="login-form-container">
+  <div class="form-container login-form-container">
     <form method="POST" action="/profile" class="form">
       <h2>Cambiar los datos del perfíl</h2>
       <div class="field-group">

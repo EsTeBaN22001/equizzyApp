@@ -1,4 +1,4 @@
-<section class="section-sm container-sm edit-form-container">
+<section class="section-sm container-sm">
   <!-- <a href="<?= $_ENV['HOST'] ?>/my-polls" class="previousUrlLink"><i class="fa-solid fa-arrow-left"></i>Volver</a> -->
   <h1>Crear encuesta</h1>
   <?php include_once(__DIR__ . './../templates/alerts.php') ?>

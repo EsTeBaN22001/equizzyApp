@@ -77,7 +77,7 @@ class PublicPollsController{
     }
 
     $router->renderPolls('publicPolls/respond', [
-      'title' => 'Responder encuesta',
+      'title' => $poll->title . ' - Responder encuesta',
       'poll' => $poll,
       'questions' => $questionsAndOptions
     ]);

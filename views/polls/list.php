@@ -6,7 +6,7 @@
     <div class="glide glide1">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -15,7 +15,7 @@
               </div>
             </div>
           </li>
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -24,7 +24,7 @@
               </div>
             </div>
           </li>
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -58,7 +58,7 @@
     <div class="glide glide2">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -67,7 +67,7 @@
               </div>
             </div>
           </li>
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -76,7 +76,7 @@
               </div>
             </div>
           </li>
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -121,7 +121,7 @@
     <div class="glide glide3">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -130,7 +130,7 @@
               </div>
             </div>
           </li>
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -139,7 +139,7 @@
               </div>
             </div>
           </li>
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -173,7 +173,7 @@
     <div class="glide glide4">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -182,7 +182,7 @@
               </div>
             </div>
           </li>
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -191,7 +191,7 @@
               </div>
             </div>
           </li>
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -225,7 +225,7 @@
     <div class="glide glide5">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -234,7 +234,7 @@
               </div>
             </div>
           </li>
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">
@@ -243,7 +243,7 @@
               </div>
             </div>
           </li>
-          <li class="glide__slide">
+          <li class="glide__slide poll">
             <div class="slide__content about-poll-container">
               <img src="/build/img/hero.webp">
               <div class="about-poll">

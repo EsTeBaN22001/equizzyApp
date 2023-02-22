@@ -103,3 +103,9 @@ img {
 .swal2-container.swal2-backdrop-show{
 	background-color: #4343438a !important;
 }
+
+// Añadir un borde redondeado a todas las encuestas
+.poll{
+	border-radius: 2rem;
+	overflow: hidden;
+}

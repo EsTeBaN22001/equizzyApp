@@ -47,6 +47,7 @@
       </div>
       <div class="field-group">
         <label for="img">Seleccionar una imagen:</label>
+        <label for="categoryId" class="warning-input"><span>*</span><p>Resolución recomendada: 800x600 / 4:3</p></label>
         <input 
         type="file" 
         name="img" 

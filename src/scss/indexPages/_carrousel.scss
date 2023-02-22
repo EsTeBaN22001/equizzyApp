@@ -28,9 +28,18 @@
   }
 
   .glide{
+    border-radius: 2rem;
+    overflow: hidden;
+    
     .about-poll-container{
       position: relative;
       height: 100%;
+
+      img{
+        width: 100%;
+        max-height: 30rem;
+        object-fit: cover;
+      }
 
       .about-poll{
         background-color: rgba($color: v.$black, $alpha: 0.8);
@@ -44,6 +53,9 @@
         h3{
           text-align: start;
           font-size: 3rem;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
         }
       }
     }

@@ -18,9 +18,16 @@
       justify-content: space-between;
       align-items: center;
 
-      h2{
-        margin-bottom: 3rem;
-        @include m.tablet{margin: 3rem 0;}
+      a{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h2{
+          margin-bottom: 5rem;
+          @include m.tablet{margin: 3rem 0;}
+        }
       }
   
       .navbar-menu-button{
