@@ -3,15 +3,16 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
-use Controllers\ProfileController;
 use Controllers\AdminController;
 use Controllers\IndexController;
 use Controllers\LoginController;
 use Controllers\PollsController;
 use Controllers\OptionController;
+use Controllers\ProfileController;
 use Controllers\QuestionController;
-use Controllers\CategoryPollController;
 use Controllers\PublicPollsController;
+use Controllers\CategoryPollController;
+use Controllers\StateAndRateController;
 
 $router = new Router();
 
@@ -62,8 +63,8 @@ $router->get('/polls/answers', [PublicPollsController::class, 'answers']);
 $router->post('/polls/get-answers', [PublicPollsController::class, 'getAnswers']);
 
 // RUTAS para verificar si una encuesta es pública
-$router->post('/polls/get-public-state', [PollsController::class, 'getPublicState']);
-$router->post('/polls/set-public-state', [PollsController::class, 'setPublicState']);
+$router->post('/polls/get-public-state', [StateAndRateController::class, 'getPublicState']);
+$router->post('/polls/set-public-state', [StateAndRateController::class, 'setPublicState']);
 
 // CRUD de las PREGUNTAS de las encuestas
 $router->post('/questions/create', [QuestionController::class, 'create']);
@@ -78,8 +79,8 @@ $router->post('/options/edit', [OptionController::class, 'edit']);
 $router->post('/options/delete', [OptionController::class, 'delete']);
 
 // End-Point para agregar una nueva calificación a una encuesta
-$router->post('/polls/rate', [PollsController::class, 'addRatePoll']);
-$router->post('/polls/verify-rate', [PollsController::class, 'verifyRate']);
+$router->post('/polls/rate', [StateAndRateController::class, 'addRatePoll']);
+$router->post('/polls/verify-rate', [StateAndRateController::class, 'verifyRate']);
 
 // Secciones de administrador
 $router->get('/admin/index', [AdminController::class, 'index']);

@@ -69,7 +69,7 @@
           <?php foreach($polls as $poll): ?>
             <li class="glide__slide poll">
               <div class="slide__content about-poll-container">
-                <img src="/pollsImages/<?= $poll->img ?>">
+                <img alt="<?= $poll->title ?>" src="/pollsImages/<?= $poll->img ?>">
                 <div class="about-poll">
                   <h3><?= $poll->title ?></h3>
                 </div>
@@ -86,8 +86,6 @@
       <div class="glide__bullets" data-glide-el="controls[nav]">
         <button class="glide__bullet" data-glide-dir="=0"></button>
         <button class="glide__bullet" data-glide-dir="=1"></button>
-        <button class="glide__bullet" data-glide-dir="=2"></button>
-        <button class="glide__bullet" data-glide-dir="=3"></button>
       </div>
     </div>
   </div>

@@ -10,9 +10,6 @@ if(document.querySelector('.polls-carrousel')){
     animationDuration: 1000,
     hoverpause: true,
     breakpoints: {
-      768: {
-        perView: 2
-      },
       480: {
         perView: 1
       }
