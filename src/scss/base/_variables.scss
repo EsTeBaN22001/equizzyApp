@@ -1,5 +1,8 @@
+// Importar fuente
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 // Fuentes
-$principalFont: 'Abel', sans-serif;
+$principalFont: 'Roboto', sans-serif;
 
 // Tamaño de Media Queries
 $breakpointSmartWatch: 320px;
@@ -20,6 +23,7 @@ $textColor: #e6e6e6;
 $red:#FF0000;
 $green:#34b822;
 $blue: #37a6e6;
+$yellow: #e5ff00;
 
 // Escala de grises
 $black: #000000;

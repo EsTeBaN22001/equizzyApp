@@ -12,7 +12,62 @@
   align-items: center;
   text-align: center;
 
-  // .logo{
-  //   font-size: 6rem;
-  // }
+  .hero-content{
+
+    .logo{
+      margin-bottom: 2rem;
+      font-size: 7rem;
+    }
+
+    .register-link{
+      @include m.button(v.$principalColor, v.$white);
+      margin-top: 2rem;
+      background: linear-gradient(
+        45deg, 
+        #00C9AC, #00A5AE, #0098FA,
+        #0098FA, #00A5AE, #00C9AC,
+      );
+      background-size: 800%;
+      border-radius: 1rem;
+      animation: glowing 20s linear infinite;
+
+      @keyframes glowing{
+        0%{
+          background-position: 0 0;
+        }
+
+        50%{
+          background-position: 400% 0;
+        }
+
+        100%{
+          background-position: 0 0;
+        }
+      }
+
+      &:hover{
+        background: linear-gradient(
+          45deg, 
+          #00c9abdf, #00a5abdf, #0096fadb,
+          #0096fadb, #00a5abdf, #00c9abdf,
+        );
+        background-size: 800%;
+        animation: glowing2 20s linear infinite;
+
+        @keyframes glowing2{
+          0%{
+            background-position: 0 0;
+          }
+  
+          50%{
+            background-position: 400% 0;
+          }
+  
+          100%{
+            background-position: 0 0;
+          }
+        }
+      }
+    }
+  }
 }

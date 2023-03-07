@@ -14,17 +14,27 @@
 
     .sidebar-header{
       position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      h2{
-        margin-bottom: 3rem;
-        @include m.tablet{margin: 3rem 0;}
+      a{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h2{
+          margin-bottom: 5rem;
+          @include m.tablet{margin: 3rem 0;}
+        }
       }
   
       .navbar-menu-button{
         padding: 2rem;
-        position: absolute;
-        top: -1.5rem;
-        right: -1rem;
+        // position: absolute;
+        // top: -1.5rem;
+        // right: -1rem;
         font-size: 4rem;
         display: none;
         transition: color .2s ease;

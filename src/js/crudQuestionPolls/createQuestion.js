@@ -15,7 +15,7 @@ createQuestionButton.addEventListener('click', function () {
         return "Este campo no puede estar vacío"
       }
     }
-  }).then(response => {
+  }).then( async response => {
 
     if (response.isConfirmed) {
       const data = new FormData();
@@ -26,21 +26,17 @@ createQuestionButton.addEventListener('click', function () {
       let nameQuestion = response.value
 
       //Llamada a la función que realiza el fetch
-      const url = `${domain}/questions/create`
-      const result = callFetch(url, 'POST', data)
-      result.then((res) => {
-
-        if (res.response) {
-          Swal.fire({
-            icon: 'success',
-            title: 'Correcto!',
-            text: 'La pregunta se creó correctamente!'
-          }).then(()=>{
-            location.reload()
-          })
-        }
-
-      })
+      const result = await callFetch(`${domain}/questions/create`, 'POST', data)
+      
+      if (result.response) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Correcto!',
+          text: 'La pregunta se creó correctamente!'
+        }).then(()=>{
+          location.reload()
+        })
+      }
     }
 
   })

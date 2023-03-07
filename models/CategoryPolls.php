@@ -10,6 +10,7 @@ class CategoryPolls extends ActiveRecord{
   public function __construct($args = []){
     $this->id = $args['id'] ?? null;
     $this->name = $args['name'] ?? '';
+    $this->poll_count = null;
   }
 
   public function validateNewCategory(){

@@ -14,16 +14,16 @@
 
       <div class="poll" data-id="<?= $poll->uniqId ?>">
         <div class="img-container">
-          <img src="/pollsImages/<?= $poll->img ?>" alt="Imagen de la encuesta">
+          <img src="/pollsImages/<?= $poll->img ?>" alt="Imagen de la encuesta <?= $poll->title ?>">
         </div>
         <div class="about-poll">
           <h3><?= $poll->title ?></h3>
           <button class="menu-button"><i class="fa-solid fa-ellipsis-vertical"></i></button>
           <ul class="options-container">
-            <a href="#">
+            <a href="<?= $_ENV['HOST'] ?>/polls/answers?poll=<?= $poll->uniqId ?>">
               <li class="option">
                 <i class="fa-regular fa-eye"></i>
-                <p>Ver</p>
+                <p>Ver resultados</p>
               </li>
             </a>
             <a href="<?= $_ENV['HOST'] ?>/polls/edit?poll=<?= $poll->uniqId ?>">

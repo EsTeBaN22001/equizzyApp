@@ -1,0 +1,63 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.answers-section{
+  h2{
+    color: v.$principalColor;
+  }
+
+  .answers-container{
+    .answer-title{
+      font-size: 3rem;
+      margin-top: 3rem;
+    }
+    
+    canvas{
+      width: 70% !important;
+      margin: 0 auto;
+
+      @include m.tablet{
+        width: 100% !important;
+      }
+    }
+  }
+
+  .rate-poll-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.137);
+    padding: 3rem;
+    width: fit-content;
+    border-radius: .5rem;
+
+    .rated-message{
+      font-size: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    
+    .rate-info{
+      text-align: center;
+      p{
+        margin-top: .5rem;
+      }
+    }
+
+    .stars-widget{
+      font-size: 4rem;
+
+      .rated{
+        color: v.$yellow;
+      }
+    }
+
+    .rate-button{
+      @include m.button(v.$principalColor, v.$white);
+      margin-top: 0;
+    }
+  }
+}

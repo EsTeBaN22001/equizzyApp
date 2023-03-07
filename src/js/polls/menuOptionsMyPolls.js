@@ -1,13 +1,16 @@
-const allMenuButtons = document.querySelectorAll('.menu-button')
+const pollsContainer = document.querySelector('.polls-container')
 
-allMenuButtons.forEach(button => {
-  button.addEventListener('click', function(e){
-    const optionsContainer = button.nextElementSibling
-    if(optionsContainer.classList.contains('active')){
-      ocultActiveMenus()
-    }else{
-      ocultActiveMenus()
-      optionsContainer.classList.add('active')
-    }
-  })
+pollsContainer.addEventListener('click', function(e){
+
+  const optionsButton = getParentElementByClass(e.target, 'menu-button')
+
+  const optionsContainer = optionsButton.nextElementSibling
+
+  if(optionsContainer.classList.contains('active')){
+    ocultActiveMenus()
+  }else{
+    ocultActiveMenus()
+    optionsContainer.classList.add('active')
+  }
+
 })

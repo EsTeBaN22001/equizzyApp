@@ -49,6 +49,14 @@ body {
 		margin-top: 2.5rem;
 	}
 }
+.section-lg{
+	margin: 25rem auto;
+	margin-top: 10rem;
+
+	@include m.tablet{
+		margin-top: 5rem;
+	}
+}
 a {
 	text-decoration: none;
 }
@@ -84,27 +92,20 @@ img {
   }
 }
 
-// Link para volver a la página anterior
-.previousUrlLink{
-	display: block;
-	color: v.$principalColor;
-	padding-bottom: 2rem;
-	font-size: 2.5rem;
-
-	svg{
-		margin-right: .5rem;
-	}
-}
-
 // Agregar estilos a la etiqueta <hr> como separador
 .separator{
 	margin: 2rem 0;
 }
-
 // Cambiar los estilos de las alertas
 .swal2-popup {
   font-size: 1.6rem !important;
 }
 .swal2-container.swal2-backdrop-show{
 	background-color: #4343438a !important;
+}
+
+// Añadir un borde redondeado a todas las encuestas
+.poll{
+	border-radius: 2rem;
+	overflow: hidden;
 }

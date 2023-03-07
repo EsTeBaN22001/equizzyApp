@@ -136,7 +136,7 @@ class ActiveRecord
 	{
 		$query = "SELECT * FROM " . static::$table . " LIMIT ${limit}";
 		$result = self::consultSQL($query);
-		return array_shift($result);
+		return $result;
 	}
 
 	// Busqueda Where con Columna 
@@ -160,7 +160,7 @@ class ActiveRecord
 	{
 		// Sanitizar los datos
 		$attributes = $this->sanitizeAttributes();
-		
+
 
 		// Insertar en la base de datos
 		$query = " INSERT INTO " . static::$table . " ( ";
@@ -168,7 +168,7 @@ class ActiveRecord
 		$query .= " ) VALUES ('";
 		$query .= join("', '", array_values($attributes));
 		$query .= "') ";
-		
+
 		// Resultado de la consulta
 		$result = self::$db->query($query);
 		return [
@@ -227,12 +227,21 @@ class ActiveRecord
 	// Eliminar imagen
 	public function deleteImage($dir)
 	{
+		// Ruta del archivo de la imagen
+		$fileRoute= $_SERVER['DOCUMENT_ROOT'] . $dir . $this->img;
 		// Comprobar si existe el archivo
-		$fileExist = file_exists($dir . $this->img);
+		$fileExist = file_exists($fileRoute);
 
 		if ($fileExist) {
-			unlink($dir . $this->img);
+			unlink($fileRoute);
 		}
 		$fileExist = null;
+	}
+
+	public static function exists($column, $id)
+	{
+		$query = "SELECT * FROM " . static::$table  . " WHERE ${column} = '${id}'";
+		$result = self::consultSQL($query);
+		if(!$result) header('Location: /polls/list');
 	}
 }

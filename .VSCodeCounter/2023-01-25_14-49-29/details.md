@@ -1,0 +1,127 @@
+# Details
+
+Date : 2023-01-25 14:49:29
+
+Directory c:\\laragon\\www\\equizzy
+
+Total : 112 files,  20010 codes, 299 comments, 1226 blanks, all 21535 lines
+
+[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
+
+## Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [Router.php](/Router.php) | PHP | 93 | 13 | 19 | 125 |
+| [composer.json](/composer.json) | JSON | 22 | 0 | 1 | 23 |
+| [composer.lock](/composer.lock) | JSON | 765 | 0 | 1 | 766 |
+| [controllers/AdminController.php](/controllers/AdminController.php) | PHP | 12 | 0 | 9 | 21 |
+| [controllers/CategoryPollController.php](/controllers/CategoryPollController.php) | PHP | 56 | 3 | 27 | 86 |
+| [controllers/IndexController.php](/controllers/IndexController.php) | PHP | 20 | 1 | 10 | 31 |
+| [controllers/LoginController.php](/controllers/LoginController.php) | PHP | 71 | 4 | 49 | 124 |
+| [controllers/OptionController.php](/controllers/OptionController.php) | PHP | 74 | 0 | 57 | 131 |
+| [controllers/PollsController.php](/controllers/PollsController.php) | PHP | 185 | 19 | 114 | 318 |
+| [controllers/PublicPollsController.php](/controllers/PublicPollsController.php) | PHP | 79 | 8 | 54 | 141 |
+| [controllers/QuestionController.php](/controllers/QuestionController.php) | PHP | 89 | 0 | 52 | 141 |
+| [controllers/UserController.php](/controllers/UserController.php) | PHP | 12 | 0 | 8 | 20 |
+| [equizzy.sql](/equizzy.sql) | SQL | 82 | 25 | 17 | 124 |
+| [gulpfile.js](/gulpfile.js) | JavaScript | 62 | 1 | 10 | 73 |
+| [includes/app.php](/includes/app.php) | PHP | 9 | 2 | 5 | 16 |
+| [includes/database.php](/includes/database.php) | PHP | 7 | 0 | 4 | 11 |
+| [includes/functions.php](/includes/functions.php) | PHP | 16 | 1 | 3 | 20 |
+| [models/ActiveRecord.php](/models/ActiveRecord.php) | PHP | 170 | 37 | 41 | 248 |
+| [models/Answer.php](/models/Answer.php) | PHP | 13 | 0 | 6 | 19 |
+| [models/CategoryPolls.php](/models/CategoryPolls.php) | PHP | 24 | 0 | 13 | 37 |
+| [models/Option.php](/models/Option.php) | PHP | 18 | 0 | 7 | 25 |
+| [models/Poll.php](/models/Poll.php) | PHP | 51 | 0 | 21 | 72 |
+| [models/Question.php](/models/Question.php) | PHP | 19 | 0 | 10 | 29 |
+| [models/RatePolls.php](/models/RatePolls.php) | PHP | 14 | 0 | 9 | 23 |
+| [models/User.php](/models/User.php) | PHP | 59 | 0 | 26 | 85 |
+| [package-lock.json](/package-lock.json) | JSON | 14,542 | 0 | 1 | 14,543 |
+| [package.json](/package.json) | JSON | 33 | 0 | 1 | 34 |
+| [src/img/createPoll.svg](/src/img/createPoll.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/img/undraw_about.svg](/src/img/undraw_about.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/img/undraw_analitics.svg](/src/img/undraw_analitics.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/img/undraw_createPoll.svg](/src/img/undraw_createPoll.svg) | XML | 1 | 0 | 0 | 1 |
+| [src/js/answers/getAnswers.js](/src/js/answers/getAnswers.js) | JavaScript | 49 | 9 | 17 | 75 |
+| [src/js/answers/ratePoll.js](/src/js/answers/ratePoll.js) | JavaScript | 39 | 0 | 25 | 64 |
+| [src/js/app.js](/src/js/app.js) | JavaScript | 56 | 10 | 28 | 94 |
+| [src/js/crudOptionPolls/createOption.js](/src/js/crudOptionPolls/createOption.js) | JavaScript | 38 | 0 | 13 | 51 |
+| [src/js/crudOptionPolls/deleteOption.js](/src/js/crudOptionPolls/deleteOption.js) | JavaScript | 19 | 0 | 9 | 28 |
+| [src/js/crudOptionPolls/editOption.js](/src/js/crudOptionPolls/editOption.js) | JavaScript | 31 | 0 | 9 | 40 |
+| [src/js/crudOptionPolls/listOption.js](/src/js/crudOptionPolls/listOption.js) | JavaScript | 24 | 2 | 16 | 42 |
+| [src/js/crudQuestionPolls/createQuestion.js](/src/js/crudQuestionPolls/createQuestion.js) | JavaScript | 35 | 2 | 6 | 43 |
+| [src/js/crudQuestionPolls/deleteQuestion.js](/src/js/crudQuestionPolls/deleteQuestion.js) | JavaScript | 31 | 0 | 4 | 35 |
+| [src/js/crudQuestionPolls/editQuestion.js](/src/js/crudQuestionPolls/editQuestion.js) | JavaScript | 54 | 0 | 18 | 72 |
+| [src/js/crudQuestionPolls/questionManager.js](/src/js/crudQuestionPolls/questionManager.js) | JavaScript | 38 | 10 | 27 | 75 |
+| [src/js/indexPollsCarrousel.js](/src/js/indexPollsCarrousel.js) | JavaScript | 21 | 0 | 3 | 24 |
+| [src/js/navbarHome.js](/src/js/navbarHome.js) | JavaScript | 13 | 1 | 2 | 16 |
+| [src/js/navbarPollsResponsive.js](/src/js/navbarPollsResponsive.js) | JavaScript | 7 | 0 | 3 | 10 |
+| [src/js/polls/changePollVisibility.js](/src/js/polls/changePollVisibility.js) | JavaScript | 35 | 2 | 17 | 54 |
+| [src/js/polls/menuOptionsMyPolls.js](/src/js/polls/menuOptionsMyPolls.js) | JavaScript | 11 | 0 | 5 | 16 |
+| [src/js/polls/textAreaCounter.js](/src/js/polls/textAreaCounter.js) | JavaScript | 15 | 0 | 5 | 20 |
+| [src/js/principalPollsCarrousel.js](/src/js/principalPollsCarrousel.js) | JavaScript | 25 | 0 | 1 | 26 |
+| [src/scss/admin/_index.scss](/src/scss/admin/_index.scss) | SCSS | 1 | 0 | 0 | 1 |
+| [src/scss/admin/_indexCards.scss](/src/scss/admin/_indexCards.scss) | SCSS | 49 | 1 | 10 | 60 |
+| [src/scss/app.scss](/src/scss/app.scss) | SCSS | 4 | 1 | 1 | 6 |
+| [src/scss/base/_globals.scss](/src/scss/base/_globals.scss) | SCSS | 91 | 3 | 11 | 105 |
+| [src/scss/base/_index.scss](/src/scss/base/_index.scss) | SCSS | 5 | 0 | 0 | 5 |
+| [src/scss/base/_mixins.scss](/src/scss/base/_mixins.scss) | SCSS | 53 | 1 | 7 | 61 |
+| [src/scss/base/_normalize.scss](/src/scss/base/_normalize.scss) | SCSS | 146 | 129 | 75 | 350 |
+| [src/scss/base/_typography.scss](/src/scss/base/_typography.scss) | SCSS | 21 | 0 | 3 | 24 |
+| [src/scss/base/_variables.scss](/src/scss/base/_variables.scss) | SCSS | 24 | 11 | 8 | 43 |
+| [src/scss/components/_404.scss](/src/scss/components/_404.scss) | SCSS | 20 | 0 | 3 | 23 |
+| [src/scss/components/_alerts.scss](/src/scss/components/_alerts.scss) | SCSS | 22 | 0 | 3 | 25 |
+| [src/scss/components/_footer.scss](/src/scss/components/_footer.scss) | SCSS | 6 | 0 | 1 | 7 |
+| [src/scss/components/_forms.scss](/src/scss/components/_forms.scss) | SCSS | 97 | 0 | 19 | 116 |
+| [src/scss/components/_glide.core.min.scss](/src/scss/components/_glide.core.min.scss) | SCSS | 57 | 0 | 2 | 59 |
+| [src/scss/components/_glide.theme.min.scss](/src/scss/components/_glide.theme.min.scss) | SCSS | 82 | 0 | 1 | 83 |
+| [src/scss/components/_hero.scss](/src/scss/components/_hero.scss) | SCSS | 62 | 0 | 11 | 73 |
+| [src/scss/components/_index.scss](/src/scss/components/_index.scss) | SCSS | 10 | 0 | 0 | 10 |
+| [src/scss/components/_logo.scss](/src/scss/components/_logo.scss) | SCSS | 8 | 0 | 2 | 10 |
+| [src/scss/components/_navbar.scss](/src/scss/components/_navbar.scss) | SCSS | 64 | 0 | 11 | 75 |
+| [src/scss/components/_scrollbar.scss](/src/scss/components/_scrollbar.scss) | SCSS | 7 | 0 | 2 | 9 |
+| [src/scss/indexPages/_about.scss](/src/scss/indexPages/_about.scss) | SCSS | 41 | 0 | 9 | 50 |
+| [src/scss/indexPages/_cards-section.scss](/src/scss/indexPages/_cards-section.scss) | SCSS | 32 | 0 | 6 | 38 |
+| [src/scss/indexPages/_carrousel.scss](/src/scss/indexPages/_carrousel.scss) | SCSS | 43 | 0 | 8 | 51 |
+| [src/scss/indexPages/_index.scss](/src/scss/indexPages/_index.scss) | SCSS | 5 | 0 | 0 | 5 |
+| [src/scss/indexPages/categoriesPolls/_categories.scss](/src/scss/indexPages/categoriesPolls/_categories.scss) | SCSS | 39 | 0 | 9 | 48 |
+| [src/scss/indexPages/categoriesPolls/_index.scss](/src/scss/indexPages/categoriesPolls/_index.scss) | SCSS | 2 | 0 | 0 | 2 |
+| [src/scss/indexPages/categoriesPolls/_pollsByCategory.scss](/src/scss/indexPages/categoriesPolls/_pollsByCategory.scss) | SCSS | 51 | 0 | 11 | 62 |
+| [src/scss/indexPages/principalPagesPolls/_index.scss](/src/scss/indexPages/principalPagesPolls/_index.scss) | SCSS | 6 | 0 | 1 | 7 |
+| [src/scss/indexPages/principalPagesPolls/_pollsLayout.scss](/src/scss/indexPages/principalPagesPolls/_pollsLayout.scss) | SCSS | 115 | 3 | 25 | 143 |
+| [src/scss/indexPages/principalPagesPolls/_profile.scss](/src/scss/indexPages/principalPagesPolls/_profile.scss) | SCSS | 23 | 0 | 6 | 29 |
+| [src/scss/indexPages/principalPagesPolls/editPolls/_editPolls.scss](/src/scss/indexPages/principalPagesPolls/editPolls/_editPolls.scss) | SCSS | 70 | 0 | 16 | 86 |
+| [src/scss/indexPages/principalPagesPolls/editPolls/_index.scss](/src/scss/indexPages/principalPagesPolls/editPolls/_index.scss) | SCSS | 2 | 0 | 0 | 2 |
+| [src/scss/indexPages/principalPagesPolls/editPolls/_question.scss](/src/scss/indexPages/principalPagesPolls/editPolls/_question.scss) | SCSS | 165 | 0 | 36 | 201 |
+| [src/scss/indexPages/principalPagesPolls/listMyPolls/_index.scss](/src/scss/indexPages/principalPagesPolls/listMyPolls/_index.scss) | SCSS | 1 | 0 | 0 | 1 |
+| [src/scss/indexPages/principalPagesPolls/listMyPolls/_listMyPolls.scss](/src/scss/indexPages/principalPagesPolls/listMyPolls/_listMyPolls.scss) | SCSS | 96 | 0 | 16 | 112 |
+| [src/scss/indexPages/principalPagesPolls/principalListPolls/_createPollSection.scss](/src/scss/indexPages/principalPagesPolls/principalListPolls/_createPollSection.scss) | SCSS | 23 | 0 | 5 | 28 |
+| [src/scss/indexPages/principalPagesPolls/principalListPolls/_index.scss](/src/scss/indexPages/principalPagesPolls/principalListPolls/_index.scss) | SCSS | 1 | 0 | 0 | 1 |
+| [src/scss/indexPages/principalPagesPolls/publicPolls/_answersPoll.scss](/src/scss/indexPages/principalPagesPolls/publicPolls/_answersPoll.scss) | SCSS | 53 | 0 | 10 | 63 |
+| [src/scss/indexPages/principalPagesPolls/publicPolls/_index.scss](/src/scss/indexPages/principalPagesPolls/publicPolls/_index.scss) | SCSS | 2 | 0 | 0 | 2 |
+| [src/scss/indexPages/principalPagesPolls/publicPolls/_respondPoll.scss](/src/scss/indexPages/principalPagesPolls/publicPolls/_respondPoll.scss) | SCSS | 99 | 0 | 18 | 117 |
+| [views/404.php](/views/404.php) | PHP | 44 | 0 | 6 | 50 |
+| [views/admin/index.php](/views/admin/index.php) | PHP | 25 | 0 | 0 | 25 |
+| [views/categoryPolls/create.php](/views/categoryPolls/create.php) | PHP | 22 | 0 | 0 | 22 |
+| [views/categoryPolls/list.php](/views/categoryPolls/list.php) | PHP | 20 | 0 | 4 | 24 |
+| [views/categoryPolls/pollsByCategory.php](/views/categoryPolls/pollsByCategory.php) | PHP | 17 | 0 | 1 | 18 |
+| [views/index.php](/views/index.php) | PHP | 96 | 0 | 7 | 103 |
+| [views/layouts/layout.php](/views/layouts/layout.php) | PHP | 61 | 0 | 8 | 69 |
+| [views/layouts/layoutAdmin.php](/views/layouts/layoutAdmin.php) | PHP | 51 | 0 | 5 | 56 |
+| [views/layouts/layoutLogin.php](/views/layouts/layoutLogin.php) | PHP | 44 | 0 | 6 | 50 |
+| [views/layouts/layoutPolls.php](/views/layouts/layoutPolls.php) | PHP | 54 | 0 | 5 | 59 |
+| [views/login.php](/views/login.php) | PHP | 34 | 0 | 0 | 34 |
+| [views/polls/create.php](/views/polls/create.php) | PHP | 63 | 0 | 6 | 69 |
+| [views/polls/edit.php](/views/polls/edit.php) | PHP | 70 | 0 | 12 | 82 |
+| [views/polls/editInfo.php](/views/polls/editInfo.php) | PHP | 68 | 0 | 7 | 75 |
+| [views/polls/list.php](/views/polls/list.php) | PHP | 270 | 0 | 8 | 278 |
+| [views/polls/listMyPolls.php](/views/polls/listMyPolls.php) | PHP | 49 | 0 | 7 | 56 |
+| [views/principalPages/changePassword.php](/views/principalPages/changePassword.php) | PHP | 23 | 0 | 0 | 23 |
+| [views/principalPages/profile.php](/views/principalPages/profile.php) | PHP | 20 | 0 | 0 | 20 |
+| [views/publicPolls/answer.php](/views/publicPolls/answer.php) | PHP | 29 | 0 | 6 | 35 |
+| [views/publicPolls/respond.php](/views/publicPolls/respond.php) | PHP | 27 | 0 | 5 | 32 |
+| [views/register.php](/views/register.php) | PHP | 62 | 0 | 0 | 62 |
+| [views/templates/alerts.php](/views/templates/alerts.php) | PHP | 11 | 0 | 4 | 15 |
+| [views/templates/navbar.php](/views/templates/navbar.php) | PHP | 10 | 0 | 0 | 10 |
+
+[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)

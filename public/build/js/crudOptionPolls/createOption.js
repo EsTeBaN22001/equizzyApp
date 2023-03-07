@@ -1,7 +1,5 @@
-const questionsContainer = document.querySelector('.questions-container')
+function createOption(e){
 
-questionsContainer.addEventListener('click', function(e){
-  
   if(e.target.classList.contains('add-option-button')){
 
     Swal.fire({
@@ -18,38 +16,31 @@ questionsContainer.addEventListener('click', function(e){
           return "Este campo no puede estar vacío"
         }
       }
-    }).then((res)=>{
+    }).then( async (res)=>{
       
       if(res.isConfirmed){
 
         const question = getParentElementByClass(e.target, 'question')
-        const questionId = getParentElementByClass(e.target, 'question').dataset.idquestion
+        const questionId = question.dataset.idquestion
         
         const data = new FormData()
         data.append('name', res.value)
         data.append('questionId', questionId)
         
-        const result = callFetch(`${domain}/options/create`, 'POST', data)
+        const result = await callFetch(`${domain}/options/create`, 'POST', data)
 
-        result.then((response)=>{
-          
-          if(response.response){
-            Swal.fire({
-              icon: 'success',
-              title: 'Correcto!',
-              text: 'La opción se creó correctamente!'
-            }).then(()=>{
-              const questionElement = question
-              const optionName = response.question.name
+        if(result.response){
+          let questionElement = question
+          let optionName = result.option.name
+          let optionId = result.result.id
 
-              addOptionDOM(questionElement, optionName)
+          addOptionDOM(questionElement, optionName, optionId)
 
-              const noOption = document.querySelector('p.no-option-text')
-              noOption.remove()
-            })
+          if(document.querySelector('p.no-option-text')){
+            const noOption = document.querySelector('p.no-option-text')
+            noOption.remove()
           }
-
-        })
+        }
 
       }
 
@@ -57,4 +48,4 @@ questionsContainer.addEventListener('click', function(e){
 
   }
 
-})
+}

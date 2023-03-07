@@ -1,6 +1,6 @@
 <section class="navbar-polls">
   <div class="userNameContainer">
-    <p class="userName">Hola: <span><?= $userName ?></span></p>
+    <p class="userName">Hola: <span><?= $_SESSION['userName'] ?? 'Invitado' ?></span></p>
   </div>
   <div class="closeSession">
     <a href="<?= $_ENV['HOST'] ?>/logout">

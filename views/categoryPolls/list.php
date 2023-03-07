@@ -12,9 +12,9 @@
 
     <?php foreach($categories as $category): ?>
   
-      <div class="about-poll-container">
-        <div class="about-poll">
-          <h3><?= $category->name ?></h3>
+      <div class="category">
+        <div class="about-category">
+          <a href="<?= $_ENV['HOST'] ?>/polls-by-category?category=<?= $category->id ?>"><h3><?= $category->name ?></h3></a>
         </div>
       </div>
 

@@ -5,7 +5,7 @@
   background-color: v.$black;
   padding: 1.5rem;
   margin-top: 2rem;
-  border-radius: 2rem;
+  border-radius: .5rem;
 
   .question-header {
     display: flex;
@@ -137,17 +137,26 @@
   }
 
   .options-list {
+    max-width: 80%;
+    margin: 0 auto !important;
+
     .option {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 0;
+      padding: 1rem 0 2rem 0;
 
-      .name-option{
+      @include m.phone{
+        flex-direction: column;
+        row-gap: 1rem;
+        margin: 2rem 0;
+      }
+
+      .name-option {
         font-size: 2rem;
       }
 
-      .no-option-text{
+      .no-option-text {
         text-align: center !important;
         font-size: 2rem !important;
         color: v.$gray !important;

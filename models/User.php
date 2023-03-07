@@ -15,6 +15,7 @@ class User extends ActiveRecord{
     $this->surname = $args['surname'] ?? '';
     $this->email = $args['email'] ?? '';
     $this->password = $args['password'] ?? '';
+    $this->newPassword = $args['newPassword'] ?? '';
     $this->confirmPassword = $args['confirmPassword'] ?? '';
     $this->admin = $args['admin'] ?? 0;
   }
@@ -59,16 +60,36 @@ class User extends ActiveRecord{
 
   }
 
+  public function validateProfile(){
+
+    if(!$this->name){
+      self::$alerts['error'][] = 'El nombre es incorrecto';
+    }
+
+    if(!$this->surname){
+      self::$alerts['error'][] = 'El apellido es incorrecto';
+    }
+
+    if(!$this->email){
+      self::$alerts['error'][] = 'El correo es incorrecto';
+    }
+
+    return self::$alerts;
+
+  }
+
   public function startSession(){
+    
     session_unset();
 
+    $_SESSION['login'] = true;
     $_SESSION['id'] = $this->id;
     $_SESSION['uniqId'] = $this->uniqId;
-    $_SESSION['name'] = $this->name;
-    $_SESSION['surname'] = $this->surname;
-    $_SESSION['email'] = $this->email;
-    $_SESSION['login'] = true;
-    $_SESSION['admin'] = $this->admin;
+    $_SESSION['name'] = trim($this->name);
+    $_SESSION['surname'] = trim($this->surname);
+    $_SESSION['userName'] = trim($_SESSION['name']) . ' ' . trim($_SESSION['surname']);
+    $_SESSION['email'] = trim($this->email);
+    $_SESSION['admin'] = trim($this->admin);
 
   }
 

@@ -1,0 +1,23 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.page-container{
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .principalContent{
+    h1{
+      color: v.$principalColor;
+      margin-bottom: 2rem;
+    }
+
+    p{
+      a{
+        color: v.$principalColor;
+      }
+    }
+  }
+}

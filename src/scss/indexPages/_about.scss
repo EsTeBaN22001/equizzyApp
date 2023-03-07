@@ -2,12 +2,17 @@
 @use 'base/mixins' as m;
 
 .box-info-container{
-  margin-bottom: 10rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 3rem;
+  column-gap: 10rem;
+  place-items: center;
 
   .text-content{
+
+    h2{
+      margin-bottom: 1rem;
+      color: v.$principalColor;
+    }
 
     &.text-left{
       h2, p{text-align: left;}
@@ -25,8 +30,9 @@
     }
   }
 
-  @include m.tablet{
+    @include m.tablet{
     grid-template-columns: 1fr;
+    row-gap: 3rem;
 
     &.box-inverted{
       display: flex;

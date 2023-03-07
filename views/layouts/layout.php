@@ -4,11 +4,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><?= $title; ?> | Equizzy</title>
-	<!-- Google Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+	<meta name="description" content="Sitio para realizar, crear y contestas encuestas de tus temas preferidos">
+	<meta name="keywords" content="Encuestas, equizzyApp, crear encuestas, realizar encuestas">
+	<meta name="author" content="Esteban Redón">
+	<meta name="copyright" content="Esteban Redón">
+	<meta name="robots" content="index">
+	<meta name="robots" content="follow">
+	<title><?=$title;?> | Equizzy</title>
+	<!-- App Icon -->
+	<link rel="shortcut icon" href="/build/img/EquizzyAppIcon.svg" type="image/x-icon">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- Custom CSS -->
@@ -16,12 +20,17 @@
 </head>
 
 <body>
-
 	<section class="header">
 		<div class="hero">
 			<div class="hero-content container-sm">
 				<h1 class="logo">equizzy<span>App</span></h1>
-				<p>Aplicación de encuestas en la que podrás responder las mejores encuestas según tus gustos.</p>
+				<p class="register-paragraph">¡Inicia tu primera encuesta ahora y descubre todo lo que nuestro sitio tiene para ofrecer!</p>
+				
+				<?php if (isset($_SESSION['login']) && $_SESSION['login']): ?>
+					<a href="<?= $_ENV['HOST'] ?>/polls/create" class="register-link">Crear encuesta</a>
+				<?php else: ?>
+					<a href="<?= $_ENV['HOST'] ?>/register" class="register-link">Regístrate para comenzar</a>
+				<?php endif?>
 			</div>
 		</div>
 	</section>
@@ -29,11 +38,16 @@
 	<section class="navbar-container">
 		<div class="navbar container">
 			<div>
-				<a href="<?= $_ENV['HOST'] ?>/" class="logo">equizzy<span>App</span></a>
+				<a href="<?=$_ENV['HOST']?>/" class="logo">equizzy<span>App</span></a>
 			</div>
 			<nav class="nav">
-				<a href="<?= $_ENV['HOST'] ?>/register">Regístrate</a>
-				<a href="<?= $_ENV['HOST'] ?>/login">Iniciar sesión</a>
+				<?php if (isset($_SESSION['login']) && $_SESSION['login']): ?>
+					<a class="nav-link" href="<?=$_ENV['HOST']?>/polls/list">Ver encuestas</a>
+					<a class="nav-link logout-button" href="<?=$_ENV['HOST']?>/logout">Cerrar sesión</a>
+				<?php else: ?>
+					<a class="nav-link" href="<?=$_ENV['HOST']?>/register">Regístrate</a>
+					<a class="nav-link" href="<?=$_ENV['HOST']?>/login">Iniciar sesión</a>
+				<?php endif?>
 			</nav>
 		</div>
 	</section>
