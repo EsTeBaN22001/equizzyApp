@@ -13,27 +13,23 @@ questions.forEach(question => {
 
 	result.then((options) => {
 
-		if(options){
+		if(options == "error" || options.length == 0){
+
+      const optionsContainer = question.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling
+
+      const noOption = document.createElement('p')
+      noOption.textContent = 'No hay opciones'
+      noOption.classList.add('no-option-text')
+      noOption.style.fontSize = '2rem'
+      noOption.style.textAlign = 'center'
+
+      optionsContainer.appendChild(noOption)
       
-      if(options.length == 0){
+    }else{
 
-        const optionsContainer = question.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling
-
-        const noOption = document.createElement('p')
-        noOption.textContent = 'No hay opciones'
-        noOption.classList.add('no-option-text')
-        noOption.style.fontSize = '2rem'
-        noOption.style.textAlign = 'center'
-
-        optionsContainer.appendChild(noOption)
-        
-      }else{
-
-        options.forEach((option)=>{
-          addOptionDOM(question, option.name, option.id)
-        })
-
-      }
+      options.forEach((option)=>{
+        addOptionDOM(question, option.name, option.id)
+      })
 
     }
 

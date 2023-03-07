@@ -2,6 +2,16 @@
 const domain = 'http://localhost:3000'
 const urlPoll = getIdToUrl().poll ?? ''
 
+// Obtener el token actual de la sesión
+const actualUserJwt = getIdToUrl().t ?? ''
+
+const storage = window.localStorage
+
+if(actualUserJwt != ''){
+  // Guardar el token en el localStorage
+  storage.setItem('jwt', actualUserJwt)
+}
+
 // FUNCIONES HELPERS
 
 // Función que obtiene el uniqId de la encuesta en el parámetro GET de la URL
@@ -18,12 +28,23 @@ async function callFetch(url, method, data) {
 
     const consult = await fetch(url, {
       method: method,
+      headers: {
+        "Authorization": storage.getItem('jwt'),
+      },
       body: data
     })
 
     const response = await consult.json()
 
-    return response
+    if(response != "error"){
+      return response
+    }
+
+    Swal.fire(
+      'Su sesión caducó!',
+      'Si quiere realizar esta acción cierre sesión e inicie nuevamente',
+      'error'
+    )
 
   } catch (error) {
     console.log(error)

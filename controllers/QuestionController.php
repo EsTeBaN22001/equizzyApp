@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Model\JWTIntegration;
 use Model\Poll;
 use Model\Question;
 
@@ -13,44 +14,54 @@ class QuestionController{
     
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
       
-      if($_POST['name']){
-        
-        $question->syncUp($_POST);
-        
-        $alerts = $question->validateName();
+      $verifyToken = JWTIntegration::verifyToken();
 
-        if(empty($alerts)){
+      if($verifyToken){
+
+        if($_POST['name']){
+        
+          $question->syncUp($_POST);
           
-          $poll = Poll::where('uniqId', $_POST['idPoll']);
-
-          if($poll){
-
-            $question->pollId = $poll->id;
-
-            $result = $question->save();
+          $alerts = $question->validateName();
   
-            if($result){
-              $response = [
-                'response' => true,
-              ];
-            }else{
-              $response = [
-                'response' => false
-              ];
+          if(empty($alerts)){
+            
+            $poll = Poll::where('uniqId', $_POST['idPoll']);
+  
+            if($poll){
+  
+              $question->pollId = $poll->id;
+  
+              $result = $question->save();
+    
+              if($result){
+                $response = [
+                  'response' => true,
+                ];
+              }else{
+                $response = [
+                  'response' => false
+                ];
+              }
+  
             }
-
+  
+  
+          }else{
+            $response = [
+              'response' => false
+            ];
           }
-
-
-        }else{
-          $response = [
-            'response' => false
-          ];
+  
         }
+        
+        echo json_encode($response);
 
+      }else{
+
+        echo json_encode("error");
+        
       }
-      
-      echo json_encode($response);
 
     }
 
@@ -60,77 +71,108 @@ class QuestionController{
     
     if($_SERVER['REQUEST_METHOD']== 'POST'){
       
-      if($_POST['id'] && $_POST['name']){
+      $verifyToken = JWTIntegration::verifyToken();
 
-        $newNameQuestion = $_POST['name'];
-        
-        $question = Question::find($_POST['id']);
-        
-        if($question){
+      if($verifyToken){
+
+        if($_POST['id'] && $_POST['name']){
+
+          $newNameQuestion = $_POST['name'];
           
-          if($newNameQuestion){
-
-            $question->name = $newNameQuestion;
+          $question = Question::find($_POST['id']);
+          
+          if($question){
             
-            $result = $question->save();
-
-            if($result){
-              $response = ['response' => true];
-            }else{
-              $response = ['response' => false];
+            if($newNameQuestion){
+  
+              $question->name = $newNameQuestion;
+              
+              $result = $question->save();
+  
+              if($result){
+                $response = ['response' => true];
+              }else{
+                $response = ['response' => false];
+              }
             }
+  
+          }else{
+            $response = ['response' => false];
           }
-
-        }else{
-          $response = ['response' => false];
         }
+        
+        echo json_encode($response);
+
+      }else{
+
+        echo json_encode("error");
+
       }
-      
 
     }
 
-    echo json_encode($response);
 
   }
 
   public static function delete(){
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-      if($_POST['idQuestion']){
+      $verifyToken = JWTIntegration::verifyToken();
 
-        $idQuestion = $_POST['idQuestion'];
+      if($verifyToken){
 
-        $question = Question::find($idQuestion);
+        if($_POST['idQuestion']){
 
-        if($question){
-          $result = $question->delete();
-
-          if($result){
-            $response = ['response' => true];
+          $idQuestion = $_POST['idQuestion'];
+  
+          $question = Question::find($idQuestion);
+  
+          if($question){
+            $result = $question->delete();
+  
+            if($result){
+              $response = ['response' => true];
+            }else{
+              $response = ['response' => false];
+            }
           }else{
             $response = ['response' => false];
           }
-        }else{
-          $response = ['response' => false];
+  
         }
+        
+        echo json_encode($response);
+
+      }else{
+
+        echo json_encode("error");
 
       }
-      
-      echo json_encode($response);
+
     }
   }
 
   public static function get(){
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
       
-      if($_POST['idQuestion']){
-        $idQuestion = $_POST['idQuestion'];
+      $verifyToken = JWTIntegration::verifyToken();
 
-        $question = Question::find($idQuestion);
+      if($verifyToken){
 
-        if($question){
-          echo json_encode($question);
+        if($_POST['idQuestion']){
+          $idQuestion = $_POST['idQuestion'];
+  
+          $question = Question::find($idQuestion);
+  
+          if($question){
+            echo json_encode($question);
+          }
         }
+
+      }else{
+
+        echo json_encode("error");
+
       }
 
     }

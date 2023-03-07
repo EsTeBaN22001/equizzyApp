@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Model\JWTIntegration;
 use Model\Poll;
 use Model\RatePolls;
 
@@ -12,11 +13,21 @@ class StateAndRateController{
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-      $poll = Poll::where('uniqId', $_POST['pollId']);
-      
-      if($poll){
+      $verifyToken = JWTIntegration::verifyToken();
 
-        echo json_encode($poll->public);
+      if($verifyToken){
+
+        $poll = Poll::where('uniqId', $_POST['pollId']);
+      
+        if($poll){
+  
+          echo json_encode($poll->public);
+  
+        }
+
+      }else{
+
+        echo json_encode("error");
 
       }
       
@@ -29,23 +40,33 @@ class StateAndRateController{
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-      $poll = Poll::where('uniqId', $_POST['pollId']);
+      $verifyToken = JWTIntegration::verifyToken();
+
+      if($verifyToken){
+
+        $poll = Poll::where('uniqId', $_POST['pollId']);
       
-      if($poll && isset($_POST['state'])){
-
-        if($_POST['state'] == 0){
-          $poll->public = 1;
+        if($poll && isset($_POST['state'])){
+  
+          if($_POST['state'] == 0){
+            $poll->public = 1;
+          }
+  
+          if($_POST['state'] == 1){
+            $poll->public = 0;
+          }
+  
+          $result = $poll->save();
+  
+          if($result){
+            echo json_encode($poll->public);
+          }
+  
         }
 
-        if($_POST['state'] == 1){
-          $poll->public = 0;
-        }
+      }else{
 
-        $result = $poll->save();
-
-        if($result){
-          echo json_encode($poll->public);
-        }
+        echo json_encode("error");
 
       }
       
@@ -58,25 +79,35 @@ class StateAndRateController{
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-      $response = ['isRated' => false];
+      $verifyToken = JWTIntegration::verifyToken();
 
-      if(isset($_POST['pollUniqId'])){
+      if($verifyToken){
 
-        $poll = Poll::where('uniqId', $_POST['pollUniqId']);
+        $response = ['isRated' => false];
 
-        if($poll){
-
-          $rate = RatePolls::where('pollId', $poll->id);
-
-          if($rate && $rate->userId == $_SESSION['id']){
-            $response = ['isRated' => true];
+        if(isset($_POST['pollUniqId'])){
+  
+          $poll = Poll::where('uniqId', $_POST['pollUniqId']);
+  
+          if($poll){
+  
+            $rate = RatePolls::where('pollId', $poll->id);
+  
+            if($rate && $rate->userId == $_SESSION['id']){
+              $response = ['isRated' => true];
+            }
+  
           }
-
+  
         }
+  
+        echo json_encode($response);
+
+      }else{
+
+        echo json_encode("error");
 
       }
-
-      echo json_encode($response);
 
     }
 
@@ -87,42 +118,52 @@ class StateAndRateController{
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-      $response = ['result' => false];
+      $verifyToken = JWTIntegration::verifyToken();
+
+      if($verifyToken){
+
+        $response = ['result' => false];
       
-      if(isset($_POST['rate']) && isset($_POST['pollUniqId'])){
-
-        // Busca si existe esa encuesta
-        $poll = Poll::where('uniqId', $_POST['pollUniqId']);
-
-        if($poll){
-          
-          $rate = RatePolls::where('pollId', $poll->id);
-
-          if($rate && $rate->userId == $_SESSION['id']){
-
-            $rate->rate = $_POST['rate'];
-
-          }else{
-
-            $rate = new RatePolls();
-            $rate->rate = $_POST['rate'];
-            $rate->pollId = $poll->id;
-            $rate->userId = $_SESSION['id'];
-
+        if(isset($_POST['rate']) && isset($_POST['pollUniqId'])){
+  
+          // Busca si existe esa encuesta
+          $poll = Poll::where('uniqId', $_POST['pollUniqId']);
+  
+          if($poll){
+            
+            $rate = RatePolls::where('pollId', $poll->id);
+  
+            if($rate && $rate->userId == $_SESSION['id']){
+  
+              $rate->rate = $_POST['rate'];
+  
+            }else{
+  
+              $rate = new RatePolls();
+              $rate->rate = $_POST['rate'];
+              $rate->pollId = $poll->id;
+              $rate->userId = $_SESSION['id'];
+  
+            }
+  
+            // Guardar la nueva calificación en la base de datos
+            $result = $rate->save();
+  
+            if($result){
+              $response = ['result' => true];
+            }
+            
           }
-
-          // Guardar la nueva calificación en la base de datos
-          $result = $rate->save();
-
-          if($result){
-            $response = ['result' => true];
-          }
-          
+  
         }
+        
+        echo json_encode($response);
+
+      }else{
+
+        echo json_encode("error");
 
       }
-      
-      echo json_encode($response);
 
     }
 

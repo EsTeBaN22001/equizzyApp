@@ -3,13 +3,14 @@
 namespace Controllers;
 
 use Model\ActiveRecord;
+use Model\JWTIntegration;
 use Model\User;
 use MVC\Router;
 
 class LoginController{
 
   public static function login(Router $router){
-
+    
     $user = new User();
 
     $alerts = [];
@@ -31,8 +32,10 @@ class LoginController{
           if(password_verify($user->password, $userExists->password)){
 
             $userExists->startSession();
+
+            $jwt = JWTIntegration::createToken($_SESSION['uniqId']);
             
-            header('Location: /polls/list');
+            header('Location: /polls/list?t=' . $jwt);
 
           }else{
             User::setAlert('error', 'La contraseña es incorrecta');

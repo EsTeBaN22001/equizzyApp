@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Model\Option;
 use Model\Question;
+use Model\JWTIntegration;
 
 class OptionController {
 
@@ -11,11 +12,21 @@ class OptionController {
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-      $questionId = $_POST['idQuestion'];
+      $verifyToken = JWTIntegration::verifyToken();
 
-      $options = Option::belongsTo('questionId', $questionId);
+      if($verifyToken){
 
-      echo json_encode($options);
+        $questionId = $_POST['idQuestion'];
+
+        $options = Option::belongsTo('questionId', $questionId);
+  
+        echo json_encode($options);
+
+      }else{
+
+        echo json_encode('error');
+
+      }
 
     }
 
@@ -26,33 +37,44 @@ class OptionController {
     $option = new Option();
     
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-      $response = ['response' => false];
-      
-      $option->syncUp($_POST);
 
-      $question = Question::find('id', $option->questionId);
+      $verifyToken = JWTIntegration::verifyToken();
 
-      if($question){
+      if($verifyToken){
 
-        $alerts = $option->validateName();
+        $response = ['response' => false];
+            
+        $option->syncUp($_POST);
 
-        if(empty($alerts)){
+        $question = Question::find('id', $option->questionId);
 
-          $result = $option->save();
+        if($question){
 
-          if($result){
-            $response = [
-              'response' => true,
-              'option' => $option,
-              'result' => $result
-            ];
+          $alerts = $option->validateName();
+
+          if(empty($alerts)){
+
+            $result = $option->save();
+
+            if($result){
+              $response = [
+                'response' => true,
+                'option' => $option,
+                'result' => $result
+              ];
+            }
+
           }
 
         }
 
-      }
+        echo json_encode($response);
 
-      echo json_encode($response);
+      }else{
+
+        echo json_encode('error');
+
+      }
 
     }
   }
@@ -61,33 +83,43 @@ class OptionController {
     
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-      $response = ['response' => false];
+      $verifyToken = JWTIntegration::verifyToken();
 
-      if($_POST['name'] & $_POST['idOption']){
+      if($verifyToken){
 
-        $option = Option::find($_POST['idOption']);
+        $response = ['response' => false];
 
-        if($option){
-  
-          $option->name = $_POST['name'] ?? $option->name;
+        if($_POST['name'] & $_POST['idOption']){
 
-          $result = $option->save();
+          $option = Option::find($_POST['idOption']);
 
-          if($result){
+          if($option){
 
-            $response = [
-              'response' => true,
-              'result' => $result,
-              'option' => $option
-            ];
+            $option->name = $_POST['name'] ?? $option->name;
 
+            $result = $option->save();
+
+            if($result){
+
+              $response = [
+                'response' => true,
+                'result' => $result,
+                'option' => $option
+              ];
+
+            }
+            
           }
-          
+
         }
 
+        echo json_encode($response);
+
+      }else{
+
+        echo json_encode('error');
+
       }
-      
-      echo json_encode($response);
 
     }
 
@@ -97,30 +129,40 @@ class OptionController {
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-      $response = ['response' => false];
+      $verifyToken = JWTIntegration::verifyToken();
 
-      if($_POST['idOption']){
-
-        $option = Option::find($_POST['idOption']);
-
-        if($option){
-
-          $result = $option->delete();
-
-          if($result){
-
-            $response = [
-              'response' => true,
-              'result' => $result
-            ];
-
+      if($verifyToken){
+      
+        $response = ['response' => false];
+      
+        if($_POST['idOption']){
+        
+          $option = Option::find($_POST['idOption']);
+        
+          if($option){
+        
+            $result = $option->delete();
+        
+            if($result){
+        
+              $response = [
+                'response' => true,
+                'result' => $result
+              ];
+        
+            }
+        
           }
-
+        
         }
-
+        
+        echo json_encode($response);
+      
+      }else{
+      
+        echo json_encode('error');
+      
       }
-
-      echo json_encode($response);
       
     }
 

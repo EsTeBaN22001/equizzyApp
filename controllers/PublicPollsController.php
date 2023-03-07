@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use Model\Answer;
+use Model\JWTIntegration;
 use Model\Option;
 use Model\Poll;
 use Model\Question;
@@ -102,36 +103,46 @@ class PublicPollsController{
     
     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['uniqId'])){
 
-      $poll = Poll::where('uniqId', $_POST['uniqId']);
+      $verifyToken = JWTIntegration::verifyToken();
 
-      // Código para obtener un arreglo con todas las preguntas y las opciones
-      $answersAll = Answer::belongsTo('pollId', $poll->id);
-  
-      // Arreglo definitivo para obtener las preguntas y la cantidad de opciones seleccionadas
-      $answers = [];
-  
-      foreach($answersAll as $answer){
-        
-        // Código para obtener un arreglo con todas las preguntas y las opciones de las mismas
-        $questionName = Question::where('id', $answer->questionId)->name;
-  
-        $optionsByQuestion = Option::belongsTo('questionId', $answer->questionId);
-  
-        // Arreglo que obtiene el nombre de la opción y la cantidad de votos de la misma
-        $options = [];
-        
-        foreach($optionsByQuestion as $option){
+      if($verifyToken){
+
+        $poll = Poll::where('uniqId', $_POST['uniqId']);
+
+        // Código para obtener un arreglo con todas las preguntas y las opciones
+        $answersAll = Answer::belongsTo('pollId', $poll->id);
+    
+        // Arreglo definitivo para obtener las preguntas y la cantidad de opciones seleccionadas
+        $answers = [];
+    
+        foreach($answersAll as $answer){
           
-          $optionsCount = count( Answer::belongsTo('optionId', $option->id));
+          // Código para obtener un arreglo con todas las preguntas y las opciones de las mismas
+          $questionName = Question::where('id', $answer->questionId)->name;
+    
+          $optionsByQuestion = Option::belongsTo('questionId', $answer->questionId);
+    
+          // Arreglo que obtiene el nombre de la opción y la cantidad de votos de la misma
+          $options = [];
           
-          $options[$option->name] = $optionsCount;
+          foreach($optionsByQuestion as $option){
+            
+            $optionsCount = count( Answer::belongsTo('optionId', $option->id));
+            
+            $options[$option->name] = $optionsCount;
+          }
+          
+          $answers[$questionName] = $options;
+    
         }
-        
-        $answers[$questionName] = $options;
   
-      }
+        echo json_encode($answers);
 
-      echo json_encode($answers);
+      }else{
+
+        echo json_encode("error");
+
+      }
 
     }
       
