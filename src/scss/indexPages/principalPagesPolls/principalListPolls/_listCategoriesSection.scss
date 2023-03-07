@@ -31,6 +31,9 @@
             h3 {
               text-align: start;
               font-size: 3rem;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
             }
           }
         }

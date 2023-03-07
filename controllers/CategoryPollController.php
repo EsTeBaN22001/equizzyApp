@@ -10,7 +10,10 @@ class CategoryPollController{
 
   public static function list(Router $router){
 
-    $categories = CategoryPolls::all();
+    // $categories = CategoryPolls::all();
+    $query = "SELECT categorypoll.id, categorypoll.name, COUNT(polls.id) as poll_count FROM categorypoll LEFT JOIN polls ON categorypoll.id = polls.categoryId GROUP BY categorypoll.id ORDER BY poll_count DESC;";
+
+    $categories = CategoryPolls::consultSQL($query);
     
     $router->renderPolls('categoryPolls/list', [
       'title' => 'Categorías',

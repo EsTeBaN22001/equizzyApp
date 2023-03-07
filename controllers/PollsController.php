@@ -26,7 +26,12 @@ class PollsController{
   // Vista principal en donde se muestran todas las encuestas de todos los usuarios
   public static function list(Router $router){
 
-    // ENCUESTAS POPULARES - CARROUSEL 1
+    // CATEGORÍAS PRINCIPALES - CARROUSEL 1
+    $query = "SELECT categorypoll.id, categorypoll.name, COUNT(polls.id) as poll_count FROM categorypoll LEFT JOIN polls ON categorypoll.id = polls.categoryId GROUP BY categorypoll.id ORDER BY poll_count DESC;";
+
+    $principalCategories = CategoryPolls::consultSQL($query);
+    
+    // ENCUESTAS POPULARES - CARROUSEL 2
     $query = "SELECT id, rate, pollId, userId FROM ratepolls GROUP BY pollId ORDER BY rate DESC LIMIT 10;";
     $ratePolls = RatePolls::consultSQL($query);
 
@@ -46,11 +51,6 @@ class PollsController{
       }
 
     }
-
-    // CATEGORÍAS PRINCIPALES - CARROUSEL 2
-    $query = "SELECT categorypoll.id, categorypoll.name, COUNT(polls.id) as poll_count FROM categorypoll LEFT JOIN polls ON categorypoll.id = polls.categoryId GROUP BY categorypoll.id ORDER BY poll_count DESC LIMIT 6;";
-
-    $principalCategories = CategoryPolls::consultSQL($query);
 
     // CATEGORÍA 1 - CARROUSEL 3 - MÚSICA: ID 1
     $pollsCategoryOne = Poll::belongsTo('categoryId', 1);
