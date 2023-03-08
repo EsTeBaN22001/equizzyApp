@@ -1,4 +1,4 @@
-<section class="navbar-polls">
+<section class="navbar-polls reveal-top">
   <div class="userNameContainer">
     <p class="userName">Hola: <span><?= $_SESSION['userName'] ?? 'Invitado' ?></span></p>
   </div>

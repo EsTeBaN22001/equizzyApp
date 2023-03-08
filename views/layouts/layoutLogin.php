@@ -21,7 +21,7 @@
 
 <body>
 
-	<section class="navbar-container">
+	<section class="navbar-container reveal-top">
 		<div class="navbar container">
 			<div class="logo">
 				<a href="<?= $_ENV['HOST'] ?>/" class="logo">equizzy<span>App</span></a>
@@ -44,6 +44,9 @@
 
 	<!-- Font Awesome -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js" integrity="sha512-8pHNiqTlsrRjVD4A/3va++W1sMbUHwWxxRPWNyVlql3T+Hgfd81Qc6FC5WMXDC+tSauxxzp1tgiAvSKFu1qIlA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="build/js/indexScrollReveal.js"></script>
+
 	<?php echo $script ?? ''; ?>
 </body>
 

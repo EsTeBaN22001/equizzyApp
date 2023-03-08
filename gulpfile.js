@@ -69,5 +69,5 @@ function watchArchivesDev(){
 }
 
 exports.dev = watchArchivesDev;
-exports.watch = watchArchives;
+exports.build = watchArchives;
 exports.default = parallel(css, javascript,  img,  watchArchives ); 

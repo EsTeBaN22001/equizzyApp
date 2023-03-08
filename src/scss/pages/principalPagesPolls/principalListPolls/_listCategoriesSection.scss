@@ -4,8 +4,10 @@
 .principal-categories{
 
   .glide__track{
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
+
+    @include m.phone{width: 100%;}
 
     .glide__slide{
       .category {
@@ -34,6 +36,8 @@
               white-space: nowrap;
               text-overflow: ellipsis;
               overflow: hidden;
+
+              @include m.phone{text-align: center;}
             }
           }
         }
