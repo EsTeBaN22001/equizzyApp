@@ -201,8 +201,11 @@
 <?=
 
 $script = '
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5.0.12/dark.min.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
   <script src="/build/js/principalPollsCarrousel.js"></script>
+  <script src="/build/js/polls/searcher.js"></script>
 '
 
 ?>

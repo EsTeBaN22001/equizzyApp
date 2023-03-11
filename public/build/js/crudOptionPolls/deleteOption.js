@@ -1,1 +1,28 @@
-function deleteOption(t){Swal.fire({title:"Estás seguro/a?",icon:"warning",showCancelButton:!0,confirmButtonText:"Si"}).then(async e=>{if(e.isConfirmed){const e=getParentElementByClass(t.target,"option"),n=e.dataset.id,o=new FormData;o.append("idOption",n);(await callFetch(domain+"/options/delete","POST",o)).response&&e.remove()}})}
+function deleteOption(e){
+  Swal.fire({
+    title: 'Estás seguro/a?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Si',
+  }).then( async result => {
+
+    if (result.isConfirmed) {
+
+      const option = getParentElementByClass(e.target, 'option')
+      const idOption = option.dataset.id
+
+      const data = new FormData();
+      data.append('idOption', idOption);
+
+      const result = await callFetch(`${domain}/options/delete`, 'POST', data)
+
+      if (result.response) {
+
+        option.remove()
+
+      }
+
+    }
+
+  })
+}
