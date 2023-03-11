@@ -330,17 +330,15 @@ body {
   min-height: 100%;
   background-color: #131313;
   color: #FFFFFF;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  overflow-x: hidden;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.6rem;
 }
 
 .container {
@@ -568,6 +566,7 @@ p {
 
 .navbar-container {
   background-color: #000000;
+  z-index: 1;
 }
 
 .navbar {
@@ -1074,6 +1073,14 @@ p {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.polls-carrousel .glide .about-poll-container .about-poll .category-link {
+  color: #a1a1a1;
+  transition: color 0.3s ease;
+}
+.polls-carrousel .glide .about-poll-container .about-poll .category-link:hover {
+  color: #00c9ac;
+  cursor: pointer;
 }
 
 .sitePollsLayoutContainer {
@@ -1928,7 +1935,6 @@ p {
   cursor: pointer;
   font-size: 1.8rem;
   min-width: 25rem;
-  white-space: nowrap;
   position: relative;
   transition: 0.3s ease-in-out 0s;
 }

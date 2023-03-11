@@ -13,15 +13,14 @@ body {
 	min-height: 100%;
 	background-color: v.$bgColor;
 	color: v.$white;
+	font-family: v.$principalFont;
+	font-size: 1.6rem;
+	overflow-x: hidden;
 }
 *, *:before, *:after {
 	box-sizing: inherit;
 	margin: 0;
 	padding: 0;
-}
-body {
-	font-family: v.$principalFont;
-	font-size: 1.6rem;
 }
 .container {
 	width: 95%;

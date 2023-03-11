@@ -27,7 +27,7 @@ class PollsController{
   public static function list(Router $router){
 
     // CATEGORÍAS PRINCIPALES - CARROUSEL 1
-    $query = "SELECT categorypoll.id, categorypoll.name, COUNT(polls.id) as poll_count FROM categorypoll LEFT JOIN polls ON categorypoll.id = polls.categoryId GROUP BY categorypoll.id ORDER BY poll_count DESC;";
+    $query = "SELECT categorypoll.id, categorypoll.name, COUNT(polls.id) as poll_count FROM categorypoll LEFT JOIN polls ON categorypoll.id = polls.categoryId GROUP BY categorypoll.id ORDER BY poll_count DESC LIMIT 6;";
 
     $principalCategories = CategoryPolls::consultSQL($query);
     

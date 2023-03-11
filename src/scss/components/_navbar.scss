@@ -3,6 +3,7 @@
 
 .navbar-container{
   background-color: v.$black;
+  z-index: 1;
 }
 .navbar{
   display: flex;

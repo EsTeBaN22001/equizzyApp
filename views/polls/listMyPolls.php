@@ -12,7 +12,7 @@
 
     <?php foreach ($userPolls as $poll) : ?>
 
-      <div class="poll" data-id="<?= $poll->uniqId ?>">
+      <div class="poll" data-id="<?= $poll->uniqId ?>" title="<?= $poll->title ?>">
         <div class="img-container">
           <img src="/pollsImages/<?= $poll->img ?>" alt="Imagen de la encuesta <?= $poll->title ?>">
         </div>

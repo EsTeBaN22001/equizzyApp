@@ -57,6 +57,16 @@
           text-overflow: ellipsis;
           overflow: hidden;
         }
+
+        .category-link{
+          color: v.$gray;
+          transition: color .3s ease;
+
+          &:hover{
+            color: v.$principalColor;
+            cursor: pointer;
+          }
+        }
       }
     }
   }
