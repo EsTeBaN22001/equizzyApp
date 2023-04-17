@@ -45,13 +45,15 @@
           <?php foreach($popularPolls as $poll): ?>
         
           <li class="glide__slide poll" title="<?= $poll->title ?>">
-            <div class="slide__content about-poll-container">
-              <img src="/pollsImages/<?= $poll->img ?>">
-              <div class="about-poll">
-                <h3><?= $poll->title ?></h3>
-                <a class="category-link" href="<?= $_ENV['HOST'] ?>/polls-by-category?category=<?= $poll->categoryId ?>"><?= $poll->categoryName ?></a>
+            <a href="<?= $_ENV['HOST'] ?>/polls/respond?poll=<?= $poll->uniqId ?>">
+              <div class="slide__content about-poll-container">
+                <img src="/pollsImages/<?= $poll->img ?>">
+                <div class="about-poll">
+                  <h3><?= $poll->title ?></h3>
+                  <a class="category-link" href="<?= $_ENV['HOST'] ?>/polls-by-category?category=<?= $poll->categoryId ?>"><?= $poll->categoryName ?></a>
+                </div>
               </div>
-            </div>
+            </a>
           </li>
 
           <?php endforeach ?>
@@ -92,12 +94,14 @@
           <?php foreach($pollsCategoryOne as $poll): ?>
 
           <li class="glide__slide poll" title="<?= $poll->title ?>">
-            <div class="slide__content about-poll-container">
-              <img src="/pollsImages/<?= $poll->img ?>">
-              <div class="about-poll">
-                <h3><?= $poll->title ?></h3>
+            <a href="<?= $_ENV['HOST'] ?>/polls/respond?poll=<?= $poll->uniqId ?>">
+              <div class="slide__content about-poll-container">
+                <img src="/pollsImages/<?= $poll->img ?>">
+                <div class="about-poll">
+                  <h3><?= $poll->title ?></h3>
+                </div>
               </div>
-            </div>
+            </a>
           </li>
 
           <?php endforeach ?>
@@ -132,14 +136,16 @@
           <?php foreach($pollsCategoryTwo as $poll): ?>
 
           <li class="glide__slide poll" title="<?= $poll->title ?>">
-            <div class="slide__content about-poll-container">
-              <img src="/pollsImages/<?= $poll->img ?>">
-              <div class="about-poll">
-                <h3><?= $poll->title ?></h3>
+            <a href="<?= $_ENV['HOST'] ?>/polls/respond?poll=<?= $poll->uniqId ?>">
+              <div class="slide__content about-poll-container">
+                <img src="/pollsImages/<?= $poll->img ?>">
+                <div class="about-poll">
+                  <h3><?= $poll->title ?></h3>
+                </div>
               </div>
-            </div>
+            </a>
           </li>
-
+          
           <?php endforeach ?>
 
         </ul>
@@ -172,12 +178,14 @@
         <?php foreach($pollsCategoryThree as $poll): ?>
 
         <li class="glide__slide poll" title="<?= $poll->title ?>">
-          <div class="slide__content about-poll-container">
-            <img src="/pollsImages/<?= $poll->img ?>">
-            <div class="about-poll">
-              <h3><?= $poll->title ?></h3>
+          <a href="<?= $_ENV['HOST'] ?>/polls/respond?poll=<?= $poll->uniqId ?>">
+            <div class="slide__content about-poll-container">
+              <img src="/pollsImages/<?= $poll->img ?>">
+              <div class="about-poll">
+                <h3><?= $poll->title ?></h3>
+              </div>
             </div>
-          </div>
+          </a>
         </li>
 
         <?php endforeach ?>

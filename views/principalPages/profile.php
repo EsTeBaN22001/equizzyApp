@@ -1,7 +1,7 @@
 <div class="profile-section section-sm container-sm">
   <h1>Perfil</h1>
 
-  <?php include_once(__DIR__ . './../templates/alerts.php') ?>
+  <?php include_once(__DIR__ . '/../templates/alerts.php') ?>
 
   <?php if(isset($_GET['alert'])): ?>
     <div class="alert success">

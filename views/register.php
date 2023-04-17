@@ -1,6 +1,6 @@
 <section class="section-sm container-sm reveal-bottom">
   <h1>Registrate</h1>
-  <?php include_once(__DIR__ . './templates/alerts.php') ?>
+  <?php include_once(__DIR__ . '/templates/alerts.php') ?>
   <div class="login-form-container">
     <form method="POST" action="" class="form">
       <label for="name" class="warning-input"><span>*</span><p>Todos los campos son obligatorios</p></label>

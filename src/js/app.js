@@ -1,4 +1,5 @@
 // VARIABLES GLOBALES
+// const domain = 'https://equizzy.000webhostapp.com'
 const domain = 'http://localhost:3000'
 const urlPoll = getIdToUrl().poll ?? ''
 
