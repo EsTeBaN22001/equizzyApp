@@ -1,6 +1,6 @@
 // VARIABLES GLOBALES
-const domain = 'equizzy.epizy.com'
-// const domain = 'http://localhost:3000'
+// const domain = 'equizzy.epizy.com'
+const domain = 'http://localhost:3000'
 const urlPoll = getIdToUrl().poll ?? ''
 
 // Obtener el token actual de la sesión
