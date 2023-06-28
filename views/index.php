@@ -1,4 +1,4 @@
-<section class="box-info-container section-lg container-sm">
+<section class="box-info-container section-lg container-sm reveal-bottom">
   <div class="text-content text-right">
     <h2>EquizzyApp</h2>
     <p>¡BIENVENIDO/A a nuestro sitio web sobre encuestas! En nuestro sitio, podrás crear y administrar tus propias encuestas de manera rápida y fácil. Con nuestra herramienta en línea, podrás recopilar datos valiosos de tus clientes, empleados o cualquier grupo de personas que desees encuestar.</p>
@@ -8,7 +8,7 @@
   </div>
 </section>
 
-<section class="box-info-container box-inverted section-lg container-sm">
+<section class="box-info-container box-inverted section-lg container-sm reveal-bottom">
   <div class="img-container">
     <img src="build/img/undraw_createPoll.svg" alt="about image">
   </div>
@@ -18,7 +18,7 @@
   </div>
 </section>
 
-<section class="box-info-container section-lg container-sm">
+<section class="box-info-container section-lg container-sm reveal-bottom">
   <div class="text-content text-right">
     <h2>Análisis y recopilación de datos</h2>
     <p>Con este sistema, puedes obtener un análisis detallado de los resultados de la encuesta. El sistema te permite generar gráficos que facilitan la información de forma clara y sencilla. Puedes recopilar respuestas de forma automática. Las respuestas se almacenan en una base de datos segura, y puedes acceder a ellas en cualquier momento para ver el progreso de la encuesta y obtener una visión general de los resultados.</p>
@@ -31,7 +31,7 @@
 <section class="cards-section section-lg container-sm">
   <h2>Beneficios de usar EquizzyApp</h2>
   <div class="cards-container">
-    <div class="card">
+    <div class="card reveal-left">
       <div class="img-container">
         <i class="fa-regular fa-face-smile"></i>
       </div>
@@ -40,7 +40,7 @@
         <p>Nuestra plataforma es intuitiva y te guía paso a paso en el proceso de creación de encuestas.</p>
       </div>
     </div>
-    <div class="card">
+    <div class="card reveal-top">
       <div class="img-container">
         <i class="fa-solid fa-gauge-high"></i>
       </div>
@@ -49,7 +49,7 @@
         <p>Puedes publicar tu encuesta en cuestión de minutos y empezar a recoger respuestas de inmediato.</p>
       </div>
     </div>
-    <div class="card">
+    <div class="card reveal-right">
       <div class="img-container">
         <i class="fa-solid fa-wand-magic-sparkles"></i>
       </div>
@@ -60,7 +60,7 @@
     </div>
 </section>
 
-<div class="polls-carrousel section-lg container-sm">
+<div class="polls-carrousel section-lg container-sm reveal-bottom">
   <h2>Encuestas populares</h2>
   <div class="carrousel-container">
     <div class="glide">
@@ -94,6 +94,8 @@
 <?php
 
 $script = '
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="build/js/indexScrollReveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script src="build/js/indexPollsCarrousel.js"></script>
 ';

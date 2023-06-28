@@ -12,6 +12,7 @@ use Controllers\ProfileController;
 use Controllers\QuestionController;
 use Controllers\PublicPollsController;
 use Controllers\CategoryPollController;
+use Controllers\SearchController;
 use Controllers\StateAndRateController;
 
 $router = new Router();
@@ -65,6 +66,9 @@ $router->post('/polls/get-answers', [PublicPollsController::class, 'getAnswers']
 // RUTAS para verificar si una encuesta es pública
 $router->post('/polls/get-public-state', [StateAndRateController::class, 'getPublicState']);
 $router->post('/polls/set-public-state', [StateAndRateController::class, 'setPublicState']);
+
+// Ruta para buscar una encuesta en el buscador
+$router->post('/polls/search', [SearchController::class, 'search']);
 
 // CRUD de las PREGUNTAS de las encuestas
 $router->post('/questions/create', [QuestionController::class, 'create']);

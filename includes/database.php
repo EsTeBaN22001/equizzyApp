@@ -1,6 +1,8 @@
 <?php
 
-$db = mysqli_connect($_ENV['HOST'], $_ENV['DB_USER'], $_ENV['DB_USER_PASSWORD'], $_ENV['DB_NAME']);
+$db = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME']);
+
+mysqli_set_charset($db, 'utf8');
 
 
 if (!$db) {

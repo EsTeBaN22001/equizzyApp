@@ -11,7 +11,7 @@
 
           <?php foreach($principalCategories as $category): ?>
 
-            <li class="glide__slide poll">
+            <li class="glide__slide poll" title="<?= $category->name ?>">
               <div class="slide__content category">
                 <div class="about-category">
                   <a href="<?= $_ENV['HOST'] ?>/polls-by-category?category=<?= $category->id ?>"><h3><?= $category->name ?></h3></a>
@@ -44,14 +44,16 @@
 
           <?php foreach($popularPolls as $poll): ?>
         
-          <li class="glide__slide poll">
-            <div class="slide__content about-poll-container">
-              <img src="/pollsImages/<?= $poll->img ?>">
-              <div class="about-poll">
-                <h3><?= $poll->title ?></h3>
-                <p><b>Categoría: </b><?= $poll->categoryName ?></p>
+          <li class="glide__slide poll" title="<?= $poll->title ?>">
+            <a href="<?= $_ENV['HOST'] ?>/polls/respond?poll=<?= $poll->uniqId ?>">
+              <div class="slide__content about-poll-container">
+                <img src="/pollsImages/<?= $poll->img ?>">
+                <div class="about-poll">
+                  <h3><?= $poll->title ?></h3>
+                  <a class="category-link" href="<?= $_ENV['HOST'] ?>/polls-by-category?category=<?= $poll->categoryId ?>"><?= $poll->categoryName ?></a>
+                </div>
               </div>
-            </div>
+            </a>
           </li>
 
           <?php endforeach ?>
@@ -81,7 +83,7 @@
 <!-- CATEGORÍA 1 - MÚSICA -->
 <section class="polls-carrousel container section-sm categories-section">
   <div class="header-container">
-    <h2>Categoría <span>Música</span></h2>
+    <h2>Música</h2>
     <a href="<?= $_ENV['HOST'] ?>/polls-by-category?category=1">Ver todas</a>
   </div>
   <div class="carrousel-container">
@@ -91,13 +93,15 @@
 
           <?php foreach($pollsCategoryOne as $poll): ?>
 
-          <li class="glide__slide poll">
-            <div class="slide__content about-poll-container">
-              <img src="/pollsImages/<?= $poll->img ?>">
-              <div class="about-poll">
-                <h3><?= $poll->title ?></h3>
+          <li class="glide__slide poll" title="<?= $poll->title ?>">
+            <a href="<?= $_ENV['HOST'] ?>/polls/respond?poll=<?= $poll->uniqId ?>">
+              <div class="slide__content about-poll-container">
+                <img src="/pollsImages/<?= $poll->img ?>">
+                <div class="about-poll">
+                  <h3><?= $poll->title ?></h3>
+                </div>
               </div>
-            </div>
+            </a>
           </li>
 
           <?php endforeach ?>
@@ -121,7 +125,7 @@
 <!-- CATEGORÍA 2 - INTELIGENCIA ARTIFICIAL -->
 <section class="polls-carrousel container section-sm categories-section">
   <div class="header-container">
-    <h2>Categoría <span>Inteligencia artificial</span></h2>
+    <h2>Inteligencia artificial</h2>
     <a href="<?= $_ENV['HOST'] ?>/polls-by-category?category=15">Ver todas</a>
   </div>
   <div class="carrousel-container">
@@ -131,15 +135,17 @@
 
           <?php foreach($pollsCategoryTwo as $poll): ?>
 
-          <li class="glide__slide poll">
-            <div class="slide__content about-poll-container">
-              <img src="/pollsImages/<?= $poll->img ?>">
-              <div class="about-poll">
-                <h3><?= $poll->title ?></h3>
+          <li class="glide__slide poll" title="<?= $poll->title ?>">
+            <a href="<?= $_ENV['HOST'] ?>/polls/respond?poll=<?= $poll->uniqId ?>">
+              <div class="slide__content about-poll-container">
+                <img src="/pollsImages/<?= $poll->img ?>">
+                <div class="about-poll">
+                  <h3><?= $poll->title ?></h3>
+                </div>
               </div>
-            </div>
+            </a>
           </li>
-
+          
           <?php endforeach ?>
 
         </ul>
@@ -161,7 +167,7 @@
 <!-- CATEGORÍA 3 - CRIPTOMONEDAS -->
 <section class="polls-carrousel container section-sm categories-section">
   <div class="header-container">
-    <h2>Categoría <span>Criptomonedas</span></h2>
+    <h2>Criptomonedas</h2>
     <a href="<?= $_ENV['HOST'] ?>/polls-by-category?category=2">Ver todas</a>
   </div>
   <div class="carrousel-container">
@@ -171,13 +177,15 @@
 
         <?php foreach($pollsCategoryThree as $poll): ?>
 
-        <li class="glide__slide poll">
-          <div class="slide__content about-poll-container">
-            <img src="/pollsImages/<?= $poll->img ?>">
-            <div class="about-poll">
-              <h3><?= $poll->title ?></h3>
+        <li class="glide__slide poll" title="<?= $poll->title ?>">
+          <a href="<?= $_ENV['HOST'] ?>/polls/respond?poll=<?= $poll->uniqId ?>">
+            <div class="slide__content about-poll-container">
+              <img src="/pollsImages/<?= $poll->img ?>">
+              <div class="about-poll">
+                <h3><?= $poll->title ?></h3>
+              </div>
             </div>
-          </div>
+          </a>
         </li>
 
         <?php endforeach ?>
@@ -201,8 +209,12 @@
 <?=
 
 $script = '
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5.0.12/dark.min.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
   <script src="/build/js/principalPollsCarrousel.js"></script>
+  <script src="/build/js/polls/searcher.js"></script>
 '
 
 ?>
+

@@ -22,7 +22,7 @@
 <body>
 	<section class="header">
 		<div class="hero">
-			<div class="hero-content container-sm">
+			<div class="hero-content container-sm reveal-bottom">
 				<h1 class="logo">equizzy<span>App</span></h1>
 				<p class="register-paragraph">¡Inicia tu primera encuesta ahora y descubre todo lo que nuestro sitio tiene para ofrecer!</p>
 				
@@ -35,7 +35,7 @@
 		</div>
 	</section>
 
-	<section class="navbar-container">
+	<section class="navbar-container reveal-left">
 		<div class="navbar container">
 			<div>
 				<a href="<?=$_ENV['HOST']?>/" class="logo">equizzy<span>App</span></a>

@@ -1,6 +1,6 @@
 <section class="categories-section container-sm section-sm">
   <h1>Crear categoría</h1>
-  <?php include_once(__DIR__ . './../templates/alerts.php') ?>
+  <?php include_once(__DIR__ . '/../templates/alerts.php') ?>
   <div class="form-container">
     <form method="POST" class="form" enctype="multipart/form-data">
       <div class="field-group">

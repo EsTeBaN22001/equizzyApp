@@ -12,9 +12,12 @@
 
     <?php foreach($categories as $category): ?>
   
-      <div class="category">
+      <div class="category" title="<?= $category->name ?>">
         <div class="about-category">
-          <a href="<?= $_ENV['HOST'] ?>/polls-by-category?category=<?= $category->id ?>"><h3><?= $category->name ?></h3></a>
+          <a href="<?= $_ENV['HOST'] ?>/polls-by-category?category=<?= $category->id ?>">
+            <h3><?= $category->name ?></h3>
+            <span class="char-counter"><?= $category->poll_count ?></span>
+          </a>
         </div>
       </div>
 
