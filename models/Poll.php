@@ -1,6 +1,7 @@
 <?php 
 
 namespace Model;
+use Model\ActiveRecord;
 
 class Poll extends ActiveRecord{
 
@@ -19,6 +20,28 @@ class Poll extends ActiveRecord{
     $this->userId = $args['userId'] ?? null;
   }
 
+  public function validateEditInfoPoll(){
+
+    if(!$this->title){
+      self::$alerts['error'][] = 'El título es obligatorio';
+    }
+
+    if(!$this->description){
+      self::$alerts['error'][] = 'La descripción es obligatoria';
+    }
+
+    // if(strlen($this->description) > 500 || strlen($this->description < 1)){
+    //   self::$alerts['error'][] = 'La descripción debe tener entre 1 y 500 carácteres';
+    // }
+
+    if(!$this->categoryId){
+      self::$alerts['error'][] = 'Debes seleccionar una categoría';
+    }
+
+    return self::$alerts;
+
+  }
+  
   public function validateNewPoll(){
 
     if(!$this->title){
@@ -39,28 +62,6 @@ class Poll extends ActiveRecord{
 
     if(!$_FILES['img']['tmp_name']){
       self::$alerts['error'][] = 'La imagen es obligatoria';
-    }
-
-    return self::$alerts;
-
-  }
-
-  public function validateEditInfoPoll(){
-
-    if(!$this->title){
-      self::$alerts['error'][] = 'El título es obligatorio';
-    }
-
-    if(!$this->description){
-      self::$alerts['error'][] = 'La descripción es obligatoria';
-    }
-
-    if(strlen($this->description) > 500 || strlen($this->description < 1)){
-      self::$alerts['error'][] = 'La descripción debe tener entre 1 y 500 carácteres';
-    }
-
-    if(!$this->categoryId){
-      self::$alerts['error'][] = 'Debes seleccionar una categoría';
     }
 
     return self::$alerts;

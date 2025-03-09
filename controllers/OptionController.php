@@ -5,6 +5,7 @@ namespace Controllers;
 use Model\Option;
 use Model\Question;
 use Model\JWTIntegration;
+use Model\Poll;
 
 class OptionController {
 
@@ -13,6 +14,8 @@ class OptionController {
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
       $verifyToken = JWTIntegration::verifyToken();
+
+      $poll = new Poll();
 
       if($verifyToken){
 

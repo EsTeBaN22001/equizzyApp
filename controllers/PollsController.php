@@ -2,10 +2,10 @@
 
 namespace Controllers;
 
-use Model\Poll;
 use Model\User;
 use MVC\Router;
 use Model\Question;
+use Model\Poll;
 use Model\RatePolls;
 use Model\CategoryPolls;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -32,7 +32,7 @@ class PollsController{
     $principalCategories = CategoryPolls::consultSQL($query);
     
     // ENCUESTAS POPULARES - CARROUSEL 2
-    $query = "SELECT id, rate, pollId, userId FROM ratepolls GROUP BY pollId ORDER BY rate DESC LIMIT 10;";
+    $query = "SELECT id, rate, pollId, userId FROM ratepolls GROUP BY id, rate, pollId, userId ORDER BY rate DESC LIMIT 4;";
     $ratePolls = RatePolls::consultSQL($query);
 
     // Obtener las encuestas a partir de las calificaciones más altas
@@ -84,6 +84,8 @@ class PollsController{
       $poll->syncUp($_POST);
       
       $alerts = $poll->validateNewPoll();
+
+      debugstop($poll);
 
       if(empty($alerts)){
 
@@ -169,16 +171,21 @@ class PollsController{
     // Verifica si existe la encuesta pasada por parámetro
     $pollId = isset($_GET['poll']) ? $_GET['poll'] : '';
 
-    $poll = Poll::where('uniqId', $pollId);
+    $poll = new Poll();
+    
+    $pollRes = $poll::where('uniqId', $pollId);
 
-    if(!$poll || $_SESSION['id'] != $poll->userId ){
+    if(!$pollRes || $_SESSION['id'] != $pollRes->userId ){
       header('Location: /my-polls');
+      exit;
     }
 
     // Guardar los cambios de la encuesta
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-      $poll->syncUp($_POST);
+      
+      $pollRes->syncUp($_POST);
+      
+      $poll->syncUp($pollRes);
       
       $alerts = $poll->validateEditInfoPoll();
 
@@ -234,7 +241,7 @@ class PollsController{
     
     $router->renderPolls('polls/editInfo', [
       'title' => 'Editar información',
-      'poll' => $poll,
+      'poll' => $pollRes,
       'alerts' => $alerts,
       'categories' => $categories
     ]);

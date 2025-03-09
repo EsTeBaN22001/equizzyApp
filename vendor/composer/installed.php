@@ -3,7 +3,7 @@
         'name' => 'esteb/template',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '79c52d6a762657fdda52923c862339da0c01873a',
+        'reference' => '01ac87bc78ac563370b6226ec70847a43e3e0409',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'esteb/template' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '79c52d6a762657fdda52923c862339da0c01873a',
+            'reference' => '01ac87bc78ac563370b6226ec70847a43e3e0409',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
