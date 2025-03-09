@@ -37,23 +37,30 @@ class ActiveRecord
 	}
 
 	// Consulta SQL para crear un objeto en Memoria
-	public static function consultSQL($query)
-	{
-		// Consultar la base de datos
-		$result = self::$db->query($query);
+// Consulta SQL para crear un objeto en Memoria
+public static function consultSQL($query)
+{
+    // Consultar la base de datos
+    $result = self::$db->query($query);
 
-		// Iterar los resultados
-		$array = [];
-		while ($registry = $result->fetch_assoc()) {
-			$array[] = static::createObject($registry);
-		}
+    // Verificar si la consulta fue exitosa
+    if (!$result) {
+        throw new \Exception("Error en la consulta SQL: " . self::$db->error);
+    }
 
-		// liberar la memoria
-		$result->free();
+    // Iterar los resultados
+    $array = [];
+    while ($registry = $result->fetch_assoc()) {
+        $array[] = static::createObject($registry);
+    }
 
-		// retornar los resultados
-		return $array;
-	}
+    // liberar la memoria
+    $result->free();
+
+    // retornar los resultados
+    return $array;
+}
+
 
 	// Crea el objeto en memoria que es igual al de la BD
 	protected static function createObject($registry)

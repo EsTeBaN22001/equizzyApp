@@ -13,7 +13,7 @@ class IndexController{
     // OBTENER LAS ENCUESTAS MÁS POPULARES
 
     // Obtener las calificaciones más altas
-    $query = "SELECT id, rate, pollId, userId FROM ratepolls GROUP BY pollId ORDER BY rate DESC LIMIT 4;";
+    $query = "SELECT id, rate, pollId, userId FROM ratepolls WHERE (pollId, rate) IN ( SELECT pollId, MAX(rate) AS max_rate FROM ratepolls GROUP BY pollId) ORDER BY rate DESC LIMIT 4;";
     $ratePolls = RatePolls::consultSQL($query);
 
     // Obtener las encuestas a partir de las calificaciones más altas

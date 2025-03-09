@@ -1,7 +1,5 @@
 node_modules
 .env
-<<<<<<< HEAD
 equizzy.sql
-=======
->>>>>>> dev
-VSCodeCounter
+.VSCodeCounter
+vendor

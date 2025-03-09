@@ -8,7 +8,7 @@ const actualUserJwt = getIdToUrl().t ?? ''
 
 const storage = window.localStorage
 
-if(actualUserJwt != ''){
+if (actualUserJwt != '') {
   // Guardar el token en el localStorage
   storage.setItem('jwt', actualUserJwt)
 }
@@ -24,51 +24,41 @@ function getIdToUrl() {
 
 // Función que hace la llamada al backend
 async function callFetch(url, method, data) {
-
   try {
-
     const consult = await fetch(url, {
       method: method,
       headers: {
-        "Authorization": storage.getItem('jwt'),
+        Authorization: storage.getItem('jwt')
       },
       body: data
     })
 
     const response = await consult.json()
 
-    if(response != "error"){
+    if (response != 'error') {
       return response
     }
 
-    Swal.fire(
-      'Su sesión caducó!',
-      'Si quiere realizar esta acción cierre sesión e inicie nuevamente',
-      'error'
-    )
-
+    Swal.fire('Su sesión caducó!', 'Si quiere realizar esta acción cierre sesión e inicie nuevamente', 'error')
   } catch (error) {
     console.log(error)
   }
-
 }
 
 // Oculta todos los menús activos en la página
-function ocultActiveMenus(){
-
+function ocultActiveMenus() {
   const activeMenus = document.querySelectorAll('.options-container.active')
 
-  activeMenus.forEach((menu)=>{
+  activeMenus.forEach(menu => {
     menu.classList.remove('active')
   })
-
 }
 
 // Sube desde el elemento hasta el padre con una clase en específico
-function getParentElementByClass(element, objetiveClass){
+function getParentElementByClass(element, objetiveClass) {
   let actualElement = element
 
-  while(actualElement && !actualElement.classList.contains(objetiveClass)){
+  while (actualElement && !actualElement.classList.contains(objetiveClass)) {
     actualElement = actualElement.parentElement
   }
 
@@ -77,7 +67,6 @@ function getParentElementByClass(element, objetiveClass){
 
 // Función para crear el DOM para las opciones y agregarlas a la pregunta
 function addOptionDOM(question, optionName, optionId) {
-
   const optionsContainer = question.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling
 
   const separator = document.createElement('hr')
@@ -112,5 +101,4 @@ function addOptionDOM(question, optionName, optionId) {
 
   // Agregar la opción al container "options-list"
   optionsContainer.appendChild(optionContainer)
-
 }
